@@ -6,12 +6,14 @@ import { button as buttonStyles } from "@heroui/theme";
 import { useTheme } from "next-themes";
 
 import { siteConfig } from "@/config/site";
+import { cardData } from "@/config/data";
 import { title } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import ScrollContent from "@/components/homepage/scrollContent";
 import MultiDirectionSlide from "@/components/multidirectionslide";
 import WordShuffle from "@/components/wordshuffle";
 import Earth from "@/components/earth";
+import Card from "@/components/card";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -23,7 +25,7 @@ export default function Home() {
   return (
     <section className="py-10">
       <section className="flex flex-col md:flex-row items-start min-h-screen justify-start gap-4 py-8 md:py-10">
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 mx-5">
           <MultiDirectionSlide
             className={`${title({ size: "xl", color: "white" })}`}
             text1="REDEFINING"
@@ -78,7 +80,17 @@ export default function Home() {
         </Snippet>
       </div> */}
       </section>
-
+      <div className="p-4 items-center justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:-mt-60">
+        {cardData.map((card, index) => (
+          <Card
+            key={index}
+            description={card.description}
+            imageUrl={card.imageUrl}
+            readMoreLink={card.readMoreLink}
+            title={card.title}
+          />
+        ))}
+      </div>
       <section>
         <ScrollContent />
       </section>
