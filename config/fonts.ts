@@ -1,11 +1,17 @@
-import { Fira_Code as FontMono, Inter as FontSans } from "next/font/google";
+import { Poppins, Roboto_Mono } from "next/font/google";
 
-export const fontSans = FontSans({
+// Poppins for all general text
+export const fontSans = Poppins({
   subsets: ["latin"],
   variable: "--font-sans",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // Supports varied thickness
+  display: "swap",
 });
 
-export const fontMono = FontMono({
+// Roboto Mono for specific blocks
+export const fontMono = Roboto_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+  weight: ["100", "200", "300", "400", "500", "600", "700"], // Adjust based on needs
+  display: "swap",
 });

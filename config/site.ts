@@ -5,19 +5,19 @@ export const siteConfig = {
   description: "Make beautiful websites regardless of your design experience.",
   navItems: [
     {
-      label: "Home",
-      href: "/",
+      label: "What we do",
+      href: "/products",
     },
     {
-      label: "Docs",
+      label: "What we think",
       href: "/docs",
     },
     {
-      label: "Pricing",
+      label: "Who are we",
       href: "/pricing",
     },
     {
-      label: "Blog",
+      label: "Careers",
       href: "/blog",
     },
     {
@@ -60,9 +60,9 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/heroui-inc/heroui",
+    eisd: "https://eisdinfotech.com",
     twitter: "https://twitter.com/hero_ui",
-    docs: "https://heroui.com",
+    more: "/products",
     discord: "https://discord.gg/9b6yyZKmH4",
     sponsor: "https://patreon.com/jrgarciadev",
   },
