@@ -38,7 +38,7 @@ const ScrollContent: React.FC = () => {
         </div>
 
         <section className="dark:text-white w-full dark:bg-slate-950 bg-white text-slate-950">
-          <div className="grid grid-cols-2 md:grid-cols-2">
+          <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="sticky top-0 h-screen flex items-center justify-center">
               <h1 className="2xl:text-7xl text-4xl sm:text-5xl font-semibold text-center tracking-tight leading-[120%]">
                 Our Core
@@ -49,7 +49,7 @@ const ScrollContent: React.FC = () => {
               <figure className="grid place-content-center lg:-skew-x-12">
                 <Image
                   alt=""
-                  className="transition-all duration-300 w-4/5 lg:w-screen h-96 align-bottom object-cover"
+                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
                   src="/images/rocket/1.jpg"
                   width={500}
@@ -58,7 +58,7 @@ const ScrollContent: React.FC = () => {
               <figure className="grid place-content-center lg:skew-x-12">
                 <Image
                   alt=""
-                  className="transition-all duration-300 w-4/5 lg:w-screen h-96 align-bottom object-cover"
+                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
                   src="/images/rocket/2.jpg"
                   width={500}
@@ -67,7 +67,7 @@ const ScrollContent: React.FC = () => {
               <figure className="grid place-content-center lg:-skew-x-12">
                 <Image
                   alt=""
-                  className="transition-all duration-300 w-4/5 lg:w-screen h-96 align-bottom object-cover"
+                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
                   src="/images/rocket/3.jpg"
                   width={500}
@@ -76,7 +76,7 @@ const ScrollContent: React.FC = () => {
               <figure className="grid place-content-center lg:skew-x-12">
                 <Image
                   alt=""
-                  className="transition-all duration-300 w-4/5 lg:w-screen h-96 align-bottom object-cover"
+                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
                   src="/images/rocket/4.jpg"
                   width={500}
@@ -85,7 +85,7 @@ const ScrollContent: React.FC = () => {
               <figure className="grid place-content-center lg:-skew-x-12">
                 <Image
                   alt=""
-                  className="transition-all duration-300 w-4/5 lg:w-screen h-96 align-bottom object-cover"
+                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
                   src="/images/rocket/5.jpg"
                   width={500}
@@ -96,14 +96,20 @@ const ScrollContent: React.FC = () => {
         </section>
 
         <section className="dark:text-white w-full dark:bg-slate-950 bg-white text-slate-950">
-          <div className="grid grid-cols-2 px-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 px-2">
+            <div className="sticky top-0 h-screen grid place-content-center p-5">
+              <h1 className={title({ size: "md" })}>
+                Ayspire deliver precise insights & scalable solutions for
+                informed decision-making in dynamic markets.
+              </h1>
+            </div>
             <div className="grid gap-2">
               <figure className="sticky top-0 h-screen grid place-content-center">
                 <Image
                   alt=""
                   className="transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-md"
                   height={500}
-                  src="https://images.unsplash.com/photo-1718183120769-ece47f31045b?w=500&auto=format&fit=crop"
+                  src="/images/scroll/1.png"
                   width={500}
                 />
               </figure>
@@ -112,7 +118,7 @@ const ScrollContent: React.FC = () => {
                   alt=""
                   className="transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-md"
                   height={500}
-                  src="https://images.unsplash.com/photo-1715432362539-6ab2ab480db2?w=500&auto=format&fit=crop"
+                  src="/images/scroll/2.png"
                   width={500}
                 />
               </figure>
@@ -121,7 +127,7 @@ const ScrollContent: React.FC = () => {
                   alt=""
                   className="transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-md"
                   height={500}
-                  src="https://images.unsplash.com/photo-1685904042960-66242a0ac352?w=500&auto=format&fit=crop"
+                  src="/images/scroll/3.png"
                   width={500}
                 />
               </figure>
@@ -130,16 +136,37 @@ const ScrollContent: React.FC = () => {
                   alt=""
                   className="transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-md"
                   height={500}
-                  src="https://images.unsplash.com/photo-1718838541476-d04e71caa347?w=500&auto=format&fit=crop"
+                  src="/images/scroll/4.png"
                   width={500}
                 />
               </figure>
-            </div>
-            <div className="sticky top-0 h-screen grid place-content-center p-5">
-              <h1 className={title({ size: "md" })}>
-                Ayspire deliver precise insights & scalable solutions for
-                informed decision-making in dynamic markets.
-              </h1>
+              <figure className="sticky top-0 h-screen grid place-content-center">
+                <Image
+                  alt=""
+                  className="transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-md"
+                  height={500}
+                  src="/images/scroll/5.png"
+                  width={500}
+                />
+              </figure>
+              <figure className="sticky top-0 h-screen grid place-content-center">
+                <Image
+                  alt=""
+                  className="transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-md"
+                  height={500}
+                  src="/images/scroll/6.png"
+                  width={500}
+                />
+              </figure>
+              <figure className="sticky top-0 h-screen grid place-content-center">
+                <Image
+                  alt=""
+                  className="transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-md"
+                  height={500}
+                  src="/images/scroll/7.png"
+                  width={500}
+                />
+              </figure>
             </div>
           </div>
         </section>
