@@ -62,7 +62,7 @@ const Earth: React.FC<EarthProps> = ({
       baseColor: baseColor,
       markerColor: markerColor,
       glowColor: glowColor,
-      opacity: 1,
+      opacity: 0.8,
       offset: [0, 0],
       markers: markers, // Add markers here if needed
       onRender: (state: Record<string, any>) => {

@@ -1,5 +1,7 @@
+import { Link } from "@heroui/link";
 import React from "react";
-import Link from "next/link";
+import Image from "next/image";
+import { button as buttonStyles } from "@heroui/theme";
 
 interface CardProps {
   title: string;
@@ -8,37 +10,60 @@ interface CardProps {
   readMoreLink: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, description, imageUrl, readMoreLink }) => {
+const Card: React.FC<CardProps> = ({
+  title,
+  description,
+  imageUrl,
+  readMoreLink,
+}) => {
   return (
-    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    <div className="max-w-md bg-slate-50 border border-slate-200 rounded-b-lg shadow-lg shadow-gray-300 dark:shadow-gray-700 dark:bg-gray-800 dark:border-gray-700">
+      <div className="top-0 left-0 mx-1 my-3 flex flex-col items-start justify-start w-1/6 h-2 bg-gradient-to-r rounded-full from-teal-500 via-teal-300 to-teal-200" />
+
       <Link href={readMoreLink}>
-        <img className="rounded-t-lg w-full" src={imageUrl} alt={title} />
+        <Image
+          alt={title}
+          className="rounded-b-xl dark:shadow-teal-900 shadow-lg w-full"
+          height={500}
+          src={imageUrl}
+          width={500}
+        />
       </Link>
+
       <div className="p-5">
         <Link href={readMoreLink}>
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="mb-5 text-2xl font-light tracking-tight text-gray-900 dark:text-white">
             {title}
           </h5>
         </Link>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{description}</p>
+        <p className="mb-16 font-extralight text-2xl text-gray-700 dark:text-gray-400">
+          {description}
+        </p>
+
         <Link
+          // isExternal
+          className={buttonStyles({
+            color: "primary",
+            radius: "full",
+            variant: "shadow",
+          })}
           href={readMoreLink}
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          title="Explore"
         >
           Read more
           <svg
-            className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
             aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
+            className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
             fill="none"
             viewBox="0 0 14 10"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
+              d="M1 5h12m0 0L9 1m4 4L9 9"
               stroke="currentColor"
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
         </Link>

@@ -56,16 +56,11 @@ export const Navbar = () => {
               className="flex justify-start items-center gap-1"
               href="/"
             >
-              <Image
-                src="/logo.svg"
-                alt="Ayspire Inc"
-                width={40}
-                height={40}/>
+              <Image alt="Ayspire Inc" height={40} src="/logo.svg" width={40} />
               {/* <Logo className="text-primary" /> */}
               <p className="font-bold text-inherit text-xl text-primary">
                 Ayspire Inc
               </p>
-              
             </NextLink>
           </NavbarBrand>
         </NavbarContent>

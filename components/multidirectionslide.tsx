@@ -9,9 +9,9 @@ interface Props {
 }
 
 const MULTIDIRECTION_SLIDE_VARIANTS = {
-  hidden: { opacity: 0, x: "-30vw" },
+  hidden: { opacity: 0, x: "-140vw" },
   visible: { opacity: 1, x: 0 },
-  right: { opacity: 0, x: "30vw" },
+  right: { opacity: 0, x: "180vw" },
 } as const;
 
 const MultiDirectionSlide: FC<Props> = ({

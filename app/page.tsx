@@ -23,9 +23,9 @@ export default function Home() {
     theme === "dark" ? [0.9451, 0.9608, 0.9765] : [0.8, 0.9843, 0.9451];
 
   return (
-    <section className="py-10">
-      <section className="flex flex-col md:flex-row items-start min-h-screen justify-start gap-4 py-8 md:py-10">
-        <div className="w-full md:w-1/2 mx-5">
+    <section className="py-10 md:py-10">
+      <section className="flex flex-col mt-5 md:flex-row items-center justify-center md:items-start md:justify-start h-screen min-h-screen gap-2 py-0 md:py-10">
+        <div className="w-full px-5 md:w-1/2">
           <MultiDirectionSlide
             className={`${title({ size: "xl", color: "white" })}`}
             text1="REDEFINING"
@@ -37,7 +37,7 @@ export default function Home() {
               />
             }
           </MultiDirectionSlide>
-          <div className="flex gap-3 my-20 lg:my-40 justify-center md:justify-start">
+          <div className="flex gap-2 mt-24 md:mt-20 lg:mt-40 justify-center md:justify-start">
             <Link
               // isExternal
               className={buttonStyles({
@@ -46,6 +46,7 @@ export default function Home() {
                 variant: "shadow",
               })}
               href={siteConfig.links.more}
+              title="Explore"
             >
               Explore
             </Link>
@@ -80,7 +81,7 @@ export default function Home() {
         </Snippet>
       </div> */}
       </section>
-      <div className="p-4 items-center justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:-mt-60">
+      <div className="px-4 mb-10 items-center justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:-mt-60">
         {cardData.map((card, index) => (
           <Card
             key={index}
