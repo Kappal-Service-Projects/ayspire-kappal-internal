@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <section className="pt-10 mx-5">
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 min-h-screen">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 min-h-screen">
         <div className="col-span-1">
           <MultiDirectionSlide
             className={`${title({ size: "xl", color: "white" })}`}
@@ -55,7 +55,7 @@ export default function Home() {
         <div className="col-span-1">
           <Earth
             baseColor={baseColor}
-            className="w-full max-w-screen md:max-w-2xl mx-auto"
+            className="w-full max-w-screen lg:max-w-2xl mx-auto"
             dark={theme === "dark" ? 1 : 0.05}
             glowColor={glowColor}
             markers={[
@@ -65,7 +65,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <div className="px-2 mb-10 items-center justify-center grid grid-cols-1 md:grid-cols-3 gap-6 md:-mt-60">
+      <div className="px-2 mb-10 items-center justify-center grid grid-cols-1 lg:grid-cols-3 gap-6 md:-mt-60">
         {cardData.map((card, index) => (
           <Card
             key={index}
