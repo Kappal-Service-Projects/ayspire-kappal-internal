@@ -17,16 +17,16 @@ const Card: React.FC<CardProps> = ({
   readMoreLink,
 }) => {
   return (
-    <div className="max-w-md md:max-w-screen bg-slate-50 border border-slate-200 rounded-b-lg shadow-lg shadow-gray-300 dark:shadow-gray-700 dark:bg-gray-800 dark:border-gray-700">
+    <div className="max-w-screen bg-slate-50 border border-slate-200 rounded-b-lg shadow-lg shadow-gray-300 dark:shadow-gray-700 dark:bg-gray-800 dark:border-gray-700">
       <div className="top-0 left-0 mx-1 my-3 flex flex-col items-start justify-start w-1/6 h-2 bg-gradient-to-r rounded-full from-teal-500 via-teal-300 to-teal-200" />
 
       <Link href={readMoreLink}>
         <Image
           alt={title}
-          className="rounded-b-xl dark:shadow-teal-900 shadow-lg w-full"
+          className="rounded-b-xl dark:shadow-teal-900 shadow-lg px-2 w-full"
           height={500}
           src={imageUrl}
-          width={500}
+          width={1500}
         />
       </Link>
 
