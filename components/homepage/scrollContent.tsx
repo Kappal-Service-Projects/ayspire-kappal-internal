@@ -6,6 +6,37 @@ import Image from "next/image";
 import { title } from "../primitives";
 
 const ScrollContent: React.FC = () => {
+  const servicesArray = [
+    {
+      alt: "Financial Planning",
+      text: "Strategic budgeting for better financial stability.",
+    },
+    {
+      alt: "Business Insights",
+      text: "Data-driven insights to optimize business decisions.",
+    },
+    {
+      alt: "Expense Analytics",
+      text: "Track and analyze spending patterns effectively.",
+    },
+    {
+      alt: "Revenue Forecasting",
+      text: "Predict future earnings with advanced analytics.",
+    },
+    {
+      alt: "Personal Budgeting",
+      text: "Manage personal finances with smart budgeting tools.",
+    },
+    {
+      alt: "Profit Optimization",
+      text: "Maximize profitability through strategic planning.",
+    },
+    {
+      alt: "Manpower Outsourcing",
+      text: "Efficient workforce solutions for business growth.",
+    },
+  ];
+
   return (
     <ReactLenis root>
       <main className="dark:text-white w-full dark:bg-slate-950 bg-white text-slate-950">
@@ -27,10 +58,10 @@ const ScrollContent: React.FC = () => {
 
           <section className=" h-screen dark:text-white w-full dark:bg-slate-950 bg-white text-slate-950 grid place-content-center sticky top-0">
             <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-            <h1 className="2xl:text-7xl text-5xl px-8 font-semibold text-center tracking-tight leading-[120%]">
+            <h1 className="2xl:text-8xl text-5xl py-8 font-semibold text-center tracking-tight leading-[120%]">
               Ayspire offers a unified and automated solution for financial
-              planning, analysis & compliance for <br />{" "}
-              <span className={title({ size: "md", color: "teal" })}>
+              planning, analysis & compliance <br /> for{" "}
+              <span className={title({ size: "xl", color: "teal" })}>
                 your organization.
               </span>
             </h1>
@@ -38,132 +69,97 @@ const ScrollContent: React.FC = () => {
         </div>
 
         <section className="dark:text-white w-full dark:bg-slate-950 bg-white text-slate-950">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="sticky top-0 h-screen flex items-center justify-center">
-              <h1 className="2xl:text-7xl text-4xl sm:text-5xl font-semibold text-center tracking-tight leading-[120%]">
-                Our Core
-                <br /> Services
+          <div className="grid grid-cols-1 md:grid-cols-2 px-2">
+            <div className="sticky top-0 h-screen grid place-content-center py-5">
+              <span className="bg-white max-w-md text-primary text-2xl md:text-5xl font-bold md:font-bold pb-5 dark:bg-black">
+                Our Services
+              </span>
+              <h1 className={title({ size: "md" })}>
+                Ayspire delivers precise insights & scalable solutions for
+                informed decision-making in dynamic markets.
               </h1>
             </div>
             <div className="grid gap-2">
-              <figure className="grid place-content-center lg:-skew-x-12">
-                <Image
-                  alt=""
-                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
-                  height={500}
-                  src="/images/rocket/1.jpg"
-                  width={500}
-                />
-              </figure>
-              <figure className="grid place-content-center lg:skew-x-12">
-                <Image
-                  alt=""
-                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
-                  height={500}
-                  src="/images/rocket/2.jpg"
-                  width={500}
-                />
-              </figure>
-              <figure className="grid place-content-center lg:-skew-x-12">
-                <Image
-                  alt=""
-                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
-                  height={500}
-                  src="/images/rocket/3.jpg"
-                  width={500}
-                />
-              </figure>
-              <figure className="grid place-content-center lg:skew-x-12">
-                <Image
-                  alt=""
-                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
-                  height={500}
-                  src="/images/rocket/4.jpg"
-                  width={500}
-                />
-              </figure>
-              <figure className="grid place-content-center lg:-skew-x-12">
-                <Image
-                  alt=""
-                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
-                  height={500}
-                  src="/images/rocket/5.jpg"
-                  width={500}
-                />
-              </figure>
+
+              {servicesArray.map((data, index) => (
+                <figure
+                  key={index}
+                  className="min-h-screen sticky top-0 flex flex-col justify-center items-center"
+                >
+
+                  <Image
+                    alt={data.alt}
+                    className="transition-all duration-300 align-bottom object-cover rounded-md"
+                    height={500}
+                    loading={index == 0 ? "eager" : "lazy"}
+                    src={`/images/services/${index + 1}.png`}
+                    width={500}
+                  />
+                  <span className="bg-white max-w-md text-primary text-3xl font-thin md:font-light dark:bg-black">
+                    {data.text}
+                  </span>
+                </figure>
+              ))}
             </div>
           </div>
         </section>
 
         <section className="dark:text-white w-full dark:bg-slate-950 bg-white text-slate-950">
-          <div className="grid grid-cols-1 md:grid-cols-2 px-2">
-            <div className="sticky top-0 h-screen grid place-content-center p-5">
-              <h1 className={title({ size: "md" })}>
-                Ayspire deliver precise insights & scalable solutions for
-                informed decision-making in dynamic markets.
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="sticky top-0 h-screen flex items-center justify-center">
+              <h1 className="2xl:text-7xl text-4xl text-primary sm:text-5xl font-semibold text-center tracking-tight leading-[120%]">
+                Awards &
+                <br /> Recognition
               </h1>
             </div>
             <div className="grid gap-2">
-              <figure className="sticky top-0 h-screen grid place-content-center">
+              <figure className="grid place-content-center lg:-skew-x-12">
                 <Image
                   alt=""
-                  className="transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-md"
+                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
-                  src="/images/scroll/1.png"
+                  loading="eager"
+                  src="/images/recognition/1.jpg"
                   width={500}
                 />
               </figure>
-              <figure className="sticky top-0 h-screen grid place-content-center">
+              <figure className="grid place-content-center lg:skew-x-12">
                 <Image
                   alt=""
-                  className="transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-md"
+                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
-                  src="/images/scroll/2.png"
+                  loading="eager"
+                  src="/images/recognition/2.jpg"
                   width={500}
                 />
               </figure>
-              <figure className="sticky top-0 h-screen grid place-content-center">
+              <figure className="grid place-content-center lg:-skew-x-12">
                 <Image
                   alt=""
-                  className="transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-md"
+                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
-                  src="/images/scroll/3.png"
+                  loading="eager"
+                  src="/images/recognition/3.jpg"
                   width={500}
                 />
               </figure>
-              <figure className="sticky top-0 h-screen grid place-content-center">
+              <figure className="grid place-content-center lg:skew-x-12">
                 <Image
                   alt=""
-                  className="transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-md"
+                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
-                  src="/images/scroll/4.png"
+                  loading="eager"
+                  src="/images/recognition/4.jpg"
                   width={500}
                 />
               </figure>
-              <figure className="sticky top-0 h-screen grid place-content-center">
+              <figure className="grid place-content-center lg:-skew-x-12">
                 <Image
                   alt=""
-                  className="transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-md"
+                  className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
-                  src="/images/scroll/5.png"
-                  width={500}
-                />
-              </figure>
-              <figure className="sticky top-0 h-screen grid place-content-center">
-                <Image
-                  alt=""
-                  className="transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-md"
-                  height={500}
-                  src="/images/scroll/6.png"
-                  width={500}
-                />
-              </figure>
-              <figure className="sticky top-0 h-screen grid place-content-center">
-                <Image
-                  alt=""
-                  className="transition-all duration-300 w-96 h-96 align-bottom object-cover rounded-md"
-                  height={500}
-                  src="/images/scroll/7.png"
+                  loading="eager"
+                  src="/images/recognition/5.jpg"
                   width={500}
                 />
               </figure>
