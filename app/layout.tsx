@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import clsx from "clsx";
 
 import { Providers } from "./providers";
@@ -45,11 +46,13 @@ export default function RootLayout({
           <div className="relative flex flex-col h-screen">
             <Navbar />
             <main className="container mx-auto max-w-screen pt-0 md:pt-16 flex-grow">
+
               {children}
             </main>
             <Footer />
           </div>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
