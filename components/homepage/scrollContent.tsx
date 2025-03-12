@@ -5,38 +5,9 @@ import Image from "next/image";
 
 import { title } from "../primitives";
 
-const ScrollContent: React.FC = () => {
-  const servicesArray = [
-    {
-      alt: "Financial Planning",
-      text: "Strategic budgeting for better financial stability.",
-    },
-    {
-      alt: "Business Insights",
-      text: "Data-driven insights to optimize business decisions.",
-    },
-    {
-      alt: "Expense Analytics",
-      text: "Track and analyze spending patterns effectively.",
-    },
-    {
-      alt: "Revenue Forecasting",
-      text: "Predict future earnings with advanced analytics.",
-    },
-    {
-      alt: "Personal Budgeting",
-      text: "Manage personal finances with smart budgeting tools.",
-    },
-    {
-      alt: "Profit Optimization",
-      text: "Maximize profitability through strategic planning.",
-    },
-    {
-      alt: "Manpower Outsourcing",
-      text: "Efficient workforce solutions for business growth.",
-    },
-  ];
+import { ProductsAndServices } from "@/config/data";
 
+const ScrollContent: React.FC = () => {
   return (
     <ReactLenis root>
       <main className="dark:text-white w-full dark:bg-slate-950 bg-white text-slate-950">
@@ -80,13 +51,11 @@ const ScrollContent: React.FC = () => {
               </h1>
             </div>
             <div className="grid gap-2">
-
-              {servicesArray.map((data, index) => (
+              {ProductsAndServices.map((data, index) => (
                 <figure
                   key={index}
                   className="min-h-screen sticky top-0 flex flex-col justify-center items-center"
                 >
-
                   <Image
                     alt={data.alt}
                     className="transition-all duration-300 align-bottom object-cover rounded-md"
@@ -168,13 +137,9 @@ const ScrollContent: React.FC = () => {
         </section>
 
         <footer className="group dark:text-white w-full dark:bg-slate-950 bg-white text-slate-950">
-          {/* <h1 className="text-[16vw] group-hover:translate-y-4 translate-y-20 leading-[100%] font-semibold text-center bg-gradient-to-r from-gray-400 to-gray-800 bg-clip-text text-transparent transition-all ease-linear"> */}
           <h1 className="text-[16vw] group-hover:translate-y-4 translate-y-20 leading-[100%] font-semibold text-center bg-gradient-to-r from-gray-100 to-gray-300 dark:bg-gradient-to-r dark:from-gray-400 dark:to-gray-800  bg-clip-text text-transparent transition-all ease-linear">
             Ayspire Inc
           </h1>
-          {/* <section className="dark:bg-black bg-gradient-to-r from-gray-100 via-gray-200 to-slate-300 h-40 relative z-10 grid place-content-center text-2xl rounded-tr-full rounded-tl-full">
-            Thanks
-          </section> */}
         </footer>
       </main>
     </ReactLenis>

@@ -5,10 +5,6 @@ export const siteConfig = {
   description: "Intelligent solutions for the modern world",
   navItems: [
     {
-      label: "What we do",
-      href: "/products",
-    },
-    {
       label: "What we think",
       href: "/docs",
     },
@@ -27,10 +23,6 @@ export const siteConfig = {
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
-    },
-    {
       label: "Dashboard",
       href: "/dashboard",
     },
@@ -43,27 +35,97 @@ export const siteConfig = {
       href: "/team",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
       label: "Help & Feedback",
       href: "/help-feedback",
     },
+  ],
+  industries: [
     {
-      label: "Logout",
-      href: "/logout",
+      label: "Automotive",
+      href: "/automotive",
+    },
+    {
+      label: "Banking and Financial Services",
+      href: "/banking",
+    },
+    {
+      label: "Consumer Goods",
+      href: "/consumer-goods",
+    },
+    {
+      label: "Communication and Media",
+      href: "/media",
+    },
+    {
+      label: "Energy and Utlities",
+      href: "/energy",
+    },
+    {
+      label: "Healthcare",
+      href: "/healthcare",
+    },
+    {
+      label: "Logistics",
+      href: "/logistics",
+    },
+    {
+      label: "Manufacturing",
+      href: "/manufacturing",
+    },
+    {
+      label: "Software and Platforms",
+      href: "/software",
+    },
+  ],
+  capabilities: [
+    {
+      label: "Data And Artificial Intelligence",
+      href: "/data-ai",
+    },
+    {
+      label: "Digital Engineering and Manufacturing",
+      href: "/engineering",
+    },
+    {
+      label: "Emerging Technologies",
+      href: "/emerging-tech",
+    },
+    {
+      label: "Ecosystem Partners",
+      href: "/partners",
+    },
+    {
+      label: "Finance and Risk Management",
+      href: "/finance",
+    },
+    {
+      label: "Learning",
+      href: "/learning",
+    },
+    {
+      label: "Marketing and Sales",
+      href: "/marketing",
+    },
+    {
+      label: "Commerce Operations",
+      href: "/commerce",
+    },
+    {
+      label: "Supply Chain Management",
+      href: "/supply-chain",
+    },
+    {
+      label: "Managed Services",
+      href: "/services",
+    },
+    {
+      label: "Technology Transformation",
+      href: "/tech-transformation",
     },
   ],
   links: {
     eisd: "https://eisdinfotech.com",
-    twitter: "https://twitter.com/hero_ui",
     more: "/products",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    kappal: "https://kappal.in",
   },
 };

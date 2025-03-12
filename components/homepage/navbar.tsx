@@ -1,3 +1,4 @@
+"use client";
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -7,17 +8,31 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@heroui/navbar";
+import {
+  Button,
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerBody,
+  DrawerFooter,
+  useDisclosure,
+} from "@heroui/react";
 import { Kbd } from "@heroui/kbd";
 import { Link } from "@heroui/link";
 import { Input } from "@heroui/input";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
-import Image from "next/image";
+import { motion } from "framer-motion";
+
+import { ColorChip } from "../chips";
+
+import { Logo } from "./logo";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
+  ChevronDown,
   // TwitterIcon,
   // GithubIcon,
   // DiscordIcon,
@@ -46,25 +61,132 @@ export const Navbar = () => {
       type="search"
     />
   );
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const handleOpen = () => {
+    onOpen();
+  };
 
   return (
     <div>
       <HeroUINavbar maxWidth="full" position="sticky">
         <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
           <NavbarBrand as="li" className="gap-3 max-w-fit">
-            <NextLink
-              className="flex justify-start items-center gap-1"
-              href="/"
-            >
-              <Image alt="Ayspire Inc" height={40} src="/logo.svg" width={40} />
-              {/* <Logo className="text-primary" /> */}
-              <p className="font-bold text-inherit text-xl text-primary">
-                Ayspire Inc
-              </p>
-            </NextLink>
+            <Logo />
           </NavbarBrand>
         </NavbarContent>
         <NavbarContent className="hidden lg:flex flex-1" justify="center">
+          <Button
+            disableRipple
+            className="p-0 bg-transparent data-[hover=true]:bg-transparent font-extralight text-md"
+            endContent={
+              <motion.div
+                animate={{ rotate: isOpen ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ChevronDown />
+              </motion.div>
+            }
+            radius="sm"
+            variant="light"
+            onPress={handleOpen}
+          >
+            What We Do
+          </Button>
+          <Drawer
+            backdrop={"opaque"}
+            className="bg-slate-100 dark:bg-slate-800"
+            classNames={{
+              base: "rounded-medium",
+            }}
+            isOpen={isOpen}
+            motionProps={{
+              variants: {
+                enter: {
+                  opacity: 0.9,
+                  y: 60,
+                },
+                exit: {
+                  y: -200,
+                  opacity: 0,
+                  transition: {
+                    duration: 0.3,
+                    ease: "easeIn",
+                  },
+                },
+              },
+            }}
+            placement={"top"}
+            onOpenChange={onOpenChange}
+          >
+            <DrawerContent className="">
+              {() => (
+                <>
+                  <DrawerHeader className="flex flex-col gap-1 text-5xl font-light">
+                    <ColorChip />
+                    What we do
+                  </DrawerHeader>
+                  <DrawerBody>
+                    <div className="grid grid-cols-2 ">
+                      <div className="col-span-1 px-5">
+                        <div className="text-primary font-light text-2xl pb-1">
+                          Capabilities
+                        </div>
+                        <div className="mx-4 mt-2 grid grid-cols-2 gap-2 border-r border-gray-300 pr-10">
+                          {siteConfig.capabilities.map((item, index) => (
+                            <NavbarMenuItem key={`${item}-${index}`}>
+                              <Link
+                                color={
+                                  index === 2
+                                    ? "primary"
+                                    : index ===
+                                        siteConfig.capabilities.length - 1
+                                      ? "warning"
+                                      : "foreground"
+                                }
+                                href="#"
+                                size="lg"
+                              >
+                                {item.label}
+                              </Link>
+                            </NavbarMenuItem>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="col-span-1 px-5">
+                        <div className="text-primary font-light text-2xl pb-1">
+                          Industries
+                        </div>
+                        <div className="mx-4 mt-2 grid grid-cols-2 gap-2">
+                          {siteConfig.industries.map((item, index) => (
+                            <NavbarMenuItem key={`${item}-${index}`}>
+                              <Link
+                                color={
+                                  index === 2
+                                    ? "primary"
+                                    : index ===
+                                        siteConfig.capabilities.length - 1
+                                      ? "warning"
+                                      : "foreground"
+                                }
+                                href="#"
+                                size="lg"
+                              >
+                                {item.label}
+                              </Link>
+                            </NavbarMenuItem>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </DrawerBody>
+                  <DrawerFooter>
+                    <Logo />
+                  </DrawerFooter>
+                </>
+              )}
+            </DrawerContent>
+          </Drawer>
           <ul className="hidden lg:flex gap-4 justify-center items-center ml-2">
             {siteConfig.navItems.map((item) => (
               <NavbarItem key={item.href}>
