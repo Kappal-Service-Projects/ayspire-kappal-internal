@@ -21,7 +21,7 @@ export const siteConfig = {
       href: "/about",
     },
   ],
-  navMenuItems: [
+  mobileMenuItems: [
     {
       label: "Dashboard",
       href: "/dashboard",
@@ -97,10 +97,6 @@ export const siteConfig = {
     {
       label: "Finance and Risk Management",
       href: "/finance",
-    },
-    {
-      label: "Learning",
-      href: "/learning",
     },
     {
       label: "Marketing and Sales",

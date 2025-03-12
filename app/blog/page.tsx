@@ -1,9 +1,17 @@
-import { title } from "@/components/primitives";
+import { BlogPosts } from "@/components/posts";
 
-export default function BlogPage() {
+export const metadata = {
+  title: "Blog",
+  description: "Read my blog.",
+};
+
+export default function Page() {
   return (
-    <div>
-      <h1 className={title()}>Blog</h1>
-    </div>
+    <section>
+      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">
+        Ayspire Writes
+      </h1>
+      <BlogPosts />
+    </section>
   );
 }
