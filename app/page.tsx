@@ -65,7 +65,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <div className="px-2 mb-10 items-center justify-center grid grid-cols-1 lg:grid-cols-3 gap-6 md:-mt-60">
+      <div className="px-2 mb-10 items-center justify-center grid grid-cols-1 lg:grid-cols-3 gap-6 lg:-mt-60">
         {cardData.map((card, index) => (
           <Card
             key={index}
