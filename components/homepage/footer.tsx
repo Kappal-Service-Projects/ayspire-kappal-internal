@@ -2,6 +2,9 @@ import { Link } from "@heroui/link";
 import React from "react";
 
 export const Footer: React.FC = () => {
+  const email = process.env.NEXT_PUBLIC_CORPORATE_EMAIL || "support@kappal.in";
+  const phone = process.env.NEXT_PUBLIC_CORPORATE_PHONE || "+123 456 7890";
+
   return (
     <footer className="bg-white dark:bg-gray-900">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -66,13 +69,29 @@ export const Footer: React.FC = () => {
                 Contact
               </h3>
               <ul className="mt-4 space-y-2 text-gray-500 dark:text-gray-400">
-                <li>Email: support@ayspire.com</li>
-                <li>Phone: +123 456 7890</li>
+                <li>
+                  Email:{" "}
+                  <a
+                    className="text-blue-600 dark:text-blue-400 hover:underline"
+                    href={`mailto:${email}`}
+                  >
+                    {email}
+                  </a>
+                </li>
+                <li>
+                  Phone:{" "}
+                  <a
+                    className="text-blue-600 dark:text-blue-400 hover:underline"
+                    href={`tel:${phone}`}
+                  >
+                    {phone}
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
-          <p className="mt-8 text-center text-gray-500 dark:text-gray-400">
-            &copy; 2025 Ayspire Inc. All rights reserved.
+          <p className="py-5 text-center text-gray-500 dark:text-gray-400">
+            &copy; {new Date().getFullYear()} Ayspire Inc. All rights reserved.
           </p>
         </div>
       </div>

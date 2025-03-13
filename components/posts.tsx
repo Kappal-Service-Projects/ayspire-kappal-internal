@@ -1,12 +1,12 @@
-import Link from "next/link";
+import FullWidthCard from "./full-width-card";
 
-import { formatDate, getBlogPosts } from "@/app/blog/utils";
+import { getBlogPosts } from "@/app/utils";
 
 export function BlogPosts() {
   let allBlogs = getBlogPosts();
 
   return (
-    <div>
+    <div className="py-5 mx-5">
       {allBlogs
         .sort((a, b) => {
           if (
@@ -18,20 +18,12 @@ export function BlogPosts() {
           return 1;
         })
         .map((post) => (
-          <Link
+          <FullWidthCard
             key={post.slug}
-            className="flex flex-col space-y-1 mb-4"
+            description={post.metadata.summary}
             href={`/blog/${post.slug}`}
-          >
-            <div className="max-w-md flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
-                {formatDate(post.metadata.publishedAt, false)}
-              </p>
-              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
-                {post.metadata.title}
-              </p>
-            </div>
-          </Link>
+            title={post.metadata.title}
+          />
         ))}
     </div>
   );

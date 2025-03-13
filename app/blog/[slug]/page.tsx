@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { formatDate, getBlogPosts } from "../utils";
+import { formatDate, getBlogPosts } from "../../utils";
 
 import { baseUrl } from "@/app/sitemap";
 import { CustomMDX } from "@/components/mdx";
@@ -13,8 +13,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  let post = await getBlogPosts().find((post) => post.slug === slug);
 
   if (!post) {
     return;
@@ -54,15 +55,16 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function Blog({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+export default async function Blog({ params }) {
+  let parameters = await params;
+  let post = await getBlogPosts().find((post) => post.slug === parameters.slug);
 
   if (!post) {
     notFound();
   }
 
   return (
-    <section>
+    <section className="mb-20">
       <script
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -78,14 +80,14 @@ export default function Blog({ params }) {
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
               "@type": "Person",
-              name: "My Portfolio",
+              name: "Kappal Software",
             },
           }),
         }}
         suppressHydrationWarning
         type="application/ld+json"
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter mx-10">
+      <h1 className="title font-semibold text-3xl tracking-tighter mx-10">
         {post.metadata.title}
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 mx-10 text-sm">
@@ -93,7 +95,7 @@ export default function Blog({ params }) {
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
-      <article className="prose mx-10">
+      <article className="prose mx-10 text-3xl font-extralight dark:font-thin">
         <CustomMDX source={post.content} />
       </article>
     </section>

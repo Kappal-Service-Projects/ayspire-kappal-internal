@@ -6,37 +6,37 @@ export const siteConfig = {
   navItems: [
     {
       label: "What we think",
-      href: "/docs",
+      href: "/products",
     },
     {
       label: "Who are we",
-      href: "/pricing",
+      href: "/about",
     },
     {
-      label: "Careers",
+      label: "Blogs",
       href: "/blog",
     },
     {
-      label: "About",
-      href: "/about",
+      label: "Careers",
+      href: "/careers",
     },
   ],
   mobileMenuItems: [
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Services",
+      href: "/products",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "Blogs",
+      href: "/blog",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "Careers",
+      href: "/careers",
     },
     {
-      label: "Help & Feedback",
-      href: "/help-feedback",
+      label: "About us",
+      href: "/about",
     },
   ],
   industries: [

@@ -1,11 +1,18 @@
 import fs from "fs";
 import path from "path";
 
-type Metadata = {
+export type Metadata = {
   title: string;
   publishedAt: string;
   summary: string;
   image?: string;
+  location: string;
+  jobLocationType: string;
+  countryCode: string;
+  currencyCode: string;
+  salary: string;
+  type: string;
+  active?: string;
 };
 
 function parseFrontmatter(fileContent: string) {
@@ -33,8 +40,9 @@ function getMDXFiles(dir: any) {
 
 function readMDXFile(filePath: string) {
   let rawContent = fs.readFileSync(filePath, "utf-8");
+  let parsedData = parseFrontmatter(rawContent);
 
-  return parseFrontmatter(rawContent);
+  return parsedData;
 }
 
 function getMDXData(dir: any) {
@@ -54,6 +62,15 @@ function getMDXData(dir: any) {
 
 export function getBlogPosts() {
   return getMDXData(path.join(process.cwd(), "app", "blog", "posts"));
+}
+
+export function getCareerListings() {
+  let allJobs = getMDXData(
+    path.join(process.cwd(), "app", "careers", "listings"),
+  );
+
+  // Filter only active jobs
+  return allJobs.filter((job) => job.metadata.active?.toLowerCase() === "true");
 }
 
 export function formatDate(date: string, includeRelative = false) {
