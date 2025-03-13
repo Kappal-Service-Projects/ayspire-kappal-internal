@@ -143,7 +143,7 @@ export const Navbar = () => {
                         <div className="text-primary font-light text-2xl pb-1">
                           Capabilities
                         </div>
-                        <div className="mx-4 mt-2 grid grid-cols-2 gap-2 border-r border-gray-300 pr-10">
+                        <div className="mx-4 mt-2 grid grid-cols-2 gap-0 border-r border-gray-300 pr-10">
                           {siteConfig.capabilities.map((item, index) => (
                             <NavbarMenuItem key={`${item}-${index}`}>
                               <Link
@@ -170,7 +170,7 @@ export const Navbar = () => {
                         <div className="text-primary font-light text-2xl pb-1">
                           Industries
                         </div>
-                        <div className="mx-4 mt-2 grid grid-cols-2 gap-2">
+                        <div className="mx-4 mt-2 grid grid-cols-2 gap-0">
                           {siteConfig.industries.map((item, index) => (
                             <NavbarMenuItem key={`${item}-${index}`}>
                               <Link
@@ -201,7 +201,7 @@ export const Navbar = () => {
               )}
             </DrawerContent>
           </Drawer>
-          <ul className="hidden lg:flex gap-4 justify-center items-center ml-2">
+          <ul className="hidden lg:flex gap-4 justify-center items-center ">
             {siteConfig.navItems.map((item) => (
               <NavbarItem key={item.href}>
                 <NextLink

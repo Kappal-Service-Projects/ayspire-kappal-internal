@@ -45,7 +45,7 @@ export const siteConfig = {
       href: "/automotive",
     },
     {
-      label: "Banking and Financial Services",
+      label: "Banking & Financial Services",
       href: "/banking",
     },
     {
@@ -53,11 +53,11 @@ export const siteConfig = {
       href: "/consumer-goods",
     },
     {
-      label: "Communication and Media",
+      label: "Communication & Media",
       href: "/media",
     },
     {
-      label: "Energy and Utlities",
+      label: "Energy & Utlities",
       href: "/energy",
     },
     {
@@ -73,17 +73,17 @@ export const siteConfig = {
       href: "/manufacturing",
     },
     {
-      label: "Software and Platforms",
+      label: "Software & Platforms",
       href: "/software",
     },
   ],
   capabilities: [
     {
-      label: "Data And Artificial Intelligence",
+      label: "Data & Artificial Intelligence",
       href: "/data-ai",
     },
     {
-      label: "Digital Engineering and Manufacturing",
+      label: "Manufacturing",
       href: "/engineering",
     },
     {
@@ -95,11 +95,11 @@ export const siteConfig = {
       href: "/partners",
     },
     {
-      label: "Finance and Risk Management",
+      label: "Finance & Risk Management",
       href: "/finance",
     },
     {
-      label: "Marketing and Sales",
+      label: "Marketing & Sales",
       href: "/marketing",
     },
     {
