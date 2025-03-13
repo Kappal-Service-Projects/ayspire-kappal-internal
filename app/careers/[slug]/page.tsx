@@ -14,18 +14,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const { slug } = await params;
-  let post = await getCareerListings().find((post) => post.slug === slug);
+export async function generateMetadata({ params }) {
+  let post = getCareerListings().find((post) => post.slug === params.slug);
 
   if (!post) {
     return;
   }
-
   let {
     title,
     publishedAt: publishedTime,
@@ -60,11 +54,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function JobListing({ params }: { params }) {
-  let parameters = await params;
-  let post = await getCareerListings().find(
-    (post) => post.slug === parameters.slug,
-  );
+export default function JobListing({ params }) {
+  let post = getCareerListings().find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();

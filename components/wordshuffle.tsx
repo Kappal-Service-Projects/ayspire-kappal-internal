@@ -2,7 +2,6 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
-import { GradualSpacing } from "./gradualSpacing";
 
 type WordShuffleProps = {
   words: string[];
