@@ -23,20 +23,20 @@ export const siteConfig = {
   ],
   mobileMenuItems: [
     {
-      label: "Services",
+      label: "What we think",
       href: "/products",
     },
     {
-      label: "Blogs",
+      label: "Who are we",
+      href: "/about",
+    },
+    {
+      label: "Insights",
       href: "/blog",
     },
     {
       label: "Careers",
       href: "/careers",
-    },
-    {
-      label: "About us",
-      href: "/about",
     },
   ],
   industries: [

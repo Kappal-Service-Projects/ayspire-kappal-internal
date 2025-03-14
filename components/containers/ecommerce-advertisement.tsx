@@ -3,9 +3,15 @@ import { Link } from "@heroui/link";
 import { Chip } from "@heroui/react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const KappalECommerceAdvertisement: React.FC = () => {
-  const { theme } = useTheme(); // Correct destructuring
+  const { theme, systemTheme } = useTheme();
+  const [currentTheme, setCurrentTheme] = useState("light");
+
+  useEffect(() => {
+    setCurrentTheme(theme === "system" ? systemTheme : theme || "light");
+  }, [theme, systemTheme]);
 
   return (
     <div>
@@ -37,7 +43,7 @@ const KappalECommerceAdvertisement: React.FC = () => {
               alt="Kappal E-Commerce"
               height={500}
               src={
-                theme === "dark"
+                currentTheme === "dark"
                   ? "/images/advertisements/kappal-ecommerce-logo.png"
                   : "/images/advertisements/kappal-ecommerce-logo-light.png"
               }

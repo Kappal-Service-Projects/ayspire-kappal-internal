@@ -13,29 +13,29 @@ export const JobHighLights: React.FC<{
           aria-labelledby="stats-tab"
           className="p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800"
         >
-          <dl className="grid grid-cols-3 gap-y-10 gap-x-0 mx-auto text-gray-900 dark:text-white ">
+          <dl className="grid grid-cols-3 gap-y-10 gap-x-5 mx-auto text-gray-900 dark:text-white ">
             <div className="flex flex-col items-start justify-center">
-              <dt className="mb-2 text-xl font-bold">Location</dt>
+              <dt className="mb-2 font-bold">Location</dt>
               <dd className="text-gray-500 dark:text-gray-400">{location}</dd>
             </div>
             <div className="flex flex-col items-start justify-center">
-              <dt className="mb-2 text-xl font-bold">Working Mode</dt>
+              <dt className="mb-2 font-bold">Working Mode</dt>
               <dd className="text-gray-500 dark:text-gray-400">{type}</dd>
             </div>
             <div className="flex flex-col items-start justify-center">
-              <dt className="mb-2 text-xl font-bold">Occupation Type</dt>
+              <dt className="mb-2 font-bold">Occupation Type</dt>
               <dd className="text-gray-500 dark:text-gray-400">{occupation}</dd>
             </div>
             <div className="flex flex-col items-start justify-center">
-              <dt className="mb-2 text-xl font-bold">Experience</dt>
+              <dt className="mb-2 font-bold">Experience</dt>
               <dd className="text-gray-500 dark:text-gray-400">{experience}</dd>
             </div>
             <div className="flex flex-col items-start justify-center">
-              <dt className="mb-2 text-xl font-bold">Salary</dt>
+              <dt className="mb-2 font-bold">Salary</dt>
               <dd className="text-gray-500 dark:text-gray-400">{salary}</dd>
             </div>
             <div className="flex flex-col items-start justify-center">
-              <dt className="mb-2 text-xl font-bold">Job Id</dt>
+              <dt className="mb-2 font-bold">Job Id</dt>
               <dd className="text-gray-500 dark:text-gray-400">{jobId}</dd>
             </div>
           </dl>

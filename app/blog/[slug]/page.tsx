@@ -87,17 +87,22 @@ export default async function Blog({ params }) {
         suppressHydrationWarning
         type="application/ld+json"
       />
-      <h1 className="title font-semibold text-3xl tracking-tighter mx-10">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 mx-10 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
-        </p>
+
+      <div className="grid grid-cols-6 grid-flow-col gap-4">
+        <div className="col-span-1">{""}</div>
+        <article className="prose text-2xl col-span-4 font-light text-gray-600 dark:text-gray-300">
+          <h1 className="title font-semibold text-3xl tracking-tighter">
+            {post.metadata.title}
+          </h1>
+          <div className="flex justify-between items-center mt-2 mb-8 text-medium">
+            <p className="text-neutral-600 dark:text-neutral-400 font-normal">
+              {formatDate(post.metadata.publishedAt)}
+            </p>
+          </div>
+          <CustomMDX source={post.content} />
+        </article>
+        <div className="col-span-1">{""}</div>
       </div>
-      <article className="prose mx-10 text-3xl font-extralight dark:font-thin">
-        <CustomMDX source={post.content} />
-      </article>
     </section>
   );
 }

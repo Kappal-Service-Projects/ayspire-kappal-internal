@@ -118,7 +118,7 @@ export default function JobListing({ params }) {
         </p>
       </div>
 
-      <article className="prose max-w-screen-lg justify-center items-center text-xl lg:text-3xl font-extralight dark:font-thin">
+      <article className="prose max-w-screen-lg justify-center items-center text-medium col-span-4 font-light text-gray-600 dark:text-gray-300">
         <JobHighLights
           experience={post.metadata.experience}
           jobId={post.metadata.jobId}
@@ -129,10 +129,6 @@ export default function JobListing({ params }) {
         />
         <CustomMDX source={post.content} />
       </article>
-      <div
-        className="border-t border-gray-200 dark:border-gray-600"
-        id="fullWidthTabContent"
-      />
       <ApplyCTA />
     </section>
   );
