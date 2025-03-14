@@ -1,4 +1,4 @@
-import FullWidthCard from "./full-width-card";
+import FullWidthCard from "./containers/full-width-card";
 
 import { getBlogPosts } from "@/app/utils";
 

@@ -9,10 +9,10 @@ import { siteConfig } from "@/config/site";
 import { cardData } from "@/config/data";
 import { title } from "@/components/primitives";
 import ScrollContent from "@/components/homepage/scrollContent";
-import MultiDirectionSlide from "@/components/multidirectionslide";
-import WordShuffle from "@/components/wordshuffle";
-import Earth from "@/components/earth";
-import Card from "@/components/card";
+import MultiDirectionSlide from "@/components/animations/multidirectionslide";
+import WordShuffle from "@/components/animations/wordshuffle";
+import Earth from "@/components/animations/earth";
+import Card from "@/components/containers/card";
 
 export default function Home() {
   const { theme } = useTheme();

@@ -24,7 +24,7 @@ export default function Page() {
             className="cursor-pointer"
             height={500}
             loading="lazy"
-            src={"/images/advertisments/blog_page_ad_dark.png"}
+            src={"/images/advertisements/blog_page_ad_dark.png"}
             width={500}
           />
         </Link>

@@ -27,7 +27,7 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import React from "react";
 
-import { ColorChip } from "../chips";
+import { ColorChip } from "../containers/chips";
 
 import { Logo } from "./logo";
 
@@ -105,7 +105,7 @@ export const Navbar = () => {
           </Button>
           <Drawer
             backdrop={"opaque"}
-            className="bg-slate-100 dark:bg-slate-800"
+            className="bg-slate-100 dark:bg-slate-800 min-h-max"
             classNames={{
               base: "rounded-medium",
             }}
@@ -129,21 +129,22 @@ export const Navbar = () => {
             placement={"top"}
             onOpenChange={onOpenChange}
           >
-            <DrawerContent className="">
+            <DrawerContent className="h-auto overflow-y-visible">
               {() => (
                 <>
                   <DrawerHeader className="flex flex-col gap-1 text-5xl font-light">
                     <ColorChip />
                     What we do
-                    <Divider className="my-4" />
+                    <Divider className="my-2" />
                   </DrawerHeader>
                   <DrawerBody>
-                    <div className="grid grid-cols-2 ">
-                      <div className="col-span-1 px-5">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 min-w-max">
+                      <div className="col-span-1 px-5 pb-10">
                         <div className="text-primary font-light text-2xl pb-1">
                           Capabilities
+                          <Divider className="my-2" />
                         </div>
-                        <div className="mx-4 mt-2 grid grid-cols-2 gap-0 border-r border-gray-300 pr-10">
+                        <div className="mt-2 mx-5 grid grid-cols-1 lg:grid-cols-2 min-w-max">
                           {siteConfig.capabilities.map((item, index) => (
                             <NavbarMenuItem key={`${item}-${index}`}>
                               <Link
@@ -166,11 +167,12 @@ export const Navbar = () => {
                         </div>
                       </div>
 
-                      <div className="col-span-1 px-5">
+                      <div className="col-span-1 min-w-2xl">
                         <div className="text-primary font-light text-2xl pb-1">
                           Industries
+                          <Divider className="my-2" />
                         </div>
-                        <div className="mx-4 mt-2 grid grid-cols-2 gap-0">
+                        <div className="mt-2 mx-5 grid grid-cols-1 lg:grid-cols-2 gap-0 min-w-max">
                           {siteConfig.industries.map((item, index) => (
                             <NavbarMenuItem key={`${item}-${index}`}>
                               <Link
