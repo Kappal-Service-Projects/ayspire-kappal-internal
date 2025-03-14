@@ -16,7 +16,7 @@ export default function Page() {
           </h1>
           <Jobs />
         </div>
-        <div className="lg:col-span-1">
+        <div className="lg:col-span-1 my-10">
           <KappalECommerceAdvertisement />
         </div>
       </div>

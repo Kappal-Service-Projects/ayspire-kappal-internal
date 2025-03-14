@@ -88,7 +88,7 @@ export default async function Blog({ params }) {
         type="application/ld+json"
       />
 
-      <div className="grid grid-cols-6 grid-flow-col gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-6 grid-flow-col gap-4">
         <div className="col-span-1">{""}</div>
         <article className="prose text-2xl col-span-4 font-light text-gray-600 dark:text-gray-300">
           <h1 className="title font-semibold text-3xl tracking-tighter">

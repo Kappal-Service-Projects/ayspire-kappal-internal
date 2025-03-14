@@ -2,21 +2,20 @@
 const nextConfig = {
   transpilePackages: ["next-mdx-remote"],
   images: {
-    domains: ["images.unsplash.com"],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "www.canva.com",
-        port: "",
-        pathname: "/**",
-      },
-    ],
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "images.unsplash.com",
+          port: "",
+          pathname: "/**",
+        },
+        {
+          protocol: "https",
+          hostname: "www.canva.com",
+          port: "",
+          pathname: "/**",
+        },
+      ],
   },
 };
 
