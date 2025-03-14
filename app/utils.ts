@@ -10,6 +10,8 @@ export type Metadata = {
   jobLocationType: string;
   countryCode: string;
   currencyCode: string;
+  experience: string;
+  jobId: string;
   salary: string;
   type: string;
   active?: string;

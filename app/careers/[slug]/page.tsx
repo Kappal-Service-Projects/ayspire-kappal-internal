@@ -5,6 +5,7 @@ import { baseUrl } from "@/app/sitemap";
 import { CustomMDX } from "@/components/mdx";
 import { formatDate, getCareerListings } from "@/app/utils";
 import ApplyCTA from "@/components/apply-cta";
+import { JobHighLights } from "@/components/containers/page/job-highlights";
 
 export async function generateStaticParams() {
   let posts = getCareerListings();
@@ -116,9 +117,22 @@ export default function JobListing({ params }) {
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
+
       <article className="prose max-w-screen-lg justify-center items-center text-xl lg:text-3xl font-extralight dark:font-thin">
+        <JobHighLights
+          experience={post.metadata.experience}
+          jobId={post.metadata.jobId}
+          location={post.metadata.location}
+          occupation={post.metadata.type}
+          salary={post.metadata.salary}
+          type={post.metadata.jobLocationType}
+        />
         <CustomMDX source={post.content} />
       </article>
+      <div
+        className="border-t border-gray-200 dark:border-gray-600"
+        id="fullWidthTabContent"
+      />
       <ApplyCTA />
     </section>
   );
