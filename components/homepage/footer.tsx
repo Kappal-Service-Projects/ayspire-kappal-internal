@@ -6,7 +6,7 @@ export const Footer: React.FC = () => {
   const phone = process.env.NEXT_PUBLIC_CORPORATE_PHONE || "+123 456 7890";
 
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    <footer className="bg-white bg-opacity-100 dark:bg-gray-900 dark:bg-opacity-100 z-40">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

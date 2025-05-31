@@ -5,38 +5,54 @@ export const siteConfig = {
   description: "Intelligent solutions for the modern world",
   navItems: [
     {
-      label: "What we think",
-      href: "/products",
-    },
-    {
-      label: "Who are we",
+      label: "About",
       href: "/about",
     },
     {
-      label: "Insights",
-      href: "/blog",
+      label: "EPM Solutions",
+      href: "/products/epm-solutions",
     },
     {
-      label: "Careers",
-      href: "/careers",
+      label: "ERP Solutions",
+      href: "/products/erp-solutions",
+    },
+    {
+      label: "AI Products and Solutions",
+      href: "/products/ai-products",
+    },
+    {
+      label: "Team Insights",
+      href: "/team",
+    },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/company/ayspire-inc/",
     },
   ],
   mobileMenuItems: [
     {
-      label: "What we think",
-      href: "/products",
-    },
-    {
-      label: "Who are we",
+      label: "About",
       href: "/about",
     },
     {
-      label: "Insights",
-      href: "/blog",
+      label: "EPM Solutions",
+      href: "/products/epm-solutions",
     },
     {
-      label: "Careers",
-      href: "/careers",
+      label: "ERP Solutions",
+      href: "/products/erp-solutions",
+    },
+    {
+      label: "AI Products and Solutions",
+      href: "/products/ai-products",
+    },
+    {
+      label: "Team Insights",
+      href: "/team",
+    },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/company/ayspire-inc/",
     },
   ],
   industries: [

@@ -1,84 +1,105 @@
 "use client";
-import { Link } from "@heroui/link";
-// import { Snippet } from "@heroui/snippet";
-// import { Code } from "@heroui/code";
-import { button as buttonStyles } from "@heroui/theme";
-import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
-import { siteConfig } from "@/config/site";
-import { cardData } from "@/config/data";
-import { title } from "@/components/primitives";
-import ScrollContent from "@/components/homepage/scrollContent";
-import MultiDirectionSlide from "@/components/animations/multidirectionslide";
-import WordShuffle from "@/components/animations/wordshuffle";
-import Earth from "@/components/animations/earth";
-import Card from "@/components/containers/card";
+import StickyVideoBackground from "@/components/homepage/StickyVideoBackground";
+import HeroSection from "@/components/homepage/HeroSection";
+import ServicesSection from "@/components/homepage/ServicesSection";
+import ClientsSection from "@/components/homepage/ClientsSection";
+import TestimonialsSection from "@/components/homepage/TestimonialsSection";
+import FixedBgSection from "@/components/homepage/FixedBgSection";
+import useScrollReveal from "@/components/homepage/useScrollReveal";
+import { services, clients, testimonials } from "@/config/homepageData";
+import BlogCardsSection from "@/components/homepage/BlogCardsSection";
+import AboutUsStaticSection from "@/components/homepage/AboutUsStaticSection";
+import WhatWeDoSection from "@/components/homepage/WhatWeDoSection";
 
 export default function Home() {
-  const { theme } = useTheme();
-  const baseColor: [number, number, number] =
-    theme === "dark" ? [0.235, 0.7804, 0.7804] : [0.9451, 0.9608, 0.9765];
-  const glowColor: [number, number, number] =
-    theme === "dark" ? [0.9451, 0.9608, 0.9765] : [0.8, 0.9843, 0.9451];
+  // For smooth scroll
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = "smooth";
+
+    return () => {
+      document.documentElement.style.scrollBehavior = "";
+    };
+  }, []);
+
+  // Scroll reveal hooks for each section
+  const [servicesRef, servicesVisible] = useScrollReveal();
+  const [clientsRef, clientsVisible] = useScrollReveal();
+  const [testimonialsRef, testimonialsVisible] = useScrollReveal();
+  const [fixedBgRef, fixedBgVisible] = useScrollReveal();
+
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY > 200);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <section className="pt-10 mx-5">
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 min-h-screen">
-        <div className="col-span-1">
-          <MultiDirectionSlide
-            className={`${title({ size: "xl", color: "white" })}`}
-            text1="REDEFINING"
+    <>
+      <StickyVideoBackground />
+      <main className="relative w-screen min-h-screen font-sans overflow-x-hidden">
+        <HeroSection />
+        <ServicesSection
+          sectionRef={servicesRef}
+          services={services}
+          visible={servicesVisible}
+        />
+        <BlogCardsSection />
+        <AboutUsStaticSection />
+        <WhatWeDoSection />
+        <ClientsSection
+          clients={clients}
+          sectionRef={clientsRef}
+          visible={clientsVisible}
+        />
+        <TestimonialsSection
+          sectionRef={testimonialsRef}
+          testimonials={testimonials}
+          visible={testimonialsVisible}
+        />
+        <FixedBgSection sectionRef={fixedBgRef} visible={fixedBgVisible} />
+        {showScroll && (
+          <button
+            aria-label="Scroll to top"
+            className="fixed bottom-6 right-6 z-50 p-0 rounded-full bg-transparent shadow-lg transition-colors duration-200"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            {
-              <WordShuffle
-                className={`${title({ size: "xl", color: "teal" })}`}
-                words={["STRATEGY", "ASPIRATIONS", "INSIGHTS", "FINANCE"]}
-              />
-            }
-          </MultiDirectionSlide>
-          <div className="justify-center items-center h-1/2 w-full flex">
-            <Link
-              // isExternal
-              className={buttonStyles({
-                color: "primary",
-                radius: "full",
-                variant: "shadow",
-                size: "lg",
-              })}
-              href={siteConfig.links.more}
-              title="Explore"
+            <svg
+              className="w-10 h-10"
+              fill="none"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              Explore
-            </Link>
-          </div>
-        </div>
-        <div className="col-span-1">
-          <Earth
-            baseColor={baseColor}
-            className="w-full max-w-screen lg:max-w-2xl mx-auto"
-            dark={theme === "dark" ? 1 : 0.05}
-            glowColor={glowColor}
-            markers={[
-              { location: [43.88686363442825, -78.9809724253452], size: 0.3 },
-              { location: [9.276389189229306, 76.45874032596521], size: 0.1 },
-            ]}
-          />
-        </div>
-      </section>
-      <div className="px-2 mb-10 items-center justify-center grid grid-cols-1 lg:grid-cols-3 gap-6 lg:-mt-60">
-        {cardData.map((card, index) => (
-          <Card
-            key={index}
-            description={card.description}
-            imageUrl={card.imageUrl}
-            readMoreLink={card.readMoreLink}
-            title={card.title}
-          />
-        ))}
-      </div>
-      <section>
-        <ScrollContent />
-      </section>
-    </section>
+              <circle
+                className="text-primary"
+                cx="24"
+                cy="24"
+                fill="transparent"
+                r="22"
+                stroke="currentColor"
+                strokeWidth="2"
+              />
+              <path
+                className="text-primary"
+                d="M16 28l8-8 8 8"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="3"
+              />
+            </svg>
+          </button>
+        )}
+      </main>
+    </>
   );
 }
