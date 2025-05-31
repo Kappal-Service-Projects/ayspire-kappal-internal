@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 export const metadata = {
-  title: "About Us | Ayspire",
+  title: "About Us | Ayspire Inc",
   description:
     "Learn about Ayspire Inc, our story, our mission, and our vision for intelligent solutions in Canada and beyond.",
 };
