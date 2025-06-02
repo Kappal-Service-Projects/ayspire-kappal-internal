@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BlogCard } from "../containers/BlogCard";
+import BlogCard from "../containers/BlogCard";
 
 import useScrollReveal from "./useScrollReveal";
 

@@ -4,13 +4,13 @@ import { Logo } from "./logo";
 
 export default function HeroSection() {
   return (
-    <section className="relative h-[] flex items-center overflow-hidden bg-gradient-to-br from-gray-600 via-teal-400/30 to-teal-900/40 text-white">
+    <section className="relative h-[] flex items-center overflow-hidden bg-gradient-to-br from-slate-900/70 via-primary-800/80 to-violet-900/70 text-white">
       <div className="absolute inset-0 tech-pattern" />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div data-aos="fade-right" data-aos-duration="1000">
             <h1 className="text-5xl lg:text-7xl font-black leading-tight mb-8">
-              <span className="bg-gradient-to-r from-cyan-500 to-teal-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary-300 to-primary-500 bg-clip-text text-transparent">
                 All in for
               </span>
               <br />
@@ -24,7 +24,7 @@ export default function HeroSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                className="inline-flex items-center px-8 py-4 bg-cyan-500 text-white font-semibold rounded-full hover:bg-cyan-700 transition-all duration-300 pulse-border group"
+                className="inline-flex items-center px-8 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary-600 transition-all duration-300 pulse-border group focus-outline"
                 href="/contact"
               >
                 Get Started
@@ -32,12 +32,12 @@ export default function HeroSection() {
                   →
                 </span>
               </Link>
-              <a
-                className="inline-flex items-center px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-full hover:bg-cyan-700 hover:text-white hover:border-bg-cyan-700 transition-all duration-300"
+              <Link
+                className="inline-flex items-center px-8 py-4 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 focus-outline"
                 href="/products/epm-solutions"
               >
                 Explore Services
-              </a>
+              </Link>
             </div>
           </div>
           <div

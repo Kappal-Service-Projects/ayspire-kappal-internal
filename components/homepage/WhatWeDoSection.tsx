@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+
 import useScrollReveal from "./useScrollReveal";
 
 export default function WhatWeDoSection() {
@@ -28,58 +29,60 @@ export default function WhatWeDoSection() {
 
   const [leftRef, leftVisible] = useScrollReveal() as [
     React.RefObject<HTMLDivElement>,
-    boolean
+    boolean,
   ];
   const [rightRef, rightVisible] = useScrollReveal() as [
     React.RefObject<HTMLDivElement>,
-    boolean
+    boolean,
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-cyan-300 via-teal-200 to-teal-50 relative overflow-hidden">
-      <div className="absolute inset-0 bg-black opacity-10" />
+    <section className="py-20 bg-gradient-to-br from-primary-100 via-primary-50 to-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-black opacity-5" />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div
             ref={leftRef}
             className={`transition-all duration-700 ${
-              leftVisible ? "opacity-100 -translate-x-0" : "opacity-0 -translate-x-16"
+              leftVisible
+                ? "opacity-100 -translate-x-0"
+                : "opacity-0 -translate-x-16"
             }`}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-teal-700">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-primary-800">
               WHAT DO WE DO
             </h2>
-            <p className="text-xl mb-8 text-white leading-relaxed">
+            <p className="text-xl mb-8 text-gray-800 leading-relaxed">
               Improving business performance through purposeful innovation is in
               our DNA. Ayspire strives to inspire clients to embrace positive
               change and to give them the tools they need to succeed throughout
               their connected planning journey.
             </p>
             <ul className="space-y-4">
-              <li className="flex items-center text-lg">
+              <li className="flex items-center text-lg text-gray-700">
                 <FontAwesomeIcon
-                  className="text-cyan-800 mr-3"
+                  className="text-primary-600 mr-3"
                   icon={faCheckCircle}
                 />
                 Customer Engagement
               </li>
-              <li className="flex items-center text-lg">
+              <li className="flex items-center text-lg text-gray-700">
                 <FontAwesomeIcon
-                  className="text-cyan-800 mr-3"
+                  className="text-primary-600 mr-3"
                   icon={faCheckCircle}
                 />
                 Technology Enablement
               </li>
-              <li className="flex items-center text-lg">
+              <li className="flex items-center text-lg text-gray-700">
                 <FontAwesomeIcon
-                  className="text-cyan-800 mr-3"
+                  className="text-primary-600 mr-3"
                   icon={faCheckCircle}
                 />
                 Strategy &amp; Operations
               </li>
-              <li className="flex items-center text-lg">
+              <li className="flex items-center text-lg text-gray-700">
                 <FontAwesomeIcon
-                  className="text-cyan-800 mr-3"
+                  className="text-primary-600 mr-3"
                   icon={faCheckCircle}
                 />
                 Connected Planning Experience
@@ -89,7 +92,9 @@ export default function WhatWeDoSection() {
           <div
             ref={rightRef}
             className={`grid grid-cols-2 gap-6 transition-all duration-700 ${
-              rightVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-16"
+              rightVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-16"
             }`}
           >
             {cards.map((card) => (

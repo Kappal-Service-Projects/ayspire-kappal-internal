@@ -73,11 +73,11 @@ export default function Home() {
         {showScroll && (
           <button
             aria-label="Scroll to top"
-            className="fixed bottom-6 right-6 z-50 p-0 rounded-full bg-transparent shadow-lg transition-colors duration-200"
+            className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-white/90 shadow-lg transition-all duration-200 hover:bg-white hover:shadow-xl focus-outline"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             <svg
-              className="w-10 h-10"
+              className="w-6 h-6"
               fill="none"
               viewBox="0 0 48 48"
               xmlns="http://www.w3.org/2000/svg"

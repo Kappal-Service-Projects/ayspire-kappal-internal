@@ -8,7 +8,6 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@heroui/navbar";
-import { useDisclosure } from "@heroui/react";
 import { Link } from "@heroui/link";
 import NextLink from "next/link";
 import clsx from "clsx";
@@ -22,7 +21,6 @@ import { Logo } from "./logo";
 import { siteConfig } from "@/config/site";
 
 export const Navbar = () => {
-  const { isOpen, onOpenChange } = useDisclosure();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const handleLinkClick = () => {
     setIsMenuOpen(false);
@@ -50,7 +48,8 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   "text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium",
-                  "font-sans text-base tracking-normal px-0 py-0 rounded-none", // Reset some default styles
+                  "font-sans text-base tracking-normal px-4 py-3 rounded-md", // Improved touch targets
+                  "focus-outline hover:bg-blue-50", // Added focus and hover states
                 )}
                 href={item.href}
               >
@@ -61,7 +60,8 @@ export const Navbar = () => {
           <NavbarItem>
             <Link
               isExternal
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-300 py-1"
+              aria-label="Visit Ayspire LinkedIn page"
+              className="text-gray-700 hover:text-blue-600 transition-colors duration-300 p-3 rounded-md focus-outline hover:bg-blue-50"
               href="https://www.linkedin.com/company/ayspire-inc/"
             >
               <FontAwesomeIcon className="text-xl" icon={faLinkedin} />
@@ -71,7 +71,8 @@ export const Navbar = () => {
 
         <NavbarContent className="lg:hidden basis-1 pl-4" justify="end">
           <NavbarMenuToggle
-            className="p-2 text-gray-700"
+            aria-label="Toggle navigation menu"
+            className="p-3 text-gray-700 focus-outline rounded-md hover:bg-blue-50"
             icon={<FontAwesomeIcon className="text-xl" icon={faBars} />}
           />
         </NavbarContent>
@@ -81,7 +82,7 @@ export const Navbar = () => {
             {siteConfig.mobileMenuItems.map((navLink, index) => (
               <NavbarMenuItem key={`${navLink}-${index}`}>
                 <Link
-                  className="block text-gray-700 hover:text-blue-600 transition-colors"
+                  className="block text-gray-700 hover:text-blue-600 transition-colors py-3 px-2 rounded-md focus-outline hover:bg-blue-50"
                   href={navLink.href}
                   size="lg"
                   onPress={handleLinkClick}
@@ -93,7 +94,8 @@ export const Navbar = () => {
             <NavbarMenuItem>
               <Link
                 isExternal
-                className="block text-gray-700 hover:text-blue-600 transition-colors"
+                aria-label="Visit Ayspire LinkedIn page"
+                className="block text-gray-700 hover:text-blue-600 transition-colors py-3 px-2 rounded-md focus-outline hover:bg-blue-50"
                 href="https://www.linkedin.com/company/ayspire-inc/"
               >
                 LinkedIn
