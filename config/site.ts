@@ -17,16 +17,12 @@ export const siteConfig = {
       href: "/products/erp-solutions",
     },
     {
-      label: "AI Products and Solutions",
+      label: "AI Products",
       href: "/products/ai-products",
     },
     {
-      label: "Team Insights",
+      label: "Team",
       href: "/team",
-    },
-    {
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/company/ayspire-inc/",
     },
   ],
   mobileMenuItems: [
@@ -43,11 +39,11 @@ export const siteConfig = {
       href: "/products/erp-solutions",
     },
     {
-      label: "AI Products and Solutions",
+      label: "AI Products",
       href: "/products/ai-products",
     },
     {
-      label: "Team Insights",
+      label: "Team",
       href: "/team",
     },
     {

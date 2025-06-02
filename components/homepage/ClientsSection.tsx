@@ -12,10 +12,15 @@ export default function ClientsSection({
   return (
     <section
       ref={sectionRef}
-      className={`py-16 px-2 sm:px-2 bg-gray-50 dark:bg-slate-900 transition-opacity duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      className={`py-16 px-2 sm:px-2 bg-gray-50 dark:bg-slate-900`}
     >
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-primary">
-        Our Clients & Partners
+      <h2
+        className={`text-4xl lg:text-5xl font-bold text-gray-900 mb-20 text-center transition-all duration-700`}
+      >
+        <span className="text-cyan-500">Our Clients </span>
+        <span className="bg-gradient-to-r from-cyan-400 to-teal-300 bg-clip-text text-transparent">
+          & Partners
+        </span>
       </h2>
       <div className="max-w-4xl mx-auto overflow-x-auto">
         <div className="flex gap-4 items-center justify-center min-w-full">

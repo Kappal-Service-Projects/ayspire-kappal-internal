@@ -3,8 +3,6 @@ import { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import clsx from "clsx";
 
-import { Providers } from "./providers";
-
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/homepage/navbar";
@@ -42,13 +40,13 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-          <div className="relative flex flex-col">
-            <Navbar />
-            <main className="flex-grow w-full min-w-0">{children}</main>
-            <Footer />
-          </div>
-        </Providers>
+        {/* <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}> */}
+        <div className="relative flex flex-col">
+          <Navbar />
+          <main className="flex-grow w-full min-w-0">{children}</main>
+          <Footer />
+        </div>
+        {/* </Providers> */}
         <Analytics />
       </body>
     </html>

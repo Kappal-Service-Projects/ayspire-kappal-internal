@@ -53,9 +53,9 @@ export default function Home() {
           services={services}
           visible={servicesVisible}
         />
+        <WhatWeDoSection />
         <BlogCardsSection />
         <AboutUsStaticSection />
-        <WhatWeDoSection />
         <ClientsSection
           clients={clients}
           sectionRef={clientsRef}
@@ -63,7 +63,10 @@ export default function Home() {
         />
         <TestimonialsSection
           sectionRef={testimonialsRef}
-          testimonials={testimonials}
+          testimonials={testimonials.map(({ author, ...rest }) => ({
+            ...rest,
+            name: author,
+          }))}
           visible={testimonialsVisible}
         />
         <FixedBgSection sectionRef={fixedBgRef} visible={fixedBgVisible} />

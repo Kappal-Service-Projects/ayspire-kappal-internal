@@ -1,3 +1,8 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import useScrollReveal from "./useScrollReveal";
+
 export default function WhatWeDoSection() {
   const cards = [
     {
@@ -21,56 +26,80 @@ export default function WhatWeDoSection() {
     },
   ];
 
+  const [leftRef, leftVisible] = useScrollReveal() as [
+    React.RefObject<HTMLDivElement>,
+    boolean
+  ];
+  const [rightRef, rightVisible] = useScrollReveal() as [
+    React.RefObject<HTMLDivElement>,
+    boolean
+  ];
+
   return (
-    <section className="py-20 px-4 sm:px-8 bg-white dark:bg-slate-950">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-start">
-        {/* Left: Text */}
-        <div className="flex-1 min-w-[300px] md:pr-10">
-          <h2 className="text-2xl md:text-4xl font-extrabold text-primary mb-6 uppercase tracking-wide">
-            WHAT DO WE DO
-          </h2>
-          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-200 mb-6 font-light">
-            Improving business performance through purposeful innovation is in
-            our DNA. Ayspire strives to inspire clients to embrace positive
-            change and to give them the tools they need to succeed throughout
-            their connected planning journey. Our energetic and experienced
-            professionals deliver consistent results through comprehensive,
-            collaborative services. Put simply, Ayspire helps companies solve
-            their problems and build strong and sustainable solutions. We do
-            this through:
-          </p>
-          <ul className="list-disc pl-6 text-base md:text-lg text-gray-800 dark:text-gray-100 space-y-1">
-            <li>Customer Engagement</li>
-            <li>Technology Enablement</li>
-            <li>Strategy &amp; Operations</li>
-            <li>Connected Planning Experience</li>
-          </ul>
-        </div>
-        {/* Right: Masonry Cards */}
-        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          <div className="flex flex-col gap-6 md:gap-8">
-            <div
-              className={`rounded-2xl shadow-lg p-6 font-semibold text-lg ${cards[0].color}`}
-            >
-              {cards[0].title}
-            </div>
-            <div
-              className={`rounded-2xl shadow-lg p-6 font-semibold text-lg ${cards[1].color}`}
-            >
-              {cards[1].title}
-            </div>
+    <section className="py-20 bg-gradient-to-br from-cyan-300 via-teal-200 to-teal-50 relative overflow-hidden">
+      <div className="absolute inset-0 bg-black opacity-10" />
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div
+            ref={leftRef}
+            className={`transition-all duration-700 ${
+              leftVisible ? "opacity-100 -translate-x-0" : "opacity-0 -translate-x-16"
+            }`}
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-teal-700">
+              WHAT DO WE DO
+            </h2>
+            <p className="text-xl mb-8 text-white leading-relaxed">
+              Improving business performance through purposeful innovation is in
+              our DNA. Ayspire strives to inspire clients to embrace positive
+              change and to give them the tools they need to succeed throughout
+              their connected planning journey.
+            </p>
+            <ul className="space-y-4">
+              <li className="flex items-center text-lg">
+                <FontAwesomeIcon
+                  className="text-cyan-800 mr-3"
+                  icon={faCheckCircle}
+                />
+                Customer Engagement
+              </li>
+              <li className="flex items-center text-lg">
+                <FontAwesomeIcon
+                  className="text-cyan-800 mr-3"
+                  icon={faCheckCircle}
+                />
+                Technology Enablement
+              </li>
+              <li className="flex items-center text-lg">
+                <FontAwesomeIcon
+                  className="text-cyan-800 mr-3"
+                  icon={faCheckCircle}
+                />
+                Strategy &amp; Operations
+              </li>
+              <li className="flex items-center text-lg">
+                <FontAwesomeIcon
+                  className="text-cyan-800 mr-3"
+                  icon={faCheckCircle}
+                />
+                Connected Planning Experience
+              </li>
+            </ul>
           </div>
-          <div className="flex flex-col gap-6 md:gap-8 mt-12 md:mt-24">
-            <div
-              className={`rounded-2xl shadow-lg p-6 font-semibold text-lg ${cards[2].color}`}
-            >
-              {cards[2].title}
-            </div>
-            <div
-              className={`rounded-2xl shadow-lg p-6 font-semibold text-lg ${cards[3].color}`}
-            >
-              {cards[3].title}
-            </div>
+          <div
+            ref={rightRef}
+            className={`grid grid-cols-2 gap-6 transition-all duration-700 ${
+              rightVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-16"
+            }`}
+          >
+            {cards.map((card) => (
+              <div
+                key={card.title}
+                className={`backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 font-bold text-lg mb-2 ${card.color}`}
+              >
+                {card.title}
+              </div>
+            ))}
           </div>
         </div>
       </div>

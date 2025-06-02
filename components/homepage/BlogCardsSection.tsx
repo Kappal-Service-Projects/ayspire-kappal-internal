@@ -1,5 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
+import React from "react";
+
+import { BlogCard } from "../containers/BlogCard";
+
+import useScrollReveal from "./useScrollReveal";
 
 const blogPosts = [
   {
@@ -8,7 +11,7 @@ const blogPosts = [
       "How artificial intelligence is transforming business operations, decision-making, and customer engagement.",
     href: "/blog/posts/ai-in-enterprise",
     date: "May 20, 2025",
-    author: "Roshin K.",
+    author: "Roshin",
     image: "/images/blogs/1.jpg",
   },
   {
@@ -17,7 +20,7 @@ const blogPosts = [
       "Unlocking business value by fostering a culture that embraces data, analytics, and evidence-based decision making.",
     href: "/blog/posts/data-driven-culture",
     date: "May 10, 2025",
-    author: "Roshin K.",
+    author: "Roshin",
     image: "/images/blogs/2.jpg",
   },
   {
@@ -26,60 +29,51 @@ const blogPosts = [
       "Exploring the next wave of cloud innovation, from edge computing to AI-powered services.",
     href: "/blog/posts/future-of-cloud",
     date: "Apr 28, 2025",
-    author: "Roshin K.",
+    author: "Roshin",
     image: "/images/blogs/3.jpg",
   },
 ];
 
 export default function BlogCardsSection() {
+  const [h2Ref, h2Visible] = useScrollReveal() as [
+    React.RefObject<HTMLHeadingElement>,
+    boolean,
+  ];
+  const [cardsRef, cardsVisible] = useScrollReveal() as [
+    React.RefObject<HTMLDivElement>,
+    boolean,
+  ];
+
   return (
     <section className="py-16 px-4 sm:px-6 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-primary">
-        Latest Insights
+      <h2
+        ref={h2Ref}
+        className={`text-4xl lg:text-5xl font-bold text-gray-900 mb-20 text-center transition-all duration-700 ${
+          h2Visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+        }`}
+      >
+        <span className="text-cyan-500">Latest </span>
+        <span className="bg-gradient-to-r from-cyan-400 to-teal-300 bg-clip-text text-transparent">
+          Insights
+        </span>
       </h2>
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div
+        ref={cardsRef}
+        className={`max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-700 ${
+          cardsVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-12"
+        }`}
+      >
         {blogPosts.map((post, i) => (
-          <div
-            key={i}
-            className="flex flex-col bg-white/90 dark:bg-slate-900/80 border border-gray-200 dark:border-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-0 h-full group overflow-hidden"
-          >
-            <div className="relative w-full h-48">
-              <Image
-                fill
-                alt={post.title}
-                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                priority={i === 0}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                src={post.image}
-              />
-            </div>
-            <div className="flex flex-col flex-1 p-7">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white group-hover:text-primary transition-colors duration-200">
-                {post.title}
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6 flex-1">
-                {post.description}
-              </p>
-              <Link
-                className="inline-flex items-center gap-1 text-primary font-medium hover:underline mt-auto"
-                href={post.href}
-              >
-                Read more
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M5 12h14m-7-7l7 7-7 7"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </Link>
-            </div>
+          <div key={i} className="flex justify-center">
+            <BlogCard
+              description={post.description}
+              href={post.href}
+              image={post.image}
+              title={post.title}
+              width="lg"
+            />
           </div>
         ))}
       </div>

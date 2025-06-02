@@ -3,25 +3,25 @@ export const services = [
     title: "EPM Solutions",
     icon: "/images/services/solution_1.jpg",
     desc: "Enterprise Performance Management",
-    readMoreLink: "/products",
+    readMoreLink: "/products/epm-solutions",
   },
   {
     title: "ERP Solutions",
     icon: "/images/services/solution_2.jpg",
     desc: "Enterprise Resource Planning",
-    readMoreLink: "/products",
+    readMoreLink: "/products/erp-solutions",
   },
   {
     title: "AI Products",
     icon: "/images/services/solution_3.jpg",
     desc: "AI-driven Business Tools",
-    readMoreLink: "/products",
+    readMoreLink: "/products/ai-products",
   },
   {
     title: "Consulting",
     icon: "/images/services/solution_4.jpg",
     desc: "Expert Business Consulting",
-    readMoreLink: "/products",
+    readMoreLink: "/consulting",
   },
 ];
 
