@@ -86,7 +86,7 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-background font-sans antialiased overflow-x-hidden",
+          "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
         )}
       >
@@ -118,7 +118,7 @@ export default function RootLayout({
                 {children}
               </main>
               <Footer />
-           </div>
+            </div>
             {/* </Providers> */}
             <Analytics />
           </ToastProvider>

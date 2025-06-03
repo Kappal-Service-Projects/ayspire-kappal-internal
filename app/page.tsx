@@ -63,7 +63,7 @@ export default function Home() {
   return (
     <>
       <StickyVideoBackground />
-      <main className="relative w-full min-h-screen font-sans overflow-x-hidden scroll-smooth">
+      <main className="relative w-full min-h-screen font-sans">
         <HeroSection />
         <ServicesSection
           sectionRef={servicesRef}

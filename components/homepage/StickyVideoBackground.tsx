@@ -24,7 +24,12 @@ export default function StickyVideoBackground() {
 
   return (
     <div
-      className={`${isMobile ? "absolute top-0 left-0 w-full h-screen" : "fixed inset-0 w-full h-full"} overflow-hidden z-0 pointer-events-none`}
+      className={`${isMobile ? "absolute top-0 left-0 w-full h-screen" : "fixed inset-0 w-full h-full"} z-0 pointer-events-none`}
+      style={{
+        overflow: "hidden",
+        willChange: "transform",
+        backfaceVisibility: "hidden",
+      }}
     >
       {!isMobile ? (
         // Desktop: Fixed sticky video background that stays in place
