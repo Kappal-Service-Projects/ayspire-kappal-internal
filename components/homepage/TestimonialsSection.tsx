@@ -3,7 +3,6 @@ import Image from "next/image";
 export default function TestimonialsSection({
   sectionRef,
   testimonials,
-  visible,
 }: {
   sectionRef: React.RefObject<HTMLElement>;
   testimonials: { quote: string; name: string; avatar: string }[];

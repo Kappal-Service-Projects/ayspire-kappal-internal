@@ -14,15 +14,6 @@ import AboutUsStaticSection from "@/components/homepage/AboutUsStaticSection";
 import WhatWeDoSection from "@/components/homepage/WhatWeDoSection";
 
 export default function Home() {
-  // For smooth scroll
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = "smooth";
-
-    return () => {
-      document.documentElement.style.scrollBehavior = "";
-    };
-  }, []);
-
   // Scroll reveal hooks for each section
   const [servicesRef, servicesVisible] = useScrollReveal();
   const [clientsRef, clientsVisible] = useScrollReveal();
@@ -32,11 +23,20 @@ export default function Home() {
   const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
+    // Use passive scroll listener with throttling for better mobile performance
+    let ticking = false;
+
     const handleScroll = () => {
-      setShowScroll(window.scrollY > 200);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setShowScroll(window.scrollY > 200);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -74,7 +74,15 @@ export default function Home() {
           <button
             aria-label="Scroll to top"
             className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-white/90 shadow-lg transition-all duration-200 hover:bg-white hover:shadow-xl focus-outline"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={() => {
+              // Use native scroll for better mobile performance
+              window.scrollTo({
+                top: 0,
+                behavior: window.matchMedia("(max-width: 768px)").matches
+                  ? "auto"
+                  : "smooth",
+              });
+            }}
           >
             <svg
               className="w-6 h-6"

@@ -2,6 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Performance optimizations for smooth scrolling */
+* {
+  scroll-behavior: smooth !important;
+}
+
+/* Optimize scroll performance */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Additional scroll performance optimizations */
+.scroll-container {
+  contain: layout style paint;
+  scroll-behavior: smooth;
+}
+
+/* Optimize animations for 60fps */
+.smooth-transform {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Prevent layout thrashing during scroll */
+.no-scroll-lag {
+  contain: layout;
+  content-visibility: auto;
+}
+
 /* Custom animations and patterns */
 .tech-pattern {
   background-image: radial-gradient(circle at 1px 1px, theme(colors.blue.600) 1px, transparent 0);
@@ -11,6 +48,8 @@
 
 .floating-element {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
+  transform: translateZ(0); /* Hardware acceleration */
 }
 
 @keyframes float {
@@ -207,11 +246,12 @@
   background-size: 200% 100%;
 }
 
-/* Scroll-triggered animations */
+/* Scroll-triggered animations - optimized for smooth performance */
 .scroll-reveal {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(30px); /* Reduced distance for smoother animation */
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother easing */
+  will-change: opacity, transform;
 }
 
 .scroll-reveal.visible {
@@ -221,11 +261,24 @@
 
 .scroll-reveal-left {
   opacity: 0;
-  transform: translateX(-50px);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(-30px); /* Reduced distance */
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother easing */
+  will-change: opacity, transform;
 }
 
 .scroll-reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(30px); /* Reduced distance */
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother easing */
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-right.visible {
   opacity: 1;
   transform: translateX(0);
 }
@@ -241,33 +294,266 @@
   transform: translateX(0);
 }
 
-/* Advanced micro-interactions */
-.interactive-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
+/* Reveal element styles for About page components */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
 }
 
-.interactive-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 
-    0 25px 50px -12px rgba(0, 0, 0, 0.25),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
+.reveal-element.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.interactive-card:active {
-  transform: translateY(-4px) scale(1.01);
+/* Staggered reveal animations */
+.reveal-element:nth-child(1) { transition-delay: 0ms; }
+.reveal-element:nth-child(2) { transition-delay: 100ms; }
+.reveal-element:nth-child(3) { transition-delay: 200ms; }
+.reveal-element:nth-child(4) { transition-delay: 300ms; }
+.reveal-element:nth-child(5) { transition-delay: 400ms; }
+
+/* Enhanced floating animations */
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
 }
 
-/* Typography enhancements */
-.text-gradient-primary {
-  background: linear-gradient(135deg, #06c7c7, #0066ee);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.animate-float-gentle-delayed {
+  animation: float-gentle 6s ease-in-out infinite;
+  animation-delay: 3s;
 }
 
-.text-shadow-soft {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+@keyframes float-gentle {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-10px) rotate(1deg); 
+  }
+}
+
+/* Enhanced gradient animations */
+.animate-gradient-shift {
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Pulse glow animation for CTAs */
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow-hover:hover {
+  animation: pulse-glow 1s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(6, 199, 199, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(6, 199, 199, 0.6);
+  }
+}
+
+/* Performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Focus indicators for accessibility */
+.focus-outline {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+}
+
+.focus-ring-enhanced {
+  @apply focus:outline-none focus:ring-4 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900;
+}
+
+/* Advanced loading states */
+.skeleton-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.dark .skeleton-loading {
+  background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  background-size: 200% 100%;
+}
+
+/* Scroll-triggered animations - optimized for smooth performance */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px); /* Reduced distance for smoother animation */
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother easing */
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-30px); /* Reduced distance */
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother easing */
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(30px); /* Reduced distance */
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother easing */
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Reveal element styles for About page components */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+
+.reveal-element.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered reveal animations */
+.reveal-element:nth-child(1) { transition-delay: 0ms; }
+.reveal-element:nth-child(2) { transition-delay: 100ms; }
+.reveal-element:nth-child(3) { transition-delay: 200ms; }
+.reveal-element:nth-child(4) { transition-delay: 300ms; }
+.reveal-element:nth-child(5) { transition-delay: 400ms; }
+
+/* Enhanced floating animations */
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.animate-float-gentle-delayed {
+  animation: float-gentle 6s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+@keyframes float-gentle {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-10px) rotate(1deg); 
+  }
+}
+
+/* Enhanced gradient animations */
+.animate-gradient-shift {
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Pulse glow animation for CTAs */
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow-hover:hover {
+  animation: pulse-glow 1s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(6, 199, 199, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(6, 199, 199, 0.6);
+  }
+}
+
+/* Performance: Mobile optimization - disable heavy animations */
+@media (max-width: 768px) {
+  .float-animation,
+  .pulse-glow-effect,
+  .shimmer-effect,
+  .text-focus-in,
+  .slide-in-blurred-left,
+  .slide-in-blurred-right,
+  .bounce-in-top {
+    animation: none !important;
+  }
+  
+  .interactive-card:hover {
+    transform: translateY(-2px) !important;
+    transition-duration: 0.2s !important;
+  }
+  
+  .interactive-card:active {
+    transform: translateY(0) !important;
+  }
+  
+  /* Reduce complex transforms on mobile */
+  .scroll-reveal,
+  .scroll-reveal-left,
+  .scroll-reveal-right {
+    transition-duration: 0.3s !important;
+    transition-timing-function: ease-out !important;
+  }
+  
+  /* Disable GPU-intensive effects on mobile */
+  .pulse-border {
+    animation: none !important;
+    box-shadow: 0 0 0 2px theme(colors.blue.600 / 0.3) !important;
+  }
+  
+  /* Simplify floating elements */
+  .floating-element {
+    animation: none !important;
+  }
 }
 
 /* Performance: Reduced motion preferences */
@@ -277,7 +563,11 @@
   .shimmer-effect,
   .scroll-reveal,
   .scroll-reveal-left,
-  .scroll-reveal-right {
+  .scroll-reveal-right,
+  .text-focus-in,
+  .slide-in-blurred-left,
+  .slide-in-blurred-right,
+  .bounce-in-top {
     animation: none;
     transition: none;
   }

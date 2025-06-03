@@ -37,7 +37,7 @@ export const metadata = {
 export default function TeamPage() {
   return (
     <main className="min-h-[80vh] w-full bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 flex flex-col items-center justify-center py-16 px-4">
-      <section className="w-full max-w-6xl mx-auto flex flex-col items-center">
+      <section className="w-full max-w-6xl mx-auto flex flex-col items-center mt-40">
         <h1 className="text-4xl md:text-6xl font-extrabold text-primary mb-8 tracking-tight text-center">
           Meet Our Team
         </h1>
@@ -54,7 +54,9 @@ export default function TeamPage() {
               <Image
                 alt={member.name}
                 className="w-24 h-24 rounded-full object-contain mb-4 border-4 border-primary bg-slate-100 dark:bg-slate-800"
+                height={24}
                 src={member.image}
+                width={24}
               />
               <h3 className="text-xl font-semibold text-primary mb-1">
                 {member.name}

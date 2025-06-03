@@ -13,7 +13,6 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import AnalyticsProvider from "@/components/AnalyticsProvider";
 import ToastProvider from "@/components/ToastProvider";
 import ScrollProgress from "@/components/ScrollProgress";
-import AdvancedCursor from "@/components/AdvancedCursor";
 
 export const metadata: Metadata = {
   title: {
@@ -95,7 +94,6 @@ export default function RootLayout({
         <AnalyticsProvider>
           <ToastProvider>
             <ScrollProgress showPercentage={false} />
-            <AdvancedCursor enabled={true} magnetic={true} />
 
             <div className="relative flex flex-col">
               {/* Accessibility Enhancement Controls */}
