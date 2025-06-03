@@ -2,6 +2,8 @@
 
 import React from "react";
 
+import { SectionHeader } from "@/components/ui/SectionHeader";
+
 interface CallToActionProps {
   title?: string;
   description?: string;
@@ -10,7 +12,6 @@ interface CallToActionProps {
 }
 
 export const EpmCallToAction: React.FC<CallToActionProps> = ({
-  title = "Ready to Transform Your EPM?",
   description = "Discover how Ayspire can help you modernize your EPM processes, drive business agility, and achieve your strategic goals.",
   buttonText = "Get Started with Ayspire",
   buttonHref = "/contact",
@@ -24,9 +25,11 @@ export const EpmCallToAction: React.FC<CallToActionProps> = ({
         style={{ animationDelay: "3s" }}
       />
 
-      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 relative z-10">
-        {title}
-      </h2>
+      <SectionHeader
+        gradientText="Your EPM?"
+        primaryText="Ready to Transform"
+        size="md"
+      />
       <p className="max-w-xl text-lg md:text-xl text-gray-700 dark:text-gray-200 mb-8 relative z-10">
         {description}
       </p>

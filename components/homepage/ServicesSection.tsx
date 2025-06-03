@@ -3,6 +3,7 @@ import React from "react";
 import { useAdvancedScrollReveal } from "./useAdvancedScrollReveal";
 
 import BlogCard from "@/components/containers/BlogCard";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 interface Service {
   title: string;
@@ -53,18 +54,17 @@ export default function ServicesSection({
       <div className="relative max-w-7xl mx-auto">
         <div className="text-center mb-16 lg:mb-20">
           {/* Show heading immediately with gentle fade-in */}
-          <h2
-            ref={h2Ref}
-            className={`font-display text-4xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white mb-8 transition-all duration-700 tracking-tight ${h2State.isVisible ? "opacity-100 translate-y-0 animate-text-focus-in" : "opacity-70 translate-y-2"}`}
-            id="services-heading"
-          >
-            <span className="text-primary-600 dark:text-primary-400 ">
-              Our{" "}
-            </span>
-            <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
-              Services
-            </span>
-          </h2>
+          <div ref={h2Ref}>
+            <SectionHeader
+              animated={h2State.isVisible}
+              className={`transition-all duration-700 ${h2State.isVisible ? "opacity-100 translate-y-0 animate-text-focus-in" : "opacity-70 translate-y-2"}`}
+              gradientAnimation={true}
+              gradientText="Services"
+              id="services-heading"
+              primaryText="Our"
+              size="md"
+            />
+          </div>
 
           {/* Show description immediately with gentle fade-in */}
           <p

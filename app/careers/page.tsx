@@ -1,5 +1,6 @@
 import KappalECommerceAdvertisement from "@/components/containers/ecommerce-advertisement";
 import { Jobs } from "@/components/jobs";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export const metadata = {
   title: "Careers",
@@ -8,12 +9,16 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <section>
-      <div className="max-w-screen grid grid-cols-1 lg:grid-cols-5 gap-4 mx-5">
+    <section className="min-h-[80vh] w-full bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 py-16 px-4">
+      <div className="max-w-screen grid grid-cols-1 lg:grid-cols-5 gap-4 mx-5 mt-24 md:mt-32">
         <div className="pb-10 col-span-1 lg:col-span-4">
-          <h1 className="font-semibold text-5xl mx-5 mb-8 pt-10 tracking-tighter">
-            Join Us, to create a better tomorrow!
-          </h1>
+          <div className="mx-5 mb-8">
+            <SectionHeader
+              gradientText="better tomorrow!"
+              primaryText="Join Us, to create a"
+              size="md"
+            />
+          </div>
           <Jobs />
         </div>
         <div className="lg:col-span-1 my-10">

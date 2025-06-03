@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import { SectionHeader } from "@/components/ui/SectionHeader";
+
 export default function FixedBgSection({
   sectionRef,
   visible,
@@ -58,9 +60,12 @@ export default function FixedBgSection({
       )}
 
       <div className="absolute inset-0 bg-blue-100/10 z-10 flex flex-col items-center justify-center gap-6">
-        <h2 className="text-3xl md:text-5xl font-bold text-white text-center drop-shadow-lg">
-          Accelerate Your Digital Transformation
-        </h2>
+        <SectionHeader
+          className="text-white drop-shadow-lg brightness-125"
+          gradientText="Digital Transformation"
+          primaryText="Accelerate Your"
+          size="lg"
+        />
         <Link
           className="z-50 inline-block rounded-full bg-primary px-8 py-3 text-lg font-semibold text-white shadow-lg hover:bg-primary/90 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           href="/contact"

@@ -3,6 +3,8 @@
 import React from "react";
 import Image from "next/image";
 
+import { SectionHeader } from "@/components/ui/SectionHeader";
+
 interface WhyAyspirePoint {
   text: string;
   gradient: string;
@@ -58,9 +60,11 @@ export const WhyAyspireSection: React.FC<WhyAyspireProps> = ({
         <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-2xl shadow-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 w-full">
           <div className="flex-1">
             <div className="mb-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary mb-2">
-                Why Choose Ayspire for EPM?
-              </h2>
+              <SectionHeader
+                gradientText="Choose Ayspire for EPM?"
+                primaryText="Why"
+                size="md"
+              />
               <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full shimmer-effect" />
             </div>
 

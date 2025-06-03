@@ -7,7 +7,9 @@ import { WhyPartnerWithUsSection } from "@/components/about/WhyPartnerWithUsSect
 import { AboutStorySection } from "@/components/about/AboutStorySection";
 import { AboutMissionVisionSection } from "@/components/about/AboutMissionVisionSection";
 import { AboutStatsSection } from "@/components/about/AboutStatsSection";
+import AboutTestimonialsSection from "@/components/about/AboutTestimonialsSection";
 import { useGlobalScrollReveal } from "@/components/about/useScrollReveal";
+import { testimonials } from "@/config/homepageData";
 
 export default function AboutPage() {
   // Initialize scroll reveal for all reveal-element classes
@@ -29,6 +31,9 @@ export default function AboutPage() {
 
       {/* Stats Section */}
       <AboutStatsSection />
+
+      {/* Testimonials Section */}
+      <AboutTestimonialsSection testimonials={testimonials} />
     </main>
   );
 }

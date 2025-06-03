@@ -2,28 +2,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
+import SectionHeader from "../ui/SectionHeader";
+
 import useScrollReveal from "./useScrollReveal";
 
 export default function WhatWeDoSection() {
   const cards = [
     {
       title: "Financial and Business Services",
-      color: "bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100",
+      color:
+        "bg-gradient-to-br from-primary-500/10 via-primary-400/15 to-primary-300/20 dark:from-primary-800/30 dark:via-primary-700/25 dark:to-primary-600/20 text-primary-800 dark:text-primary-200 border border-primary-300/40 dark:border-primary-500/30 shadow-lg shadow-primary-500/10 hover:shadow-primary-500/20 hover:from-primary-500/15 hover:via-primary-400/20 hover:to-primary-300/25",
     },
     {
       title: "Consumer",
       color:
-        "bg-green-100 dark:bg-green-900 text-green-900 dark:text-green-100",
+        "bg-gradient-to-br from-blue-500/10 via-blue-400/15 to-secondary/20 dark:from-blue-800/30 dark:via-blue-700/25 dark:to-secondary/20 text-blue-800 dark:text-blue-200 border border-blue-300/40 dark:border-secondary/30 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 hover:from-blue-500/15 hover:via-blue-400/20 hover:to-secondary/25",
     },
     {
       title: "Technology, Media and Telecom",
       color:
-        "bg-yellow-100 dark:bg-yellow-900 text-yellow-900 dark:text-yellow-100",
+        "bg-gradient-to-br from-cyan-400/10 via-accent/15 to-cyan-300/20 dark:from-cyan-800/30 dark:via-accent/20 dark:to-cyan-600/20 text-cyan-800 dark:text-accent border border-cyan-300/40 dark:border-accent/30 shadow-lg shadow-cyan-500/10 hover:shadow-cyan-500/20 hover:from-cyan-400/15 hover:via-accent/20 hover:to-cyan-300/25",
     },
     {
       title: "Manufacturing",
       color:
-        "bg-purple-100 dark:bg-purple-900 text-purple-900 dark:text-purple-100",
+        "bg-gradient-to-br from-emerald-500/10 via-green-400/15 to-teal-400/20 dark:from-emerald-800/30 dark:via-green-700/25 dark:to-teal-600/20 text-emerald-800 dark:text-emerald-200 border border-emerald-300/40 dark:border-emerald-500/30 shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/20 hover:from-emerald-500/15 hover:via-green-400/20 hover:to-teal-400/25",
     },
   ];
 
@@ -49,9 +52,16 @@ export default function WhatWeDoSection() {
                 : "opacity-0 -translate-x-16"
             }`}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-primary-800">
+            <SectionHeader
+              className={`transition-all duration-700 opacity-100 translate-y-2`}
+              gradientAnimation={true}
+              gradientText="We Do?"
+              primaryText="What Do"
+              size="md"
+            />
+            {/* <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-primary-800">
               WHAT DO WE DO
-            </h2>
+            </h2> */}
             <p className="text-xl mb-8 text-gray-800 leading-relaxed">
               Improving business performance through purposeful innovation is in
               our DNA. Ayspire strives to inspire clients to embrace positive

@@ -3,6 +3,8 @@
 import React from "react";
 import Image from "next/image";
 
+import SectionHeader from "../ui/SectionHeader";
+
 interface FloatingElementProps {
   className: string;
   style?: React.CSSProperties;
@@ -38,9 +40,13 @@ export const AboutHeroSection: React.FC = () => {
           width={100}
         />
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-primary mb-6 tracking-tight reveal-element">
-          About Ayspire
-        </h1>
+        <SectionHeader
+          className={`transition-all duration-700 opacity-100 translate-y-2`}
+          gradientAnimation={true}
+          gradientText="Ayspire"
+          primaryText="About"
+          size="lg"
+        />
 
         <p className="max-w-3xl mx-auto text-lg md:text-2xl text-gray-700 dark:text-gray-200 mb-8 leading-relaxed reveal-element">
           Empowering organizations to make smarter decisions, faster. Born in

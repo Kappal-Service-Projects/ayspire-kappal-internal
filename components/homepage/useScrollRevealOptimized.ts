@@ -12,7 +12,7 @@ function updateMobileState() {
 function getGlobalObserver() {
   if (!globalObserver) {
     updateMobileState();
-    
+
     globalObserver = new IntersectionObserver(
       (entries) => {
         // Use RAF to prevent scroll conflicts and batch updates
@@ -30,7 +30,7 @@ function getGlobalObserver() {
         threshold: isMobileGlobal ? 0.05 : 0.1,
         rootMargin: isMobileGlobal ? "20px" : "0px",
         root: null,
-      }
+      },
     );
   }
 
@@ -42,14 +42,18 @@ function handleResize() {
   const wasMobile = isMobileGlobal;
 
   updateMobileState();
-  
+
   // Recreate observer if mobile state changed
-  if (wasMobile !== isMobileGlobal && globalObserver && observedElements.size > 0) {
+  if (
+    wasMobile !== isMobileGlobal &&
+    globalObserver &&
+    observedElements.size > 0
+  ) {
     const elementsToReobserve = Array.from(observedElements.keys());
-    
+
     globalObserver.disconnect();
     globalObserver = null;
-    
+
     const newObserver = getGlobalObserver();
 
     elementsToReobserve.forEach((element) => {

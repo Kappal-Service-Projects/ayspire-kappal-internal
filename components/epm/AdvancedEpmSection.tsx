@@ -5,6 +5,8 @@ import Image from "next/image";
 
 import { EpmSolutionCard, type EpmSolution } from "./EpmSolutionCard";
 
+import { SectionHeader } from "@/components/ui/SectionHeader";
+
 interface AdvancedEpmSectionProps {
   solutions: EpmSolution[];
 }
@@ -19,9 +21,11 @@ export const AdvancedEpmSection: React.FC<AdvancedEpmSectionProps> = ({
       <div className="relative z-10 max-w-screen md:max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-primary">
-            Advanced EPM Solutions
-          </h2>
+          <SectionHeader
+            gradientText="Solutions"
+            primaryText="Advanced EPM"
+            size="lg"
+          />
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-screen md:max-w-3xl mx-auto px-4">
             Discover our cutting-edge Enterprise Performance Management (EPM)
             solutions designed to transform your business planning and
@@ -55,13 +59,13 @@ export const AdvancedEpmSection: React.FC<AdvancedEpmSectionProps> = ({
             return (
               <div
                 key={solution.title}
-                className={`relative flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2 md:gap-8 lg:gap-12 smooth-transform no-scroll-lag ${
+                className={`relative flex flex-col lg:flex-row lg:items-start lg:justify-between gap-2 md:gap-8 lg:gap-12 smooth-transform no-scroll-lag ${
                   isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
               >
                 {/* Background Image - Mobile Optimized */}
                 <div
-                  className={`relative w-full ${widthClasses.image} h-[250px] sm:h-[300px] md:h-[400px] lg:h-[600px] overflow-hidden rounded-2xl md:rounded-3xl will-change-transform`}
+                  className={`relative w-full ${widthClasses.image} h-[250px] sm:h-[300px] md:h-[400px] lg:h-[600px] overflow-hidden rounded-2xl md:rounded-3xl will-change-transform mt-2.5`}
                 >
                   <Image
                     fill
@@ -82,7 +86,7 @@ export const AdvancedEpmSection: React.FC<AdvancedEpmSectionProps> = ({
                 <div
                   className={`relative w-[calc(100%+1.5rem)] sm:w-[calc(100%+2rem)] md:w-full mx-auto ${widthClasses.card} smooth-transform ${
                     isEven ? "lg:-ml-64" : "lg:-mr-64"
-                  } -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 z-10`}
+                  } -mt-8 sm:-mt-12 md:-mt-16 lg:mt-14 z-10`}
                 >
                   <EpmSolutionCard index={index} solution={solution} />
                 </div>

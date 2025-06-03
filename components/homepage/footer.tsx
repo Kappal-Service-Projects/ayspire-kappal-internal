@@ -14,15 +14,30 @@ export const Footer: React.FC = () => {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 Company
               </h3>
-              <ul className="mt-4 space-y-2 text-gray-500 dark:text-gray-400">
+              <ul className="mt-4 space-y-2">
                 <li>
-                  <Link href="#">About Us</Link>
+                  <Link
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    href="/about"
+                  >
+                    About Us
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#">Careers</Link>
+                  <Link
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    href="/careers"
+                  >
+                    Careers
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#">Press</Link>
+                  <Link
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    href="/blog"
+                  >
+                    Press
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -30,18 +45,38 @@ export const Footer: React.FC = () => {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 Support
               </h3>
-              <ul className="mt-4 space-y-2 text-gray-500 dark:text-gray-400">
+              <ul className="mt-4 space-y-2">
                 <li>
-                  <Link href="#">FAQ</Link>
+                  <Link
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    href="#"
+                  >
+                    FAQ
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#">Help Center</Link>
+                  <Link
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    href="#"
+                  >
+                    Help Center
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#">Privacy Policy</Link>
+                  <Link
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    href="#"
+                  >
+                    Privacy Policy
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#">Terms of Service</Link>
+                  <Link
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    href="#"
+                  >
+                    Terms of Service
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -49,18 +84,38 @@ export const Footer: React.FC = () => {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 Follow Us
               </h3>
-              <ul className="mt-4 space-y-2 text-gray-500 dark:text-gray-400">
+              <ul className="mt-4 space-y-2">
                 <li>
-                  <Link href="#">Facebook</Link>
+                  <Link
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    href="#"
+                  >
+                    Facebook
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#">Instagram</Link>
+                  <Link
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    href="#"
+                  >
+                    Instagram
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#">Twitter</Link>
+                  <Link
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    href="#"
+                  >
+                    Twitter
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#">LinkedIn</Link>
+                  <Link
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    href="#"
+                  >
+                    LinkedIn
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -68,20 +123,20 @@ export const Footer: React.FC = () => {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 Contact
               </h3>
-              <ul className="mt-4 space-y-2 text-gray-500 dark:text-gray-400">
-                <li>
+              <ul className="mt-4 space-y-2">
+                <li className="text-gray-600 dark:text-gray-300">
                   Email:{" "}
                   <a
-                    className="text-blue-600 dark:text-blue-400 hover:underline"
+                    className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 hover:underline transition-colors"
                     href={`mailto:${email}`}
                   >
                     {email}
                   </a>
                 </li>
-                <li>
+                <li className="text-gray-600 dark:text-gray-300">
                   Phone:{" "}
                   <a
-                    className="text-blue-600 dark:text-blue-400 hover:underline"
+                    className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 hover:underline transition-colors"
                     href={`tel:${phone}`}
                   >
                     {phone}
@@ -90,7 +145,7 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
           </div>
-          <p className="py-5 text-center text-gray-500 dark:text-gray-400">
+          <p className="py-5 text-center text-gray-600 dark:text-gray-300">
             &copy; {new Date().getFullYear()} Ayspire Inc. All rights reserved.
           </p>
         </div>

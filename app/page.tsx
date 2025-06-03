@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import StickyVideoBackground from "@/components/homepage/StickyVideoBackground";
 import ServicesSection from "@/components/homepage/ServicesSection";
 import ClientsSection from "@/components/homepage/ClientsSection";
-import TestimonialsSection from "@/components/homepage/TestimonialsSection";
+import InnovationShowcaseSection from "@/components/homepage/InnovationShowcaseSection";
 import FixedBgSection from "@/components/homepage/FixedBgSection";
 import useScrollRevealOptimized from "@/components/homepage/useScrollRevealOptimized";
-import { services, clients, testimonials } from "@/config/homepageData";
+import { services, clients } from "@/config/homepageData";
 import BlogCardsSection from "@/components/homepage/BlogCardsSection";
 import AboutUsStaticSection from "@/components/homepage/AboutUsStaticSection";
 import WhatWeDoSection from "@/components/homepage/WhatWeDoSection";
@@ -17,7 +17,7 @@ export default function Home() {
   // Scroll reveal hooks for each section - using optimized version
   const [servicesRef, servicesVisible] = useScrollRevealOptimized();
   const [clientsRef, clientsVisible] = useScrollRevealOptimized();
-  const [testimonialsRef, testimonialsVisible] = useScrollRevealOptimized();
+  const [innovationRef, innovationVisible] = useScrollRevealOptimized();
   const [fixedBgRef, fixedBgVisible] = useScrollRevealOptimized();
 
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -78,14 +78,18 @@ export default function Home() {
           sectionRef={clientsRef}
           visible={clientsVisible}
         />
-        <TestimonialsSection
+        <InnovationShowcaseSection
+          sectionRef={innovationRef}
+          visible={innovationVisible}
+        />
+        {/* <TestimonialsSection
           sectionRef={testimonialsRef}
           testimonials={testimonials.map(({ author, ...rest }) => ({
             ...rest,
             name: author,
           }))}
           visible={testimonialsVisible}
-        />
+        /> */}
         <FixedBgSection sectionRef={fixedBgRef} visible={fixedBgVisible} />
         {showScrollToTop && (
           <button

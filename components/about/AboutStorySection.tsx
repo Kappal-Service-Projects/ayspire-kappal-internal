@@ -3,6 +3,8 @@
 import React from "react";
 import Image from "next/image";
 
+import SectionHeader from "../ui/SectionHeader";
+
 export const AboutStorySection: React.FC = () => {
   return (
     <section
@@ -13,9 +15,13 @@ export const AboutStorySection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content Side */}
           <div className="reveal-element">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-primary-800 dark:text-primary-300">
-              Our Story
-            </h2>
+            <SectionHeader
+              className={`transition-all duration-700`}
+              gradientAnimation={true}
+              gradientText="Story"
+              primaryText="Our"
+              size="md"
+            />
             <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               <p>
                 Founded with a vision to bridge the gap between complex business

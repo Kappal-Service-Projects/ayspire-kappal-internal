@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Link } from "@heroui/link";
 
 import { BlogPosts } from "@/components/posts";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export const metadata = {
   title: "Blog",
@@ -10,24 +11,30 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-3 gap-2">
-      <div className="col-span-1 lg:col-span-2">
-        <h1 className="font-semibold text-xl lg:text-3xl py-10 mx-5 tracking-tighter">
-          Ayspire Insights
-        </h1>
-        <BlogPosts />
-      </div>
-      <div className="col-span-1">
-        <Link href="/careers">
-          <Image
-            alt="kappal ads"
-            className="cursor-pointer"
-            height={500}
-            loading="lazy"
-            src={"/images/advertisements/blog_page_ad_dark.png"}
-            width={500}
-          />
-        </Link>
+    <section className="min-h-[80vh] w-full bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 py-16 px-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 mt-24 md:mt-32">
+        <div className="col-span-1 lg:col-span-2">
+          <div className="py-5 mx-5">
+            <SectionHeader
+              gradientText="Insights"
+              primaryText="Ayspire"
+              size="lg"
+            />
+          </div>
+          <BlogPosts />
+        </div>
+        <div className="col-span-1">
+          <Link href="/careers">
+            <Image
+              alt="kappal ads"
+              className="cursor-pointer"
+              height={500}
+              loading="lazy"
+              src={"/images/advertisements/blog_page_ad_dark.png"}
+              width={500}
+            />
+          </Link>
+        </div>
       </div>
     </section>
   );

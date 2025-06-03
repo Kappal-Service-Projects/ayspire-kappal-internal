@@ -45,7 +45,7 @@ export const EpmSolutionCard: React.FC<EpmSolutionCardProps> = ({
       <div className="relative z-10 h-full flex flex-col">
         <div className="flex items-start gap-4 sm:gap-6 mb-6 sm:mb-8 flex-1">
           <div className="flex-1">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mt-6 mb-10 sm:mb-4 group-hover:text-gradient-primary transition-all duration-300 leading-tight">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary mt-6 mb-10 sm:mb-4 group-hover:text-gradient-primary transition-all duration-300 leading-tight">
               {solution.title}
             </h3>
             <p className="text-gray-700 dark:text-gray-300 text-left leading-relaxed text-sm sm:text-base md:text-lg">

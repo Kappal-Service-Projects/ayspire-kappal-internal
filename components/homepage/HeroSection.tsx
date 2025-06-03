@@ -29,7 +29,7 @@ export default function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-24 lg:py-32 z-20 pointer-events-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div data-aos="fade-right" data-aos-duration="1000">
-            <h1 className="text-5xl lg:text-7xl font-black leading-tight mb-8">
+            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8">
               <span className="bg-gradient-to-r from-primary-300 to-primary-500 bg-clip-text text-transparent">
                 All in for
               </span>

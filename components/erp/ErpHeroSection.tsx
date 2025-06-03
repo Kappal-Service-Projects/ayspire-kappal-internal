@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ColorChip } from "@/components/containers/chips";
 
 interface FloatingElementProps {
@@ -34,11 +35,14 @@ export const ErpHeroSection: React.FC = () => {
           <ColorChip />
         </div>
 
-        <h1 className="text-4xl md:text-6xl font-extrabold text-primary mb-4 tracking-tight reveal-element">
-          Enterprise Resource Planning (ERP)
-        </h1>
+        <SectionHeader
+          className="text-center max-w-4xl"
+          gradientText="Resource Planning (ERP)"
+          primaryText="Enterprise"
+          size="lg"
+        />
 
-        <p className="max-w-2xl text-lg md:text-2xl text-gray-700 dark:text-gray-200 mb-6 reveal-element">
+        <p className="max-w-4xl text-center justify-center items-center text-lg md:text-2xl text-gray-700 dark:text-gray-200 mb-6 reveal-element">
           Modernize your business with Ayspire&apos;s Oracle and Anaplan-based
           ERP solutions. Integrate every function, automate processes, and gain
           real-time insights for smarter, faster decisions.

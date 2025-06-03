@@ -9,6 +9,8 @@ import {
   faBullseye,
 } from "@fortawesome/free-solid-svg-icons";
 
+import SectionHeader from "@/components/ui/SectionHeader";
+
 interface WhyPartnerCardProps {
   icon: any;
   title: string;
@@ -60,9 +62,9 @@ export const WhyPartnerWithUsSection: React.FC = () => {
     },
     {
       icon: faLightbulb,
-      title: "Inventing What&apos;s Next",
+      title: "Inventing What's Next",
       description:
-        "Stay ahead of the curve with our innovative thinking and forward-looking solutions. We continuously evolve our offerings to anticipate market trends and emerging technologies that will shape your industry&apos;s future.",
+        "Stay ahead of the curve with our innovative thinking and forward-looking solutions. We continuously evolve our offerings to anticipate market trends and emerging technologies that will shape your industry's future.",
     },
   ];
 
@@ -79,14 +81,13 @@ export const WhyPartnerWithUsSection: React.FC = () => {
       <div className="relative max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-20">
-          <h2 className="font-display text-4xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white mb-8 tracking-tight reveal-element">
-            <span className="text-primary-600 dark:text-primary-400">
-              Why Partner{" "}
-            </span>
-            <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
-              With Us?
-            </span>
-          </h2>
+          <SectionHeader
+            className="mb-8 tracking-tight reveal-element"
+            gradientAnimation={true}
+            gradientText="With Us?"
+            primaryText="Why Partner"
+            size="md"
+          />
 
           <p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed reveal-element">
             Discover the advantages that make Ayspire your ideal partner for

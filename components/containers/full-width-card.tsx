@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import clsx from "clsx";
 
+import { SectionHeader } from "@/components/ui/SectionHeader";
+
 const FullWidthCard = ({ title, description, href = "#" }) => {
   return (
     <section className="max-w-screen py-3">
@@ -13,9 +15,13 @@ const FullWidthCard = ({ title, description, href = "#" }) => {
         )}
         href={href}
       >
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {title}
-        </h5>
+        <SectionHeader
+          className="mb-2"
+          gradientText={title}
+          gradientVariant="blue"
+          primaryText=""
+          size="sm"
+        />
         <p className="font-normal text-gray-700 dark:text-gray-400">
           {description}
         </p>

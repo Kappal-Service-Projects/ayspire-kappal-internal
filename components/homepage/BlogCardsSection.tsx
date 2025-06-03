@@ -1,6 +1,7 @@
 import React from "react";
 
 import BlogCard from "../containers/BlogCard";
+import SectionHeader from "../ui/SectionHeader";
 
 import useScrollReveal from "./useScrollReveal";
 
@@ -46,17 +47,14 @@ export default function BlogCardsSection() {
 
   return (
     <section className="py-16 px-4 sm:px-6 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
-      <h2
-        ref={h2Ref}
-        className={`text-4xl lg:text-5xl font-bold text-gray-900 mb-20 text-center transition-all duration-700 ${
-          h2Visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-        }`}
-      >
-        <span className="text-cyan-500">Latest </span>
-        <span className="bg-gradient-to-r from-cyan-400 to-teal-300 bg-clip-text text-transparent">
-          Insights
-        </span>
-      </h2>
+      <SectionHeader
+        animated={h2Visible}
+        className={`transition-all text-center mb-20 duration-700`}
+        gradientAnimation={true}
+        gradientText="Insights"
+        primaryText="Latest"
+        size="md"
+      />
       <div
         ref={cardsRef}
         className={`max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-700 ${

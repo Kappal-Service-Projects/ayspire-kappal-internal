@@ -2,6 +2,8 @@
 
 import React from "react";
 
+import { SectionHeader } from "@/components/ui/SectionHeader";
+
 export const ErpCallToAction: React.FC = () => {
   return (
     <section className="w-full flex flex-col items-center justify-center py-16 px-4 text-center bg-gradient-to-b from-white to-slate-50 dark:from-slate-950 dark:to-slate-900">
@@ -9,11 +11,13 @@ export const ErpCallToAction: React.FC = () => {
         {/* Floating background elements */}
         <div className="absolute top-10 left-10 w-24 h-24 bg-gradient-to-br from-primary-400/20 to-secondary/20 rounded-full blur-xl animate-float-gentle" />
         <div className="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-br from-secondary/20 to-primary-400/20 rounded-full blur-2xl animate-float-gentle-delayed" />
-        
+
         <div className="relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 reveal-element">
-            Ready to Modernize Your ERP?
-          </h2>
+          <SectionHeader
+            gradientText="Your ERP?"
+            primaryText="Ready to Modernize"
+            size="md"
+          />
           <p className="max-w-xl mx-auto text-lg md:text-xl text-gray-700 dark:text-gray-200 mb-8 reveal-element">
             Discover how Ayspire can help you unify, automate, and optimize your
             business with next-generation ERP solutions.

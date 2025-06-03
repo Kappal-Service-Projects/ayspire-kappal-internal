@@ -1,5 +1,6 @@
 import React from "react";
 
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ColorChip } from "@/components/containers/chips";
 
 export const metadata = {
@@ -13,9 +14,11 @@ export default function AIProductsPage() {
     <main className="min-h-[80vh] w-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
       <section className="w-full flex flex-col items-center justify-center py-24 px-4 text-center">
         <ColorChip />
-        <h1 className="text-4xl md:text-6xl font-extrabold text-primary mb-6 tracking-tight">
-          AI Products & Solutions
-        </h1>
+        <SectionHeader
+          gradientText="& Solutions"
+          primaryText="AI Products"
+          size="lg"
+        />
         <p className="max-w-2xl text-lg md:text-2xl text-gray-700 dark:text-gray-200 mb-10">
           We are working on a new suite of AI-powered products and solutions to
           help you transform your business. Stay tuned for updates!

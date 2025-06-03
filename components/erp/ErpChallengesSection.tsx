@@ -3,15 +3,19 @@
 import React from "react";
 import Image from "next/image";
 
+import { SectionHeader } from "@/components/ui/SectionHeader";
+
 export const ErpChallengesSection: React.FC = () => {
   return (
     <section className="w-full px-4 py-12 bg-white dark:bg-slate-950">
       <div className="max-w-7xl mx-auto">
         <div className="bg-gradient-to-r from-primary/10 to-slate-100 dark:from-primary/20 dark:to-slate-900 rounded-2xl p-8 md:p-12 shadow-md flex flex-col md:flex-row items-center gap-8 w-full reveal-element">
           <div className="flex-1">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
-              ERP Challenges We Solve
-            </h2>
+            <SectionHeader
+              gradientText="We Solve"
+              primaryText="ERP Challenges"
+              size="md"
+            />
             <ul className="list-disc pl-6 text-gray-800 dark:text-gray-200 space-y-2 text-left md:text-lg">
               <li>Fragmented systems and manual data entry</li>
               <li>Lack of real-time visibility across business functions</li>

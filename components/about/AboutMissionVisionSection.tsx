@@ -5,11 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBullseye,
   faEye,
-  faHeart,
+  faUsers,
   faLightbulb,
   faShield,
-  faUsers,
+  faHeart,
 } from "@fortawesome/free-solid-svg-icons";
+
+import SectionHeader from "@/components/ui/SectionHeader";
 
 interface MissionVisionCardProps {
   icon: any;
@@ -122,12 +124,13 @@ export const AboutMissionVisionSection: React.FC = () => {
 
         {/* Values Section */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 reveal-element">
-            <span className="text-primary-600 dark:text-primary-400">Our </span>
-            <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-secondary bg-clip-text text-transparent">
-              Values
-            </span>
-          </h2>
+          <SectionHeader
+            className="mt-10 mb-4 reveal-element"
+            gradientAnimation={true}
+            gradientText="Values"
+            primaryText="Our"
+            size="md"
+          />
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed reveal-element">
             The principles that guide our actions and define our culture
           </p>

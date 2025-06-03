@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
+import { SectionHeader } from "@/components/ui/SectionHeader";
+
 const teamMembers = [
   {
     name: "Roshin Rasheed",
@@ -37,19 +39,25 @@ export const metadata = {
 export default function TeamPage() {
   return (
     <main className="min-h-[80vh] w-full bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 py-16 px-4">
-      <section className="w-full max-w-7xl mx-auto mt-24 md:mt-32">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-primary mb-8 tracking-tight text-center">
-          Meet Our Team
-        </h1>
+      <section className="w-full max-w-full mx-auto mt-24 md:mt-32">
+        <SectionHeader
+          className="text-center my-20"
+          gradientText="Our Team"
+          primaryText="Meet"
+          size="lg"
+        />
 
         <div className="flex flex-col lg:flex-row gap-12 mt-12">
           {/* Left Column - Text Content */}
-          <div className="w-full lg:w-1/3 flex flex-col justify-start">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6">
-              Our people make us great
-            </h2>
+          <div className="w-full lg:w-2/5 flex flex-col justify-start">
+            <SectionHeader
+              className="mx-auto"
+              gradientText="make us great!"
+              primaryText="Our people"
+              size="sm"
+            />
 
-            <div className="space-y-6">
+            <div className="space-y-6 w-3/4 mx-auto">
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 Here we focus on markets where technology and innovation can
                 unlock long-term value and drive sustainable growth.
