@@ -1,12 +1,32 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import { Logo } from "./logo";
 
 export default function HeroSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Detect mobile devices for performance optimization
+    const checkIsMobile = () => {
+      setIsMobile(
+        window.innerWidth <= 768 ||
+          /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent,
+          ),
+      );
+    };
+
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile, { passive: true });
+
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
+
   return (
-    <section className="relative h-[80vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900/70 via-primary-800/80 to-violet-900/70 text-white">
+    <section className="relative min-h-screen pt-20 md:pt-24 lg:pt-28 flex items-center overflow-hidden bg-gradient-to-br from-slate-900/70 via-primary-800/80 to-violet-900/70 text-white">
       <div className="absolute inset-0 tech-pattern" />
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-32">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-24 lg:py-32 z-20 pointer-events-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div data-aos="fade-right" data-aos-duration="1000">
             <h1 className="text-5xl lg:text-7xl font-black leading-tight mb-8">
@@ -41,7 +61,7 @@ export default function HeroSection() {
             </div>
           </div>
           <div
-            className="relative"
+            className="relative hidden md:block"
             data-aos="fade-left"
             data-aos-duration="1000"
           >
@@ -63,6 +83,47 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Jumping scroll arrow - Desktop only */}
+      {!isMobile && (
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 pointer-events-auto">
+          <div className="animate-bounce">
+            <button
+              aria-label="Scroll Down"
+              className="flex flex-col items-center text-white/90 hover:text-white transition-all duration-300 cursor-pointer group backdrop-blur-sm rounded-full p-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+              type="button"
+              onClick={() => {
+                const nextSection = document.querySelector(
+                  "main > *:nth-child(2)",
+                );
+
+                if (nextSection) {
+                  nextSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
+              {/* <span className="text-sm font-medium mb-2 opacity-90 group-hover:opacity-100 transition-opacity">
+                  Scroll Down
+                </span> */}
+
+              <svg
+                className="w-8 h-8 animate-pulse group-hover:animate-none group-hover:translate-y-1 transition-transform drop-shadow-lg"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

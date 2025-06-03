@@ -91,7 +91,7 @@ export default function WhatWeDoSection() {
           </div>
           <div
             ref={rightRef}
-            className={`grid grid-cols-2 gap-6 transition-all duration-700 ${
+            className={`grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-700 ${
               rightVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-16"

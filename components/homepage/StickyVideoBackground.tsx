@@ -23,30 +23,51 @@ export default function StickyVideoBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 w-full h-full overflow-hidden z-0">
+    <div
+      className={`${isMobile ? "absolute top-0 left-0 w-full h-screen" : "fixed inset-0 w-full h-full"} overflow-hidden z-0 pointer-events-none`}
+    >
       {!isMobile ? (
+        // Desktop: Fixed sticky video background that stays in place
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover will-change-auto"
-          poster="/images/background/hero-video-poster.jpg"
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="/images/background/hero-video-bg.jpg"
           preload="metadata"
+          style={{
+            pointerEvents: "none",
+            transform: "translateZ(0)", // Hardware acceleration for desktop
+            willChange: "transform",
+          }}
         >
           <source src="/videos/hero-video.mp4" type="video/mp4" />
         </video>
       ) : (
-        // Use static image on mobile for better performance
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+        // Mobile: Video that scrolls naturally with the content - covers only hero section
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="/images/background/hero-video-bg.jpg"
+          preload="metadata"
           style={{
-            backgroundImage: "url(/images/background/hero-video-poster.jpg)",
+            pointerEvents: "none",
+            // No hardware acceleration on mobile to prevent scroll issues
+            transform: "none",
             willChange: "auto",
           }}
-        />
+        >
+          <source src="/videos/hero-video.mp4" type="video/mp4" />
+        </video>
       )}
-      <div className="absolute inset-0 bg-black/40" />
+      <div
+        className="absolute inset-0 bg-black/40"
+        style={{ pointerEvents: "none" }}
+      />
     </div>
   );
 }

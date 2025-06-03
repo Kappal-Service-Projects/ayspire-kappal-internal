@@ -60,8 +60,25 @@ export function useScrollReveal(options: ScrollRevealOptions = {}) {
 // Initialize scroll reveal for all reveal-element classes
 export function useGlobalScrollReveal() {
   useEffect(() => {
+    // Skip scroll reveal on mobile for better performance
+    const isMobile =
+      window.innerWidth <= 768 ||
+      /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+      );
+
     const elements = document.querySelectorAll(".reveal-element");
 
+    if (isMobile) {
+      // On mobile, immediately show all elements without animations
+      elements.forEach((element) => {
+        element.classList.add("revealed");
+      });
+
+      return;
+    }
+
+    // Desktop: Use intersection observer for scroll animations
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

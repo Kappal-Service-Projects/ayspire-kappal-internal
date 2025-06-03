@@ -46,10 +46,6 @@ export const siteConfig = {
       label: "Team",
       href: "/team",
     },
-    {
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/company/ayspire-inc/",
-    },
   ],
   industries: [
     {

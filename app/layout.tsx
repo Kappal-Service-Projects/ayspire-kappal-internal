@@ -118,7 +118,7 @@ export default function RootLayout({
                 {children}
               </main>
               <Footer />
-            </div>
+           </div>
             {/* </Providers> */}
             <Analytics />
           </ToastProvider>

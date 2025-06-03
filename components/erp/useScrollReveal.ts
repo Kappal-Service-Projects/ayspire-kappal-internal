@@ -4,20 +4,37 @@ import { useEffect } from "react";
 
 export const useScrollReveal = () => {
   useEffect(() => {
-    const revealElements = document.querySelectorAll('.reveal-element');
-    
+    // Skip scroll reveal on mobile for better performance
+    const isMobile =
+      window.innerWidth <= 768 ||
+      /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+      );
+
+    const revealElements = document.querySelectorAll(".reveal-element");
+
+    if (isMobile) {
+      // On mobile, immediately show all elements without animations
+      revealElements.forEach((element) => {
+        element.classList.add("revealed");
+      });
+
+      return;
+    }
+
+    // Only use intersection observer on desktop
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
+            entry.target.classList.add("revealed");
           }
         });
       },
       {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      }
+        rootMargin: "0px 0px -50px 0px",
+      },
     );
 
     revealElements.forEach((element) => {
@@ -34,20 +51,37 @@ export const useScrollReveal = () => {
 
 export const useGlobalScrollReveal = () => {
   useEffect(() => {
-    const revealElements = document.querySelectorAll('.reveal-element');
-    
+    // Skip scroll reveal on mobile for better performance
+    const isMobile =
+      window.innerWidth <= 768 ||
+      /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+      );
+
+    const revealElements = document.querySelectorAll(".reveal-element");
+
+    if (isMobile) {
+      // On mobile, immediately show all elements without animations
+      revealElements.forEach((element) => {
+        element.classList.add("revealed");
+      });
+
+      return;
+    }
+
+    // Only use intersection observer on desktop
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
+            entry.target.classList.add("revealed");
           }
         });
       },
       {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      }
+        rootMargin: "0px 0px -50px 0px",
+      },
     );
 
     revealElements.forEach((element) => {

@@ -12,6 +12,24 @@ html {
   scroll-behavior: smooth !important;
 }
 
+/* Mobile-specific performance optimizations */
+@media (max-width: 768px) {
+  /* Disable animations on mobile for better performance */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Reduce GPU usage on mobile */
+  .floating-element {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+}
+
 /* Optimize scroll performance */
 body {
   -webkit-font-smoothing: antialiased;

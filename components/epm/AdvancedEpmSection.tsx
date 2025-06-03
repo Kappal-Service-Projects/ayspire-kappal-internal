@@ -13,40 +13,40 @@ export const AdvancedEpmSection: React.FC<AdvancedEpmSectionProps> = ({
   solutions,
 }) => {
   return (
-    <section className="w-full py-16 relative">
+    <section className="w-full py-12 md:py-16 relative">
       <div className="absolute inset-0 tech-pattern pointer-events-none opacity-30" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4">
+      <div className="relative z-10 max-w-screen md:max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient-primary">
+        <div className="text-center mb-12 md:mb-20">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-primary">
             Advanced EPM Solutions
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-screen md:max-w-3xl mx-auto px-4">
             Discover our cutting-edge Enterprise Performance Management (EPM)
             solutions designed to transform your business planning and
             performance management
           </p>
         </div>
 
-        {/* Solution Cards with Images */}
-        <div className="space-y-32">
+        {/* Solution Cards - Mobile Optimized */}
+        <div className="space-y-16 md:space-y-32">
           {solutions.map((solution, index) => {
             const isEven = index % 2 === 0;
 
-            // Define different width ratios for visual variety
+            // Define different width ratios for visual variety (desktop only)
             const getWidthClasses = (index: number) => {
               switch (index) {
                 case 0:
-                  return { image: "flex-[3]", card: "flex-[2]" }; // 60% image, 40% card
+                  return { image: "lg:flex-[3]", card: "lg:flex-[2]" }; // 60% image, 40% card
                 case 1:
-                  return { image: "flex-[2]", card: "flex-[3]" }; // 40% image, 60% card
+                  return { image: "lg:flex-[2]", card: "lg:flex-[3]" }; // 40% image, 60% card
                 case 2:
-                  return { image: "flex-[2]", card: "flex-[4]" }; // 33% image, 67% card - wider card
+                  return { image: "lg:flex-[2]", card: "lg:flex-[4]" }; // 33% image, 67% card - wider card
                 case 3:
-                  return { image: "flex-[3]", card: "flex-[4]" }; // 43% image, 57% card
+                  return { image: "lg:flex-[3]", card: "lg:flex-[4]" }; // 43% image, 57% card
                 default:
-                  return { image: "flex-1", card: "flex-1" }; // 50/50 fallback
+                  return { image: "lg:flex-1", card: "lg:flex-1" }; // 50/50 fallback
               }
             };
 
@@ -55,13 +55,13 @@ export const AdvancedEpmSection: React.FC<AdvancedEpmSectionProps> = ({
             return (
               <div
                 key={solution.title}
-                className={`relative flex items-center justify-between gap-12 smooth-transform no-scroll-lag ${
-                  isEven ? "flex-row" : "flex-row-reverse"
-                } max-lg:flex-col max-lg:gap-8`}
+                className={`relative flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2 md:gap-8 lg:gap-12 smooth-transform no-scroll-lag ${
+                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                }`}
               >
-                {/* Background Image - optimized */}
+                {/* Background Image - Mobile Optimized */}
                 <div
-                  className={`relative ${widthClasses.image} h-[600px] max-lg:h-[400px] overflow-hidden rounded-3xl will-change-transform`}
+                  className={`relative w-full ${widthClasses.image} h-[250px] sm:h-[300px] md:h-[400px] lg:h-[600px] overflow-hidden rounded-2xl md:rounded-3xl will-change-transform`}
                 >
                   <Image
                     fill
@@ -78,11 +78,11 @@ export const AdvancedEpmSection: React.FC<AdvancedEpmSectionProps> = ({
                   <div className="absolute inset-0 bg-black/10" />
                 </div>
 
-                {/* Overlapping Solution Card - optimized */}
+                {/* Solution Card - Mobile Optimized */}
                 <div
-                  className={`relative ${widthClasses.card} smooth-transform ${
-                    isEven ? "-ml-64 max-lg:ml-0" : "-mr-64 max-lg:mr-0"
-                  } max-lg:-mt-20 z-10`}
+                  className={`relative w-[calc(100%+1.5rem)] sm:w-[calc(100%+2rem)] md:w-full mx-auto ${widthClasses.card} smooth-transform ${
+                    isEven ? "lg:-ml-64" : "lg:-mr-64"
+                  } -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 z-10`}
                 >
                   <EpmSolutionCard index={index} solution={solution} />
                 </div>

@@ -77,7 +77,7 @@ export const Navbar = () => {
           />
         </NavbarContent>
 
-        <NavbarMenu className="lg:hidden bg-white border-t border-gray-100">
+        <NavbarMenu className="lg:hidden bg-white border-t border-gray-100 z-50">
           <div className="px-6 py-4 space-y-4">
             {siteConfig.mobileMenuItems.map((navLink, index) => (
               <NavbarMenuItem key={`${navLink}-${index}`}>

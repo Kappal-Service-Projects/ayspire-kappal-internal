@@ -2,51 +2,68 @@
 import { useEffect, useState } from "react";
 
 import StickyVideoBackground from "@/components/homepage/StickyVideoBackground";
-import HeroSection from "@/components/homepage/HeroSection";
 import ServicesSection from "@/components/homepage/ServicesSection";
 import ClientsSection from "@/components/homepage/ClientsSection";
 import TestimonialsSection from "@/components/homepage/TestimonialsSection";
 import FixedBgSection from "@/components/homepage/FixedBgSection";
-import useScrollReveal from "@/components/homepage/useScrollReveal";
+import useScrollRevealOptimized from "@/components/homepage/useScrollRevealOptimized";
 import { services, clients, testimonials } from "@/config/homepageData";
 import BlogCardsSection from "@/components/homepage/BlogCardsSection";
 import AboutUsStaticSection from "@/components/homepage/AboutUsStaticSection";
 import WhatWeDoSection from "@/components/homepage/WhatWeDoSection";
+import HeroSection from "@/components/homepage/HeroSection";
 
 export default function Home() {
-  // Scroll reveal hooks for each section
-  const [servicesRef, servicesVisible] = useScrollReveal();
-  const [clientsRef, clientsVisible] = useScrollReveal();
-  const [testimonialsRef, testimonialsVisible] = useScrollReveal();
-  const [fixedBgRef, fixedBgVisible] = useScrollReveal();
+  // Scroll reveal hooks for each section - using optimized version
+  const [servicesRef, servicesVisible] = useScrollRevealOptimized();
+  const [clientsRef, clientsVisible] = useScrollRevealOptimized();
+  const [testimonialsRef, testimonialsVisible] = useScrollRevealOptimized();
+  const [fixedBgRef, fixedBgVisible] = useScrollRevealOptimized();
 
-  const [showScroll, setShowScroll] = useState(false);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Use passive scroll listener with throttling for better mobile performance
-    let ticking = false;
+    // Detect mobile for scroll optimization
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile, { passive: true });
+
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
+
+  useEffect(() => {
+    // Optimized scroll listener for mobile performance
+    let rafId: number | null = null;
 
     const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setShowScroll(window.scrollY > 200);
-          ticking = false;
-        });
-        ticking = true;
-      }
+      if (rafId) return; // Prevent multiple RAF calls
+
+      rafId = requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+
+        setShowScrollToTop(scrollY > 300);
+        rafId = null;
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
     };
   }, []);
 
   return (
     <>
       <StickyVideoBackground />
-      <main className="relative w-screen min-h-screen font-sans overflow-x-hidden">
+      <main className="relative w-full min-h-screen font-sans overflow-x-hidden scroll-smooth">
         <HeroSection />
         <ServicesSection
           sectionRef={servicesRef}
@@ -70,17 +87,15 @@ export default function Home() {
           visible={testimonialsVisible}
         />
         <FixedBgSection sectionRef={fixedBgRef} visible={fixedBgVisible} />
-        {showScroll && (
+        {showScrollToTop && (
           <button
             aria-label="Scroll to top"
             className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-white/90 shadow-lg transition-all duration-200 hover:bg-white hover:shadow-xl focus-outline"
             onClick={() => {
-              // Use native scroll for better mobile performance
+              // Use instant scroll on mobile to prevent conflicts with native scroll
               window.scrollTo({
                 top: 0,
-                behavior: window.matchMedia("(max-width: 768px)").matches
-                  ? "auto"
-                  : "smooth",
+                behavior: isMobile ? "auto" : "smooth",
               });
             }}
           >

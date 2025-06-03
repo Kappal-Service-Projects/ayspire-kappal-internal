@@ -4,6 +4,26 @@ import { useEffect } from "react";
 
 export const useScrollReveal = () => {
   useEffect(() => {
+    // Skip scroll animation on mobile for performance
+    const isMobile =
+      window.innerWidth <= 768 ||
+      /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+      );
+
+    if (isMobile) {
+      // Instantly show all reveal elements on mobile
+      const revealElements = document.querySelectorAll(
+        ".scroll-reveal, .scroll-reveal-left, .scroll-reveal-right",
+      );
+
+      revealElements.forEach((el) => {
+        el.classList.add("visible");
+      });
+
+      return;
+    }
+
     const observerOptions = {
       threshold: 0.15, // Increased threshold for better performance
       rootMargin: "0px 0px -100px 0px", // More conservative margin
