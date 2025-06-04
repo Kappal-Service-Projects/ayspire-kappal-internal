@@ -38,7 +38,7 @@ export const Navbar = () => {
       >
         <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
           <NavbarBrand as="li" className="gap-3 max-w-fit">
-            <Logo className="h-28 w-auto" />
+            <Logo className="h-28 w-auto contrast-125 brightness-75" />
           </NavbarBrand>
         </NavbarContent>
 

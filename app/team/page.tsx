@@ -38,8 +38,8 @@ export const metadata = {
 
 export default function TeamPage() {
   return (
-    <main className="min-h-[80vh] w-full bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 py-16 px-4">
-      <section className="w-full max-w-full mx-auto mt-24 md:mt-32">
+    <main className="min-h-[80vh] w-full bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 py-16 px-4 overflow-x-hidden">
+      <section className="w-full max-w-full mx-auto mt-24 md:mt-32 overflow-x-hidden">
         <SectionHeader
           className="text-center my-20"
           gradientText="Our Team"
@@ -47,7 +47,7 @@ export default function TeamPage() {
           size="lg"
         />
 
-        <div className="flex flex-col lg:flex-row gap-12 mt-12">
+        <div className="flex flex-col lg:flex-row gap-12 mt-12 max-w-full overflow-x-hidden">
           {/* Left Column - Text Content */}
           <div className="w-full lg:w-2/5 flex flex-col justify-start">
             <SectionHeader
@@ -78,18 +78,18 @@ export default function TeamPage() {
           </div>
 
           {/* Right Column - Team Grid */}
-          <div className="w-full lg:w-2/3">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="w-full lg:w-2/3 min-w-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full">
               {teamMembers.map((member) => (
                 <div
                   key={member.name}
-                  className="group relative h-80 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl"
+                  className="group relative h-80 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl w-full min-w-0"
                 >
                   {/* Card background with overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/5 z-10" />
 
                   {/* Member image */}
-                  <div className="absolute inset-0 bg-slate-200 dark:bg-slate-800 transition-transform duration-500 group-hover:scale-110">
+                  <div className="absolute inset-0 bg-slate-200 dark:bg-slate-800 transition-transform duration-500 group-hover:scale-110 overflow-hidden">
                     <OptimizedImage
                       fill
                       alt={`${member.name} - ${member.role} at Ayspire Inc.`}

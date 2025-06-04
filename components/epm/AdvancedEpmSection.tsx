@@ -66,7 +66,7 @@ export const AdvancedEpmSection: React.FC<AdvancedEpmSectionProps> = ({
               >
                 {/* Background Image - Mobile Optimized */}
                 <div
-                  className={`relative w-full ${widthClasses.image} h-[250px] sm:h-[300px] md:h-[400px] lg:h-[600px] overflow-hidden rounded-2xl md:rounded-3xl will-change-transform mt-2.5`}
+                  className={`relative w-full ${widthClasses.image} h-[250px] sm:h-[300px] md:h-[400px] lg:h-[600px] overflow-hidden rounded-2xl md:rounded-3xl will-change-transform mt-2.5 hidden md:block`}
                 >
                   <ContentImage
                     fill
@@ -85,9 +85,9 @@ export const AdvancedEpmSection: React.FC<AdvancedEpmSectionProps> = ({
 
                 {/* Solution Card - Mobile Optimized */}
                 <div
-                  className={`relative w-[calc(100%+1.5rem)] sm:w-[calc(100%+2rem)] md:w-full mx-auto ${widthClasses.card} smooth-transform ${
+                  className={`relative w-full md:w-[calc(100%+1.5rem)] lg:w-full mx-auto ${widthClasses.card} smooth-transform ${
                     isEven ? "lg:-ml-64" : "lg:-mr-64"
-                  } -mt-8 sm:-mt-12 md:-mt-16 lg:mt-14 z-10`}
+                  } mt-0 md:-mt-8 lg:-mt-16 xl:mt-14 z-10`}
                 >
                   <EpmSolutionCard index={index} solution={solution} />
                 </div>
