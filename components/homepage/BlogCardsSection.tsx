@@ -5,38 +5,10 @@ import SectionHeader from "../ui/SectionHeader";
 
 import useScrollReveal from "./useScrollReveal";
 
-const blogPosts = [
-  {
-    title: "AI in the Modern Enterprise",
-    description:
-      "How artificial intelligence is transforming business operations, decision-making, and customer engagement.",
-    href: "/blog/posts/ai-in-enterprise",
-    date: "May 20, 2025",
-    author: "Roshin",
-    image: "/images/blogs/1.jpg",
-  },
-  {
-    title: "Building a Data-Driven Culture",
-    description:
-      "Unlocking business value by fostering a culture that embraces data, analytics, and evidence-based decision making.",
-    href: "/blog/posts/data-driven-culture",
-    date: "May 10, 2025",
-    author: "Roshin",
-    image: "/images/blogs/2.jpg",
-  },
-  {
-    title: "The Future of Cloud Computing",
-    description:
-      "Exploring the next wave of cloud innovation, from edge computing to AI-powered services.",
-    href: "/blog/posts/future-of-cloud",
-    date: "Apr 28, 2025",
-    author: "Roshin",
-    image: "/images/blogs/3.jpg",
-  },
-];
+import { featuredBlogPosts } from "@/app/blog/featured/posts";
 
 export default function BlogCardsSection() {
-  const [h2Ref, h2Visible] = useScrollReveal() as [
+  const [, h2Visible] = useScrollReveal() as [
     React.RefObject<HTMLHeadingElement>,
     boolean,
   ];
@@ -63,7 +35,7 @@ export default function BlogCardsSection() {
             : "opacity-0 translate-y-12"
         }`}
       >
-        {blogPosts.map((post, i) => (
+        {featuredBlogPosts.map((post, i) => (
           <div key={i} className="flex justify-center">
             <BlogCard
               description={post.description}

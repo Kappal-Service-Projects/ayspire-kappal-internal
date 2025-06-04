@@ -1,9 +1,11 @@
 "use client";
+import { useEffect, useState } from "react";
+
 import { Link } from "@heroui/link";
 import { Chip } from "@heroui/react";
 import { useTheme } from "next-themes";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+
+import { ContentImage } from "@/components/ui/OptimizedImage";
 
 const KappalECommerceAdvertisement: React.FC = () => {
   const { theme, systemTheme } = useTheme();
@@ -39,8 +41,8 @@ const KappalECommerceAdvertisement: React.FC = () => {
         {/* Image Container */}
         <div className="justify-start items-center flex py-5">
           <Link href="https://ecommerce.kappal.in" isExternal={true}>
-            <Image
-              alt="Kappal E-Commerce"
+            <ContentImage
+              alt="Kappal E-Commerce - One platform for endless possibilities"
               height={500}
               src={
                 currentTheme === "dark"

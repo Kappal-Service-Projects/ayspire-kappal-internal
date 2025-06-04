@@ -4,6 +4,7 @@ import { formatDate, getBlogPosts } from "../../utils";
 
 import { baseUrl } from "@/app/sitemap";
 import { CustomMDX } from "@/components/mdx";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
@@ -88,12 +89,17 @@ export default async function Blog({ params }) {
         type="application/ld+json"
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-6 grid-flow-col gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-6 grid-flow-col gap-4 mt-40">
         <div className="col-span-1">{""}</div>
         <article className="prose text-2xl col-span-4 font-light text-gray-600 dark:text-gray-300">
-          <h1 className="title font-semibold text-3xl tracking-tighter">
-            {post.metadata.title}
-          </h1>
+          <SectionHeader
+            className={`transition-all duration-700`}
+            gradientAnimation={true}
+            gradientText={post.metadata.title}
+            primaryText=""
+            size="md"
+          />
+
           <div className="flex justify-between items-center mt-2 mb-8 text-medium">
             <p className="text-neutral-600 dark:text-neutral-400 font-normal">
               {formatDate(post.metadata.publishedAt)}

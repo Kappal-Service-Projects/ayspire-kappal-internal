@@ -1,5 +1,6 @@
-import Image from "next/image";
 import { Link } from "@heroui/link";
+
+import { ContentImage } from "@/components/ui/OptimizedImage";
 
 import { BlogPosts } from "@/components/posts";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -25,11 +26,10 @@ export default function Page() {
         </div>
         <div className="col-span-1">
           <Link href="/careers">
-            <Image
-              alt="kappal ads"
+            <ContentImage
+              alt="Kappal Ads - Career opportunities at Ayspire"
               className="cursor-pointer"
               height={500}
-              loading="lazy"
               src={"/images/advertisements/blog_page_ad_dark.png"}
               width={500}
             />

@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+
+import { ContentImage } from "@/components/ui/OptimizedImage";
 
 import { EpmSolutionCard, type EpmSolution } from "./EpmSolutionCard";
 
@@ -67,9 +68,9 @@ export const AdvancedEpmSection: React.FC<AdvancedEpmSectionProps> = ({
                 <div
                   className={`relative w-full ${widthClasses.image} h-[250px] sm:h-[300px] md:h-[400px] lg:h-[600px] overflow-hidden rounded-2xl md:rounded-3xl will-change-transform mt-2.5`}
                 >
-                  <Image
+                  <ContentImage
                     fill
-                    alt={`${solution.title} Background`}
+                    alt={`${solution.title} - Enterprise Performance Management solution by Ayspire`}
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     priority={index < 2}
                     src={solution.imageUrl}

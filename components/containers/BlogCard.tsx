@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+
+import OptimizedImage, { ContentImage } from "@/components/ui/OptimizedImage";
 
 export interface BlogCardProps {
   title: string;
@@ -32,7 +33,7 @@ export function BlogCard({
       {/* Enhanced image container */}
       <div className="relative w-full h-48 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-        <Image
+        <ContentImage
           fill
           alt={title}
           className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out"

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { AvatarImage } from "@/components/ui/OptimizedImage";
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
@@ -41,9 +41,9 @@ export default function AboutTestimonialsSection({
                   <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-20 h-10 bg-white dark:bg-gray-800 rounded-b-full border-l border-r border-b border-gray-200 dark:border-gray-600 z-30" />
                   {/* User Avatar Circle - positioned on top of semicircle */}
                   <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-800 dark:to-primary-700 p-1 shadow-xl z-50">
-                    <Image
-                      alt={testimonial.author}
-                      className="w-full h-full rounded-full object-cover"
+                    <AvatarImage
+                      alt={`${testimonial.author} - Client testimonial`}
+                      className="w-full h-full object-cover"
                       height={64}
                       src={testimonial.avatar}
                       width={64}

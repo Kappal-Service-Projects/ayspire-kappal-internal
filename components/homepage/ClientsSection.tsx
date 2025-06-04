@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 
 import SectionHeader from "../ui/SectionHeader";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 
 export default function ClientsSection({
   clients,
@@ -151,10 +151,12 @@ export default function ClientsSection({
                 key={i}
                 className="flex items-center justify-center h-32 min-w-[200px] flex-shrink-0 group"
               >
-                <Image
-                  alt={`Client ${i + 1}`}
+                <OptimizedImage
+                  alt={`Client ${i + 1} logo`}
                   className="object-contain h-20 w-auto grayscale hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
                   height={80}
+                  priority={i < 4}
+                  quality={80}
                   src={logo}
                   width={200}
                 />

@@ -1,10 +1,9 @@
 "use client";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import React from "react";
-import Image from "next/image";
 
 import { title } from "../primitives";
-
+import { ContentImage } from "@/components/ui/OptimizedImage";
 import { ProductsAndServices } from "@/config/data";
 
 const ScrollContent: React.FC = () => {
@@ -56,11 +55,12 @@ const ScrollContent: React.FC = () => {
                   key={index}
                   className="min-h-screen sticky top-0 flex flex-col justify-center items-center"
                 >
-                  <Image
+                  <ContentImage
                     alt={data.alt}
                     className="transition-all duration-300 align-bottom object-cover rounded-md"
                     height={500}
                     loading={index == 0 ? "eager" : "lazy"}
+                    priority={index === 0}
                     src={`/images/services/${index + 1}.png`}
                     width={500}
                   />
@@ -83,51 +83,56 @@ const ScrollContent: React.FC = () => {
             </div>
             <div className="grid gap-2">
               <figure className="grid place-content-center lg:-skew-x-12">
-                <Image
-                  alt=""
+                <ContentImage
+                  alt="Ayspire Recognition Award 1"
                   className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
                   loading="eager"
+                  priority={true}
                   src="/images/recognition/1.jpg"
                   width={500}
                 />
               </figure>
               <figure className="grid place-content-center lg:skew-x-12">
-                <Image
-                  alt=""
+                <ContentImage
+                  alt="Ayspire Recognition Award 2"
                   className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
                   loading="eager"
+                  priority={false}
                   src="/images/recognition/2.jpg"
                   width={500}
                 />
               </figure>
               <figure className="grid place-content-center lg:-skew-x-12">
-                <Image
-                  alt=""
+                <ContentImage
+                  alt="Ayspire Recognition Award 3"
                   className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
                   loading="eager"
+                  priority={false}
                   src="/images/recognition/3.jpg"
                   width={500}
                 />
               </figure>
               <figure className="grid place-content-center lg:skew-x-12">
-                <Image
-                  alt=""
+                <ContentImage
+                  alt="Ayspire Recognition Award 4"
                   className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
                   loading="eager"
+                  priority={false}
                   src="/images/recognition/4.jpg"
                   width={500}
                 />
               </figure>
               <figure className="grid place-content-center lg:-skew-x-12">
-                <Image
-                  alt=""
+                <ContentImage
+                  alt="Ayspire Recognition Award 5"
                   className="transition-all duration-300 w-full md:w-4/5 lg:w-screen h-96 align-bottom object-cover"
                   height={500}
                   loading="eager"
+                  priority={false}
                   src="/images/recognition/5.jpg"
                   width={500}
                 />

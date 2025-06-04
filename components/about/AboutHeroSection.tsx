@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+
+import { HeroImage } from "@/components/ui/OptimizedImage";
 
 import SectionHeader from "../ui/SectionHeader";
 
@@ -31,9 +32,8 @@ export const AboutHeroSection: React.FC = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-4xl mx-auto">
-        <Image
-          priority
-          alt="Ayspire Logo"
+        <HeroImage
+          alt="Ayspire Logo - Digital Transformation Solutions"
           className="mb-8 drop-shadow-lg mx-auto reveal-element"
           height={100}
           src="/logo.svg"

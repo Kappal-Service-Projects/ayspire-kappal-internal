@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+
+import { ContentImage } from "@/components/ui/OptimizedImage";
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
@@ -29,8 +30,8 @@ export const WhyAyspireErpSection: React.FC = () => {
           </div>
           <div className="flex-1 flex justify-center">
             <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg group-hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
-              <Image
-                alt="Oracle Partner"
+              <ContentImage
+                alt="Oracle Partner - Certified consulting partner"
                 className="w-32 h-32 object-contain filter group-hover:brightness-110 transition-all duration-300"
                 height={128}
                 src="/images/clients/oracle.svg"

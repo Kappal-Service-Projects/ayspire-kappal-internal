@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 
 import SectionHeader from "../ui/SectionHeader";
+import { ContentImage } from "@/components/ui/OptimizedImage";
 
 export const AboutStorySection: React.FC = () => {
   return (
@@ -48,8 +48,8 @@ export const AboutStorySection: React.FC = () => {
           {/* Visual Side */}
           <div className="reveal-element lg:order-first">
             <div className="relative">
-              <Image
-                alt="Ayspire team collaboration"
+              <ContentImage
+                alt="Ayspire team collaboration - Our story of innovation and growth"
                 className="rounded-2xl shadow-2xl object-cover"
                 height={500}
                 src="/images/about/story-hero.jpg"

@@ -40,7 +40,9 @@ export default function FixedBgSection({
       className={`relative h-[60vh] w-full flex items-center justify-center md:bg-fixed bg-cover bg-center transition-opacity duration-700 ${visible ? "opacity-80 translate-y-0" : "opacity-80 translate-y-8"}`}
       style={
         isMobile
-          ? { backgroundImage: `url(/images/background/hero-video-bg.jpg)` }
+          ? {
+              backgroundImage: `url(/images/optimized/background/hero-video-bg.webp)`,
+            }
           : {}
       }
     >
@@ -51,9 +53,9 @@ export default function FixedBgSection({
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/hero-background.mp4" type="video/mp4" />
+          <source src="/videos/hero-video.mp4" type="video/mp4" />
           {/* Fallback to image if video fails */}
           Your browser does not support the video tag.
         </video>
@@ -61,7 +63,7 @@ export default function FixedBgSection({
 
       <div className="absolute inset-0 bg-blue-100/10 z-10 flex flex-col items-center justify-center gap-6">
         <SectionHeader
-          className="text-white drop-shadow-lg brightness-125"
+          className="text-white drop-shadow-lg brightness-125 mx-5"
           gradientText="Digital Transformation"
           primaryText="Accelerate Your"
           size="lg"

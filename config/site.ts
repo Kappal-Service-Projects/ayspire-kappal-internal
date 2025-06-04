@@ -10,15 +10,15 @@ export const siteConfig = {
     },
     {
       label: "EPM Solutions",
-      href: "/products/epm-solutions",
+      href: "/solutions/epm-solutions",
     },
     {
       label: "ERP Solutions",
-      href: "/products/erp-solutions",
+      href: "/solutions/erp-solutions",
     },
     {
       label: "AI Products",
-      href: "/products/ai-products",
+      href: "/solutions/ai-products",
     },
     {
       label: "Team",
@@ -32,15 +32,15 @@ export const siteConfig = {
     },
     {
       label: "EPM Solutions",
-      href: "/products/epm-solutions",
+      href: "/solutions/epm-solutions",
     },
     {
       label: "ERP Solutions",
-      href: "/products/erp-solutions",
+      href: "/solutions/erp-solutions",
     },
     {
       label: "AI Products",
-      href: "/products/ai-products",
+      href: "/solutions/ai-products",
     },
     {
       label: "Team",

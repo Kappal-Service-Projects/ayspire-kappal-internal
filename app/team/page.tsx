@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 
 const teamMembers = [
   {
@@ -90,10 +90,12 @@ export default function TeamPage() {
 
                   {/* Member image */}
                   <div className="absolute inset-0 bg-slate-200 dark:bg-slate-800 transition-transform duration-500 group-hover:scale-110">
-                    <Image
+                    <OptimizedImage
                       fill
-                      alt={member.name}
+                      alt={`${member.name} - ${member.role} at Ayspire Inc.`}
                       className="w-full h-full object-cover"
+                      priority={false}
+                      quality={90}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       src={member.image}
                     />

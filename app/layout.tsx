@@ -13,6 +13,7 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import AnalyticsProvider from "@/components/AnalyticsProvider";
 import ToastProvider from "@/components/ToastProvider";
 import ScrollProgress from "@/components/ScrollProgress";
+import SEOEnhancer from "@/components/SEOEnhancer";
 
 export const metadata: Metadata = {
   title: {
@@ -28,6 +29,21 @@ export const metadata: Metadata = {
     "AI solutions",
     "cloud services",
     "business automation",
+    "Software Company in Canada",
+    "Software Consultant in Canada",
+    "Software Company in Ontario",
+    "Roshin Rasheed",
+    "Software Company in Toronto",
+    "Indian business in Canada",
+    "ERP solutions",
+    "EPM solutions",
+    "enterprise planning",
+    "business intelligence",
+    "data analytics",
+    "process automation",
+    "digital innovation",
+    "IT consulting",
+    "enterprise architecture",
   ],
   authors: [{ name: "Ayspire" }],
   creator: "Ayspire",
@@ -38,6 +54,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL("https://ayspire.com"),
+  alternates: {
+    canonical: "https://ayspire.com",
+    languages: {
+      "en-US": "https://ayspire.com",
+    },
+  },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
@@ -45,28 +67,57 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://ayspire.com",
     siteName: siteConfig.name,
+    images: [
+      {
+        url: "https://ayspire.com/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ayspire - Digital Transformation & Enterprise Solutions",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
+    creator: "@ayspire",
+    images: ["https://ayspire.com/images/og-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  other: {
+    // Enhanced metadata for Google search features
+    "google-site-verification": "your-verification-code-here",
+    "format-detection": "telephone=no",
+    "color-scheme": "light dark",
+    // Enable action buttons in search results
+    "google-rich-snippets": "enabled",
+    // Business information for enhanced snippets
+    "business-name": "Ayspire",
+    "business-type": "Technology Company",
+    "business-category": "Software Development",
+    "contact-url": "https://ayspire.com/contact",
+    "about-url": "https://ayspire.com/about",
+    "services-url": "https://ayspire.com/solutions",
+    "msapplication-TileColor": "#2563eb",
   },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
+  manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
@@ -96,6 +147,33 @@ export default function RootLayout({
             <ScrollProgress showPercentage={false} />
 
             <div className="relative flex flex-col">
+              {/* SEO Enhancement */}
+              <SEOEnhancer
+                organizationData={{
+                  name: "Ayspire",
+                  url: "https://ayspire.com",
+                  logo: "https://ayspire.com/logo.png",
+                  description:
+                    "Leading digital transformation and enterprise solutions provider",
+                  address: {
+                    streetAddress: "",
+                    addressLocality: "Toronto",
+                    addressRegion: "Ontario",
+                    postalCode: "",
+                    addressCountry: "CA",
+                  },
+                  contactPoint: {
+                    telephone: "+1-800-AYSPIRE",
+                    contactType: "Customer Service",
+                    email: "contact@ayspire.com",
+                  },
+                  sameAs: [
+                    "https://linkedin.com/company/ayspire",
+                    "https://twitter.com/ayspire",
+                  ],
+                }}
+              />
+
               {/* Accessibility Enhancement Controls */}
               <ErrorBoundary>
                 <AccessibilityEnhancer />

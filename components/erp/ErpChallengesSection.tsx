@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+
+import { ContentImage } from "@/components/ui/OptimizedImage";
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
@@ -27,8 +28,8 @@ export const ErpChallengesSection: React.FC = () => {
           </div>
           <div className="flex-1 flex justify-center">
             <div className="relative">
-              <Image
-                alt="ERP Dashboard"
+              <ContentImage
+                alt="ERP Dashboard - Modern business intelligence and analytics"
                 className="rounded-xl shadow-lg object-cover"
                 height={240}
                 src="/images/blogs/1.jpg"

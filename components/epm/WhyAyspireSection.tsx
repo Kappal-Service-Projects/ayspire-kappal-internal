@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+
+import { ContentImage } from "@/components/ui/OptimizedImage";
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
@@ -110,8 +111,8 @@ export const WhyAyspireSection: React.FC<WhyAyspireProps> = ({
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-300 blur-xl" />
               <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg group-hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
-                <Image
-                  alt="Oracle Partner"
+                <ContentImage
+                  alt="Oracle Partner - Certified EPM implementation partner"
                   className="w-32 h-32 object-contain filter group-hover:brightness-110 transition-all duration-300"
                   height={128}
                   src="/images/clients/oracle.svg"

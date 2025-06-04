@@ -1,7 +1,8 @@
 import { Link } from "@heroui/link";
 import React from "react";
-import Image from "next/image";
 import { button as buttonStyles } from "@heroui/theme";
+
+import { ContentImage } from "@/components/ui/OptimizedImage";
 
 import { ColorChip } from "./chips";
 
@@ -22,8 +23,8 @@ const Card: React.FC<CardProps> = ({
     <div className="max-w-screen bg-slate-50 border border-slate-200 rounded-lg shadow-lg shadow-gray-300 dark:shadow-gray-700 dark:bg-gray-800 dark:border-gray-700 flex flex-col group">
       <ColorChip />
       <Link href={readMoreLink}>
-        <Image
-          alt={title}
+        <ContentImage
+          alt={`${title} - Learn more about this topic`}
           className="rounded-lg px-3 w-full grayscale group-hover:grayscale-0 transition-all duration-300"
           height={500}
           quality={60}

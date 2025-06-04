@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { AvatarImage } from "@/components/ui/OptimizedImage";
 
 export default function TestimonialsSection({
   sectionRef,
@@ -18,9 +18,9 @@ export default function TestimonialsSection({
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
             >
               <div className="flex items-start space-x-4">
-                <Image
-                  alt={t.name}
-                  className="w-16 h-16 rounded-full"
+                <AvatarImage
+                  alt={`${t.name} - Customer testimonial`}
+                  className="w-16 h-16"
                   height={64}
                   src={t.avatar}
                   width={64}

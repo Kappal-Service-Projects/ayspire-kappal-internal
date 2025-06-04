@@ -173,7 +173,7 @@ export default function InnovationShowcaseSection({
                   {/* Metric - aligned to bottom */}
                   <div className="pt-4 border-t border-gray-100 dark:border-gray-700 mt-auto">
                     <div
-                      className={`text-2xl font-bold bg-gradient-to-r contrast-125 drop-shadow-lg  ${item.gradient} bg-clip-text text-transparent mb-1`}
+                      className={`text-2xl font-bold bg-gradient-to-r contrast-125 drop-shadow-lg  text-slate-500 bg-clip-text text-transparent mb-1`}
                     >
                       {item.metric}
                     </div>

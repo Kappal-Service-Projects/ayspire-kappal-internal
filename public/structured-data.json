@@ -1,0 +1,140 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ayspire.com/#organization",
+      "name": "Ayspire",
+      "alternateName": "Ayspire Inc",
+      "url": "https://ayspire.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ayspire.com/logo.png",
+        "width": 250,
+        "height": 60
+      },
+      "description": "Leading digital transformation and enterprise solutions provider",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toronto",
+        "addressRegion": "Ontario",
+        "addressCountry": "CA"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-800-AYSPIRE",
+        "contactType": "Customer Service",
+        "email": "contact@ayspire.com"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/ayspire",
+        "https://twitter.com/ayspire",
+        "https://facebook.com/ayspire"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ayspire.com/#website",
+      "url": "https://ayspire.com",
+      "name": "Ayspire",
+      "description": "Digital transformation and enterprise solutions provider",
+      "publisher": {
+        "@id": "https://ayspire.com/#organization"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://ayspire.com/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Main Navigation",
+      "description": "Primary navigation menu for Ayspire website",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "About",
+          "description": "Learn about Ayspire's mission and expertise",
+          "url": "https://ayspire.com/about"
+        },
+        {
+          "@type": "SiteNavigationElement", 
+          "position": 2,
+          "name": "EPM Solutions",
+          "description": "Enterprise Performance Management solutions",
+          "url": "https://ayspire.com/solutions/epm-solutions"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3, 
+          "name": "ERP Solutions",
+          "description": "Enterprise Resource Planning solutions",
+          "url": "https://ayspire.com/solutions/erp-solutions"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "AI Products", 
+          "description": "AI-driven business tools and solutions",
+          "url": "https://ayspire.com/solutions/ai-products"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 5,
+          "name": "Contact",
+          "description": "Get in touch with our team",
+          "url": "https://ayspire.com/contact"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Digital Transformation Services",
+      "provider": {
+        "@id": "https://ayspire.com/#organization"
+      },
+      "serviceType": "Technology Consulting",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Enterprise Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "EPM Solutions",
+              "description": "Enterprise Performance Management"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ERP Solutions",
+              "description": "Enterprise Resource Planning"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service", 
+              "name": "AI Products",
+              "description": "AI-driven Business Tools"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
