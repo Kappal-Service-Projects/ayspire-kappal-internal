@@ -25,10 +25,10 @@ export default function ERPSolutionsPage() {
       <ErpCapabilities capabilities={erpCapabilities} />
 
       {/* ERP Challenges Section */}
-      <ErpChallengesSection />
+      {/* <ErpChallengesSection /> */}
 
       {/* Why Choose Ayspire Section */}
-      <WhyAyspireErpSection />
+      {/* <WhyAyspireErpSection /> */}
 
       {/* Call to Action Section */}
       <ErpCallToAction />

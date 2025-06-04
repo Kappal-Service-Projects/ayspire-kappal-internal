@@ -86,7 +86,7 @@ export const WhyAyspireSection: React.FC<WhyAyspireProps> = ({
             </ul>
 
             {/* Call-to-action button */}
-            <div className="mt-8">
+            {/* <div className="mt-8">
               <button className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus-outline pulse-border">
                 <span>Partner with Us</span>
                 <svg
@@ -103,7 +103,7 @@ export const WhyAyspireSection: React.FC<WhyAyspireProps> = ({
                   />
                 </svg>
               </button>
-            </div>
+            </div> */}
           </div>
 
           {/* Oracle Partner Logo with enhanced styling */}

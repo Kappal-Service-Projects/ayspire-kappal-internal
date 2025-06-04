@@ -37,8 +37,8 @@ export const ErpHeroSection: React.FC = () => {
 
         <SectionHeader
           className="text-center max-w-4xl"
-          gradientText="Resource Planning (ERP)"
-          primaryText="Enterprise"
+          gradientText="and Managed Services"
+          primaryText="ERP Implementation"
           size="lg"
         />
 

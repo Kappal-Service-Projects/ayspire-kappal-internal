@@ -31,7 +31,7 @@ const WhyPartnerCard: React.FC<WhyPartnerCardProps> = ({
     <div className="flex items-center justify-center w-16 h-16 mb-6 mx-auto rounded-full bg-gradient-to-r from-primary-500 to-secondary group-hover:scale-110 transition-transform duration-300">
       <FontAwesomeIcon className="text-white text-2xl" icon={icon} />
     </div>
-    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">
       {title}
     </h3>
     <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-center">
@@ -44,25 +44,25 @@ export const WhyPartnerWithUsSection: React.FC = () => {
   const partnerships = [
     {
       icon: faHandshake,
-      title: "Remarkable Customer Service",
+      title: "Reliable & Responsive Service",
       description:
         "We go above and beyond to ensure your success. Our dedicated support team provides personalized attention, rapid response times and proactive solutions that keep your business running smoothly.",
     },
     {
       icon: faRocket,
-      title: "Unparalleled Resources",
+      title: "Unmatched Tools and Expertise",
       description:
         "Access to cutting-edge technology, industry expertise and a global network of partners. We bring enterprise-grade resources and best practices to accelerate your digital transformation journey.",
     },
     {
       icon: faBullseye,
-      title: "Pragmatic Approach",
+      title: "Lean & Logical",
       description:
         "We deliver practical, results-driven solutions tailored to your unique business needs. Our methodical approach ensures sustainable outcomes that align with your strategic objectives and operational realities.",
     },
     {
       icon: faLightbulb,
-      title: "Inventing What's Next",
+      title: "Leading Future Innovation",
       description:
         "Stay ahead of the curve with our innovative thinking and forward-looking solutions. We continuously evolve our offerings to anticipate market trends and emerging technologies that will shape your industry's future.",
     },
@@ -136,13 +136,6 @@ export const WhyPartnerWithUsSection: React.FC = () => {
                   strokeWidth={2}
                 />
               </svg>
-            </a>
-            <a
-              aria-label="Learn more about our story"
-              className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-semibold px-8 py-4 rounded-2xl border-2 border-primary-200 dark:border-primary-800 hover:border-primary-300 dark:hover:border-primary-700 hover:bg-primary-50 dark:hover:bg-primary-950/50 hover:scale-105 transition-all duration-300 focus-outline"
-              href="#story"
-            >
-              Our Story
             </a>
           </div>
         </div>

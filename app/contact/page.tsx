@@ -7,7 +7,7 @@ export default function ContactPage() {
     <main className="min-h-[80vh] w-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 py-16 px-4">
       <section className="w-full max-w-xl mx-auto flex flex-col items-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-lg p-8 md:p-12">
         <h1 className="text-3xl md:text-5xl font-extrabold text-primary mb-6 tracking-tight text-center">
-          Contact Us
+          Let&apos;s work together!
         </h1>
         <p className="text-gray-700 dark:text-gray-200 text-lg mb-8 text-center">
           Have a question, partnership inquiry, or want to learn more? Fill out

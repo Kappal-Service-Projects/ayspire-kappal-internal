@@ -23,8 +23,8 @@ export const AdvancedEpmSection: React.FC<AdvancedEpmSectionProps> = ({
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-20">
           <SectionHeader
-            gradientText="Solutions"
-            primaryText="Advanced EPM"
+            gradientText="and Managed Services"
+            primaryText="EPM Implementation"
             size="lg"
           />
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-screen md:max-w-3xl mx-auto px-4">

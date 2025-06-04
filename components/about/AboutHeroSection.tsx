@@ -54,7 +54,7 @@ export const AboutHeroSection: React.FC = () => {
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mt-8 reveal-element">
-          <span className="bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-medium pulse-border">
+          <span className="bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-medium">
             Connected Planning
           </span>
           <span className="bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-medium">

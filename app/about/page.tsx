@@ -20,9 +20,6 @@ export default function AboutPage() {
       {/* Hero Section */}
       <AboutHeroSection />
 
-      {/* Why Partner With Us Section - NEW CONTENT */}
-      <WhyPartnerWithUsSection />
-
       {/* Story Section */}
       <AboutStorySection />
 
@@ -30,10 +27,13 @@ export default function AboutPage() {
       <AboutMissionVisionSection />
 
       {/* Stats Section */}
-      <AboutStatsSection />
+      {/* <AboutStatsSection /> */}
 
       {/* Testimonials Section */}
-      <AboutTestimonialsSection testimonials={testimonials} />
+      {/* <AboutTestimonialsSection testimonials={testimonials} /> */}
+
+      {/* Why Partner With Us Section - NEW CONTENT */}
+      <WhyPartnerWithUsSection />
     </main>
   );
 }

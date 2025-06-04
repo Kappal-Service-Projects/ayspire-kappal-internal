@@ -42,12 +42,6 @@ export const ErpCallToAction: React.FC = () => {
                 />
               </svg>
             </a>
-            <a
-              className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-semibold px-8 py-4 rounded-2xl border-2 border-primary-200 dark:border-primary-800 hover:border-primary-300 dark:hover:border-primary-700 hover:bg-primary-50 dark:hover:bg-primary-950/50 hover:scale-105 transition-all duration-300 focus-outline"
-              href="/products/epm-solutions"
-            >
-              Explore EPM Solutions
-            </a>
           </div>
         </div>
       </div>

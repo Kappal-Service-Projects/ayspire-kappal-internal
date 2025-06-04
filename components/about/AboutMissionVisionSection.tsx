@@ -36,10 +36,12 @@ const MissionVisionCard: React.FC<MissionVisionCardProps> = ({
   <div
     className={`reveal-element bg-gradient-to-br ${type === "mission" ? "from-primary-50 to-primary-100 dark:from-primary-950 dark:to-primary-900" : "from-secondary/20 to-primary-100 dark:from-secondary/10 dark:to-primary-900"} rounded-2xl p-8 h-full`}
   >
-    <div
-      className={`flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-gradient-to-r ${type === "mission" ? "from-primary-500 to-primary-600" : "from-secondary to-primary-500"}`}
-    >
-      <FontAwesomeIcon className="text-white text-2xl" icon={icon} />
+    <div className="flex justify-center mb-6">
+      <div
+        className={`flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${type === "mission" ? "from-primary-500 to-primary-600" : "from-secondary to-primary-500"}`}
+      >
+        <FontAwesomeIcon className="text-white text-2xl" icon={icon} />
+      </div>
     </div>
     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
       {title}
@@ -60,13 +62,15 @@ const ValueCard: React.FC<ValueCardProps> = ({
     className="reveal-element bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-slate-700 group"
     style={{ animationDelay: `${index * 100}ms` }}
   >
-    <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gradient-to-r from-primary-500 to-secondary group-hover:scale-110 transition-transform duration-300">
-      <FontAwesomeIcon className="text-white text-lg" icon={icon} />
+    <div className="flex justify-center mb-4">
+      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-secondary group-hover:scale-110 transition-transform duration-300">
+        <FontAwesomeIcon className="text-white text-lg" icon={icon} />
+      </div>
     </div>
-    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+    <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
       {title}
     </h4>
-    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+    <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
       {description}
     </p>
   </div>
