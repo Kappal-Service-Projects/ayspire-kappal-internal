@@ -7,28 +7,28 @@ const teamMembers = [
   {
     name: "Roshin Rasheed",
     role: "XXX",
-    image: "/images/team/ceo.jpg",
-  },
-  {
-    name: "Priyanka",
-    role: "XXX",
-    image: "/images/team/coo.jpg",
+    image: "/images/team/roshin.jpeg",
   },
   {
     name: "Omkar Kocharekar",
     role: "XXX",
-    image: "/images/team/cto.jpg",
+    image: "/images/team/omkar.jpeg",
   },
   {
-    name: "Lmnop Qrstuv ",
+    name: "Philomina Priyanka John Pius",
     role: "XXX",
-    image: "/images/team/cfo.jpg",
+    image: "/images/team/priyanka.jpeg",
   },
   {
-    name: "Abcd Efgh",
+    name: "Riya Abraham",
     role: "XXX",
-    image: "/images/team/cxo.jpg",
+    image: "/images/team/riya.jpeg",
   },
+  // {
+  //   name: "Abcd Efgh",
+  //   role: "XXX",
+  //   image: "/images/team/cxo.jpg",
+  // },
 ];
 
 export const metadata = {
@@ -106,9 +106,9 @@ export default function TeamPage() {
                     <h3 className="text-xl font-semibold text-white mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-white/80 text-base font-light">
+                    {/* <p className="text-white/80 text-base font-light">
                       {member.role}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               ))}
