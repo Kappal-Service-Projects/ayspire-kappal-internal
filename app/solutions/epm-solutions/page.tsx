@@ -8,7 +8,6 @@ import {
   AdvancedEpmSection,
   EpmValueProposition,
   EpmCapabilities,
-  WhyAyspireSection,
   EpmCallToAction,
   useScrollReveal,
   newEpmSolutions,
@@ -33,7 +32,7 @@ export default function EPMSolutionsPage() {
       <EpmCapabilities capabilities={epmCapabilities} />
 
       {/* Why Choose Ayspire Section */}
-      <WhyAyspireSection />
+      {/* <WhyAyspireSection /> */}
 
       {/* Call to Action Section */}
       <EpmCallToAction />

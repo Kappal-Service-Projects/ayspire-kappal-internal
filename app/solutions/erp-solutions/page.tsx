@@ -6,8 +6,6 @@ import { erpCapabilities } from "./erpCapabilities";
 import {
   ErpHeroSection,
   ErpCapabilities,
-  ErpChallengesSection,
-  WhyAyspireErpSection,
   ErpCallToAction,
   useScrollReveal,
 } from "@/components/erp";

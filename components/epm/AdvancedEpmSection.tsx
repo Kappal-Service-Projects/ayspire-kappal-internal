@@ -60,13 +60,13 @@ export const AdvancedEpmSection: React.FC<AdvancedEpmSectionProps> = ({
             return (
               <div
                 key={solution.title}
-                className={`relative flex flex-col lg:flex-row lg:items-start lg:justify-between gap-2 md:gap-8 lg:gap-12 smooth-transform no-scroll-lag ${
+                className={`relative flex flex-col lg:flex-row lg:items-start lg:justify-between gap-2 md:gap-8 lg:gap-12 pb-20 smooth-transform no-scroll-lag ${
                   isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
               >
                 {/* Background Image - Mobile Optimized */}
                 <div
-                  className={`relative w-full ${widthClasses.image} h-[250px] sm:h-[300px] md:h-[400px] lg:h-[600px] overflow-hidden rounded-2xl md:rounded-3xl will-change-transform mt-2.5 hidden md:block`}
+                  className={`relative w-full ${widthClasses.image} h-64 sm:h-80 md:h-96 lg:h-[60vh] overflow-hidden rounded-2xl md:rounded-3xl will-change-transform mt-3 hidden md:block`}
                 >
                   <ContentImage
                     fill
@@ -85,7 +85,7 @@ export const AdvancedEpmSection: React.FC<AdvancedEpmSectionProps> = ({
 
                 {/* Solution Card - Mobile Optimized */}
                 <div
-                  className={`relative w-full md:w-[calc(100%+1.5rem)] lg:w-full mx-auto ${widthClasses.card} smooth-transform ${
+                  className={`relative w-full px-10 mx-auto ${widthClasses.card} smooth-transform ${
                     isEven ? "lg:-ml-64" : "lg:-mr-64"
                   } mt-0 md:-mt-8 lg:-mt-16 xl:mt-14 z-10`}
                 >
