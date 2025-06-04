@@ -68,7 +68,7 @@ export default function HeroSection() {
           >
             <div className="floating-element">
               <Logo
-                className="w-full h-auto max-w-md mx-auto filter drop-shadow-2xl brightness-110 contrast-125"
+                className="w-full h-auto max-w-md mx-auto filter brightness-110 contrast-125"
                 height={500}
                 width={500}
               />
