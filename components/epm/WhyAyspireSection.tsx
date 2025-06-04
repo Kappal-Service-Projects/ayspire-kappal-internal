@@ -17,11 +17,11 @@ interface WhyAyspireProps {
 
 const defaultPoints: WhyAyspirePoint[] = [
   {
-    text: "Proven expertise in Oracle EPM, analytics, and cloud transformation",
+    text: "Proven expertise in Oracle EPM, analytics and cloud transformation",
     gradient: "from-primary to-secondary",
   },
   {
-    text: "End-to-end EPM consulting, implementation, and support",
+    text: "End-to-end EPM consulting, implementation and support",
     gradient: "from-blue-500 to-cyan-400",
   },
   {

@@ -17,8 +17,8 @@ export const siteConfig = {
       href: "/solutions/erp-solutions",
     },
     {
-      label: "AI Products",
-      href: "/solutions/ai-products",
+      label: "AI Solutions",
+      href: "/solutions/ai-solutions",
     },
     {
       label: "Team",
@@ -39,8 +39,8 @@ export const siteConfig = {
       href: "/solutions/erp-solutions",
     },
     {
-      label: "AI Products",
-      href: "/solutions/ai-products",
+      label: "AI Solutions",
+      href: "/solutions/ai-solutions",
     },
     {
       label: "Team",

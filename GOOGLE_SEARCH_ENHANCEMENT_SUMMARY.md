@@ -35,7 +35,7 @@ Successfully implemented comprehensive structured data markup and Google search 
 
 ### Rounded Corner Buttons
 - Implemented through `potentialAction` schemas
-- Contact, Learn More, and View Solutions buttons
+- Contact, Learn More and View Solutions buttons
 - Enhanced with proper URL structures and action types
 
 ### Sitelinks Enhancement

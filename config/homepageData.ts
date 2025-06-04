@@ -2,25 +2,25 @@ export const services = [
   {
     title: "EPM Solutions",
     icon: "/images/services/solution_1.jpg",
-    desc: "Enterprise Performance Management",
+    desc: "Implementation and support services",
     readMoreLink: "/solutions/epm-solutions",
   },
   {
     title: "ERP Solutions",
     icon: "/images/services/solution_2.jpg",
-    desc: "Enterprise Resource Planning",
+    desc: "Implementation and support services",
     readMoreLink: "/solutions/erp-solutions",
   },
   {
-    title: "AI Products",
+    title: "AI Solutions",
     icon: "/images/services/solution_3.jpg",
     desc: "AI-driven Business Tools",
-    readMoreLink: "/solutions/ai-products",
+    readMoreLink: "/solutions/ai-solutions",
   },
   {
-    title: "Consulting",
+    title: "Business Consulting",
     icon: "/images/services/solution_4.jpg",
-    desc: "Expert Business Consulting",
+    desc: "Business Consulting. Expertly Delivered.",
     readMoreLink: "/consulting",
   },
 ];
@@ -40,7 +40,7 @@ export const testimonials = [
     avatar: "/images/recognition/avatar1.svg",
   },
   {
-    quote: "Professional, reliable, and results-driven team.",
+    quote: "Professional, reliable and results-driven team.",
     author: "John Smith, CFO, Canadian Tech Firm",
     avatar: "/images/recognition/avatar2.svg",
   },

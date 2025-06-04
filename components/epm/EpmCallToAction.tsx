@@ -12,7 +12,7 @@ interface CallToActionProps {
 }
 
 export const EpmCallToAction: React.FC<CallToActionProps> = ({
-  description = "Discover how Ayspire can help you modernize your EPM processes, drive business agility, and achieve your strategic goals.",
+  description = "Discover how Ayspire can help you modernize your EPM processes, drive business agility and achieve your strategic goals.",
   buttonText = "Get Started with Ayspire",
   buttonHref = "/contact",
 }) => {

@@ -21,10 +21,10 @@ export const WhyAyspireErpSection: React.FC = () => {
               <li>Certified Oracle & Anaplan ERP consultants</li>
               <li>Proven track record in complex ERP transformations</li>
               <li>
-                Industry-specific solutions for finance, supply chain, HR, and
+                Industry-specific solutions for finance, supply chain, HR and
                 more
               </li>
-              <li>End-to-end implementation, training, and support</li>
+              <li>End-to-end implementation, training and support</li>
               <li>Agile, collaborative approach for rapid value delivery</li>
             </ul>
           </div>

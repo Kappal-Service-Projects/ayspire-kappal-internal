@@ -2,28 +2,28 @@ export const epmCapabilities = [
   {
     title: "Connected Planning",
     description:
-      "Integrate financial, operational, and strategic plans for a unified view of your business. Break down silos and enable real-time collaboration across departments.",
+      "Integrate financial, operational and strategic plans for a unified view of your business. Break down silos and enable real-time collaboration across departments.",
     imageUrl: "/images/services/1.png",
     icon: "planning",
   },
   {
     title: "Advanced Analytics",
     description:
-      "Leverage predictive analytics, scenario modeling, and AI-driven insights to make smarter, faster decisions and stay ahead of the competition.",
+      "Leverage predictive analytics, scenario modeling and AI-driven insights to make smarter, faster decisions and stay ahead of the competition.",
     imageUrl: "/images/services/2.png",
     icon: "analytics",
   },
   {
     title: "Performance Management",
     description:
-      "Monitor KPIs, automate reporting, and align teams with organizational goals. Drive accountability and continuous improvement.",
+      "Monitor KPIs, automate reporting and align teams with organizational goals. Drive accountability and continuous improvement.",
     imageUrl: "/images/services/3.png",
     icon: "reporting",
   },
   {
     title: "Regulatory Compliance",
     description:
-      "Automate compliance checks, ensure data integrity, and generate audit-ready reports to meet evolving regulatory requirements.",
+      "Automate compliance checks, ensure data integrity and generate audit-ready reports to meet evolving regulatory requirements.",
     imageUrl: "/images/services/4.png",
     icon: "integration",
   },

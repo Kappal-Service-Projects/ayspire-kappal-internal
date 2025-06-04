@@ -71,7 +71,7 @@ export default function TeamPage() {
 
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 Our team brings diverse expertise across enterprise planning,
-                analytics, and digital transformation to deliver exceptional
+                analytics and digital transformation to deliver exceptional
                 results.
               </p>
             </div>

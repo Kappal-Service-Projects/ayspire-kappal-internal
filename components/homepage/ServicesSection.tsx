@@ -71,8 +71,8 @@ export default function ServicesSection({
             ref={descRef}
             className={`text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed transition-all duration-700 delay-200 ${descState.isVisible ? "opacity-100 translate-y-0 animate-slide-in-blurred-bottom" : "opacity-50 translate-y-4"}`}
           >
-            Comprehensive digital solutions that drive enterprise transformation
-            and sustainable growth through innovative technology partnerships.
+            Supporting enterprise growth with seamless digital integration and
+            transformative technology partnerships.
           </p>
 
           <div
@@ -134,13 +134,6 @@ export default function ServicesSection({
                   strokeWidth={2}
                 />
               </svg>
-            </a>
-            <a
-              aria-label="Explore our products"
-              className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-semibold px-8 py-4 rounded-2xl border-2 border-primary-200 dark:border-primary-800 hover:border-primary-300 dark:hover:border-primary-700 hover:bg-primary-50 dark:hover:bg-primary-950/50 hover:scale-105 transition-all duration-300 focus-outline"
-              href="/products"
-            >
-              Explore Products
             </a>
           </div>
         </div>

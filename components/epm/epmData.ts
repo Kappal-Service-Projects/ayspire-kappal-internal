@@ -17,7 +17,7 @@ export const newEpmSolutions: EpmSolution[] = [
   {
     title: "Workday Model Advisor",
     description:
-      "Ayspire Workday Model Advisor helps organizations unlock the full potential of their Workday implementation by analyzing configuration blueprints and business process frameworks against industry best practices. It performs a comprehensive review of core HCM, payroll, and finance modules, highlighting optimization opportunities and actionable recommendations. By leveraging Ayspire's intelligent automation and data validation engine, the Workday Model Advisor ensures streamlined configurations, compliance readiness, and operational efficiency across the enterprise.",
+      "Ayspire Workday Model Advisor helps organizations unlock the full potential of their Workday implementation by analyzing configuration blueprints and business process frameworks against industry best practices. It performs a comprehensive review of core HCM, payroll and finance modules, highlighting optimization opportunities and actionable recommendations. By leveraging Ayspire's intelligent automation and data validation engine, the Workday Model Advisor ensures streamlined configurations, compliance readiness and operational efficiency across the enterprise.",
     imageUrl: "/images/epm/workday.jpg",
     features: [
       "Workforce Planning",
@@ -30,7 +30,7 @@ export const newEpmSolutions: EpmSolution[] = [
   {
     title: "Connected Planning",
     description:
-      "Ayspire Connected Planning empowers organizations to seamlessly link financial, operational, and strategic plans across all business units. Built on a foundation of real-time collaboration and data integration, Ayspire enables a unified planning ecosystem where finance, HR, supply chain, and sales teams can align and respond dynamically to change. With deep platform expertise and agile methodology, Ayspire eliminates silos and enables more accurate forecasting, scenario modeling, and business-driven outcomes.",
+      "Ayspire Connected Planning empowers organizations to seamlessly link financial, operational and strategic plans across all business units. Built on a foundation of real-time collaboration and data integration, Ayspire enables a unified planning ecosystem where finance, HR, supply chain and sales teams can align and respond dynamically to change. With deep platform expertise and agile methodology, Ayspire eliminates silos and enables more accurate forecasting, scenario modeling and business-driven outcomes.",
     imageUrl: "/images/epm/financial.jpg",
     features: [
       "Cross-Functional Integration",
@@ -43,7 +43,7 @@ export const newEpmSolutions: EpmSolution[] = [
   {
     title: "Workforce Planning",
     description:
-      "Ayspire Workforce Planning delivers a future-ready approach to managing talent needs through data-driven insights and integrated planning. Whether you're aligning workforce strategy with business goals, forecasting headcount, or modeling cost implications, Ayspire provides a comprehensive solution. By connecting HR, finance, and business leaders on a single platform, we help organizations identify skill gaps, optimize resource allocation, and drive agility in talent management strategies.",
+      "Ayspire Workforce Planning delivers a future-ready approach to managing talent needs through data-driven insights and integrated planning. Whether you're aligning workforce strategy with business goals, forecasting headcount, or modeling cost implications, Ayspire provides a comprehensive solution. By connecting HR, finance and business leaders on a single platform, we help organizations identify skill gaps, optimize resource allocation and drive agility in talent management strategies.",
     imageUrl: "/images/epm/workforce.jpg",
     features: [
       "Predictive Analytics",

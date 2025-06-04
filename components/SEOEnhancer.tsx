@@ -291,7 +291,7 @@ export default function SEOEnhancer({
                 name: "What services does Ayspire provide?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Ayspire provides comprehensive digital transformation services including ERP solutions, EPM solutions, AI-powered analytics, cloud services, and enterprise consulting.",
+                  text: "Ayspire provides comprehensive digital transformation services including ERP solutions, EPM solutions, AI-powered analytics, cloud services and enterprise consulting.",
                 },
               },
               {
@@ -299,7 +299,7 @@ export default function SEOEnhancer({
                 name: "What industries does Ayspire serve?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "We serve various industries including finance, healthcare, manufacturing, retail, and technology companies looking to modernize their operations.",
+                  text: "We serve various industries including finance, healthcare, manufacturing, retail and technology companies looking to modernize their operations.",
                 },
               },
               {
@@ -417,7 +417,7 @@ export const seoConfigs = {
     pageType: "website" as const,
     title: "Ayspire - Digital Transformation & Enterprise Solutions",
     description:
-      "Leading provider of digital transformation, ERP, EPM, and AI-powered enterprise solutions. Transform your business with cutting-edge technology.",
+      "Leading provider of digital transformation, ERP, EPM and AI-powered enterprise solutions. Transform your business with cutting-edge technology.",
     keywords: [
       "digital transformation",
       "enterprise solutions",
@@ -432,7 +432,7 @@ export const seoConfigs = {
     pageType: "organization" as const,
     title: "About Ayspire - Our Story & Mission",
     description:
-      "Learn about Ayspire's journey in digital transformation, our mission to empower businesses, and our commitment to innovation.",
+      "Learn about Ayspire's journey in digital transformation, our mission to empower businesses and our commitment to innovation.",
     keywords: [
       "about ayspire",
       "company story",
@@ -445,7 +445,7 @@ export const seoConfigs = {
     pageType: "product" as const,
     title: "Enterprise Services - ERP, EPM & Digital Solutions",
     description:
-      "Comprehensive enterprise services including ERP implementations, EPM solutions, AI analytics, and digital transformation consulting.",
+      "Comprehensive enterprise services including ERP implementations, EPM solutions, AI analytics and digital transformation consulting.",
     keywords: [
       "enterprise services",
       "ERP implementation",
@@ -458,7 +458,7 @@ export const seoConfigs = {
     pageType: "website" as const,
     title: "Ayspire Insights - Digital Transformation Blog",
     description:
-      "Expert insights on digital transformation, enterprise technology trends, and business innovation strategies.",
+      "Expert insights on digital transformation, enterprise technology trends and business innovation strategies.",
     keywords: [
       "digital transformation blog",
       "enterprise technology",

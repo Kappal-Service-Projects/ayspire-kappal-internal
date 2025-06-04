@@ -46,13 +46,13 @@ export const WhyPartnerWithUsSection: React.FC = () => {
       icon: faHandshake,
       title: "Remarkable Customer Service",
       description:
-        "We go above and beyond to ensure your success. Our dedicated support team provides personalized attention, rapid response times, and proactive solutions that keep your business running smoothly.",
+        "We go above and beyond to ensure your success. Our dedicated support team provides personalized attention, rapid response times and proactive solutions that keep your business running smoothly.",
     },
     {
       icon: faRocket,
       title: "Unparalleled Resources",
       description:
-        "Access to cutting-edge technology, industry expertise, and a global network of partners. We bring enterprise-grade resources and best practices to accelerate your digital transformation journey.",
+        "Access to cutting-edge technology, industry expertise and a global network of partners. We bring enterprise-grade resources and best practices to accelerate your digital transformation journey.",
     },
     {
       icon: faBullseye,

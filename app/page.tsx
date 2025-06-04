@@ -73,11 +73,11 @@ export default function Home() {
         <WhatWeDoSection />
         <BlogCardsSection />
         <AboutUsStaticSection />
-        <ClientsSection
+        {/* <ClientsSection
           clients={clients}
           sectionRef={clientsRef}
           visible={clientsVisible}
-        />
+        /> */}
         <InnovationShowcaseSection
           sectionRef={innovationRef}
           visible={innovationVisible}

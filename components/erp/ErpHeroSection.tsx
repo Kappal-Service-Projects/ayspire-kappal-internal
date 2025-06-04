@@ -44,7 +44,7 @@ export const ErpHeroSection: React.FC = () => {
 
         <p className="max-w-4xl text-center justify-center items-center text-lg md:text-2xl text-gray-700 dark:text-gray-200 mb-6 reveal-element">
           Modernize your business with Ayspire&apos;s Oracle and Anaplan-based
-          ERP solutions. Integrate every function, automate processes, and gain
+          ERP solutions. Integrate every function, automate processes and gain
           real-time insights for smarter, faster decisions.
         </p>
 

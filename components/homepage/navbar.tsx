@@ -62,7 +62,7 @@ export const Navbar = () => {
               isExternal
               aria-label="Visit Ayspire LinkedIn page"
               className="text-gray-700 hover:text-blue-600 transition-colors duration-300 p-3 rounded-md focus-outline hover:bg-blue-50"
-              href="https://www.linkedin.com/company/ayspire-inc/"
+              href="https://www.linkedin.com/company/ayspire"
             >
               <FontAwesomeIcon className="text-xl" icon={faLinkedin} />
             </Link>
@@ -96,7 +96,7 @@ export const Navbar = () => {
                 isExternal
                 aria-label="Visit Ayspire LinkedIn page"
                 className="block text-gray-700 hover:text-blue-600 transition-colors py-3 px-2 rounded-md focus-outline hover:bg-blue-50"
-                href="https://www.linkedin.com/company/ayspire-inc/"
+                href="https://www.linkedin.com/company/ayspire"
               >
                 LinkedIn
               </Link>

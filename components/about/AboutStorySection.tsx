@@ -3,6 +3,7 @@
 import React from "react";
 
 import SectionHeader from "../ui/SectionHeader";
+
 import { ContentImage } from "@/components/ui/OptimizedImage";
 
 export const AboutStorySection: React.FC = () => {
@@ -33,8 +34,8 @@ export const AboutStorySection: React.FC = () => {
                 Born in Canada and now serving clients globally, we&apos;ve
                 built our reputation on delivering high-value industry solutions
                 through connected planning and analytics. Our journey began with
-                a simple belief: when you bring data, people, and plans
-                together, extraordinary things happen.
+                a simple belief: when you bring data, people and plans together,
+                extraordinary things happen.
               </p>
               <p>
                 Today, we stand as a trusted partner to organizations across

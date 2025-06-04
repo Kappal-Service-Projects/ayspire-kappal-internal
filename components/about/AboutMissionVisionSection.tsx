@@ -88,7 +88,7 @@ export const AboutMissionVisionSection: React.FC = () => {
     },
     {
       description:
-        "We operate with transparency, honesty, and ethical standards in all our business practices.",
+        "We operate with transparency, honesty and ethical standards in all our business practices.",
       icon: faShield,
       title: "Integrity",
     },
@@ -109,13 +109,13 @@ export const AboutMissionVisionSection: React.FC = () => {
         {/* Mission & Vision Grid */}
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
           <MissionVisionCard
-            description="To empower organizations with connected planning and analytics solutions that drive smarter decision-making, foster innovation, and accelerate sustainable growth in an ever-evolving digital landscape."
+            description="To empower organizations with connected planning and analytics solutions that drive smarter decision-making, foster innovation and accelerate sustainable growth in an ever-evolving digital landscape."
             icon={faBullseye}
             title="Our Mission"
             type="mission"
           />
           <MissionVisionCard
-            description="To be the global leader in enterprise performance management, transforming how organizations plan, analyze, and execute their strategies through innovative technology and unparalleled expertise."
+            description="To be the global leader in enterprise performance management, transforming how organizations plan, analyze and execute their strategies through innovative technology and unparalleled expertise."
             icon={faEye}
             title="Our Vision"
             type="vision"

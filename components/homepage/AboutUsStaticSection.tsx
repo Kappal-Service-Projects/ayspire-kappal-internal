@@ -17,11 +17,10 @@ export default function AboutUsStaticSection() {
           size="lg"
         />
         <p className="text-lg md:text-2xl text-white/90 font-light drop-shadow-md">
-          Quite simply, we are “all in” on client success. Our focus is
-          delivering high-value industry solutions through connected planning
-          &amp; analytics. We bring data, people and plans together. We offer a
-          range of Technical and Advisory services to our clients depending on
-          their need.
+          We’re fully invested in client success. Through connected planning and
+          analytics, we deliver solutions that bring data, people and plans
+          together. Our range of technical and advisory services is customized
+          to fit your unique requirements.
         </p>
       </div>
     </section>

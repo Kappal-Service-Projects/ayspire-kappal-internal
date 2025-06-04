@@ -11,14 +11,14 @@ export const cardData = [
   {
     title: "Make Better Decisions with Analytics",
     description:
-      "Unlock the power of data-driven insights to make smarter, faster, and more impactful decisions for your business.",
+      "Unlock the power of data-driven insights to make smarter, faster and more impactful decisions for your business.",
     imageUrl: "/images/blogs/2.jpg",
     readMoreLink: "/blog/better-decision-with-analytics",
   },
   {
     title: "Master Your Personal Finance",
     description:
-      "Take control of your financial future with smart strategies and tools. Learn how to budget, save, and invest for long-term success.",
+      "Take control of your financial future with smart strategies and tools. Learn how to budget, save and invest for long-term success.",
     imageUrl: "/images/blogs/3.jpg",
     readMoreLink: "/blog/personal-finance",
   },

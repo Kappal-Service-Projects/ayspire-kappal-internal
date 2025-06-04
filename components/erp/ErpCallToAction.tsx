@@ -19,7 +19,7 @@ export const ErpCallToAction: React.FC = () => {
             size="md"
           />
           <p className="max-w-xl mx-auto text-lg md:text-xl text-gray-700 dark:text-gray-200 mb-8 reveal-element">
-            Discover how Ayspire can help you unify, automate, and optimize your
+            Discover how Ayspire can help you unify, automate and optimize your
             business with next-generation ERP solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center reveal-element">

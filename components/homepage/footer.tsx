@@ -31,14 +31,14 @@ export const Footer: React.FC = () => {
                     Careers
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                     href="/blog"
                   >
                     Press
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div>
@@ -49,23 +49,7 @@ export const Footer: React.FC = () => {
                 <li>
                   <Link
                     className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                    href="#"
-                  >
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                    href="#"
-                  >
-                    Help Center
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                    href="#"
+                    href="/privacy-policy"
                   >
                     Privacy Policy
                   </Link>
@@ -73,7 +57,7 @@ export const Footer: React.FC = () => {
                 <li>
                   <Link
                     className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                    href="#"
+                    href="/terms-of-service"
                   >
                     Terms of Service
                   </Link>
@@ -87,32 +71,9 @@ export const Footer: React.FC = () => {
               <ul className="mt-4 space-y-2">
                 <li>
                   <Link
+                    isExternal
                     className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                    href="#"
-                  >
-                    Facebook
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                    href="#"
-                  >
-                    Instagram
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                    href="#"
-                  >
-                    Twitter
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                    href="#"
+                    href="https://www.linkedin.com/company/ayspire"
                   >
                     LinkedIn
                   </Link>

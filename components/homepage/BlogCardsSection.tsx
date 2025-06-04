@@ -29,18 +29,19 @@ export default function BlogCardsSection() {
       />
       <div
         ref={cardsRef}
-        className={`max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-700 ${
+        className={`max-w-7xl mx-auto px-4 pb-10 grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-700 overflow-hidden ${
           cardsVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-12"
         }`}
       >
         {featuredBlogPosts.map((post, i) => (
-          <div key={i} className="flex justify-center">
+          <div key={i} className="w-full max-w-none">
             <BlogCard
               description={post.description}
               href={post.href}
               image={post.image}
+              showReadMore={false}
               title={post.title}
               width="lg"
             />
