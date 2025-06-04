@@ -24,7 +24,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen pt-20 md:pt-24 lg:pt-28 flex items-center overflow-hidden bg-gradient-to-br from-slate-900/50 via-primary-900/50 to-violet-900/50 text-white">
+    <section className="relative min-h-screen pt-20 md:pt-24 lg:pt-28 flex items-center overflow-hidden bg-gradient-to-br from-sky-600/10 via-sky-800/10 to-sky-500/10  text-white">
       <div className="absolute inset-0 tech-pattern" />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-24 lg:py-32 z-20 pointer-events-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -73,14 +73,14 @@ export default function HeroSection() {
                 width={500}
               />
             </div>
-            <div
+            {/* <div
               className="absolute top-0 right-0 w-40 h-40 rounded-full bg-gradient-to-r from-cyan-700 to-teal-300 opacity-30 floating-element"
               style={{ animationDelay: "1s" }}
             />
             <div
               className="absolute -bottom-10 -left-10 w-20 h-20 rounded-full bg-gradient-to-r from-teal-700 to-cyan-500 opacity-30 floating-element"
               style={{ animationDelay: "2s" }}
-            />
+            /> */}
           </div>
         </div>
       </div>
