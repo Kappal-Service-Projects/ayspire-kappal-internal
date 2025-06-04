@@ -39,11 +39,6 @@ video {
   scroll-behavior: smooth !important;
 }
 
-/* Prevent double scrollbars from components */
-.relative {
-  overflow-x: visible; /* Override any accidental overflow hidden */
-}
-
 /* Ensure video backgrounds don't interfere with scroll */
 .sticky-video-background {
   position: fixed;
