@@ -2,27 +2,32 @@ import React from "react";
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import OptimizedImage from "@/components/ui/OptimizedImage";
+import { Link } from "@heroui/link";
 
 const teamMembers = [
   {
     name: "Roshin Rasheed",
     role: "XXX",
     image: "/images/team/roshin.jpeg",
+    linkedIn: "https://www.linkedin.com/in/roshin-rasheed/",
   },
   {
     name: "Omkar Kocharekar",
     role: "XXX",
     image: "/images/team/omkar.png",
+    linkedIn: "https://www.linkedin.com/in/omkar-kocharekar-94591994/",
   },
   {
     name: "Philomina Priyanka John Pius",
     role: "XXX",
     image: "/images/team/priyanka.png",
+    linkedIn: "https://www.linkedin.com/in/philomina-priyanka-john-pius/",
   },
   {
     name: "Riya Abraham",
     role: "XXX",
     image: "/images/team/riya.png",
+    linkedIn: "https://www.linkedin.com/in/riya-abraham-82258b1ba/",
   },
   // {
   //   name: "Abcd Efgh",
@@ -81,36 +86,44 @@ export default function TeamPage() {
           <div className="w-full lg:w-2/3 min-w-0">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full">
               {teamMembers.map((member) => (
-                <div
+                <Link
                   key={member.name}
-                  className="group relative h-80 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl w-full min-w-0"
+                  isExternal
+                  href={member.linkedIn}
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
-                  {/* Card background with overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/5 z-10" />
+                  <div
+                    key={member.name}
+                    className="group relative h-80 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl w-full min-w-0"
+                  >
+                    {/* Card background with overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/5 z-10" />
 
-                  {/* Member image */}
-                  <div className="absolute inset-0 bg-slate-200 dark:bg-slate-800 transition-transform duration-500 group-hover:scale-110 overflow-hidden">
-                    <OptimizedImage
-                      fill
-                      alt={`${member.name} - ${member.role} at Ayspire Inc.`}
-                      className="w-full h-full object-cover"
-                      priority={false}
-                      quality={90}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      src={member.image}
-                    />
-                  </div>
+                    {/* Member image */}
+                    <div className="absolute inset-0 bg-slate-200 dark:bg-slate-800 transition-transform duration-500 group-hover:scale-110 overflow-hidden">
+                      <OptimizedImage
+                        fill
+                        alt={`${member.name} - ${member.role} at Ayspire Inc.`}
+                        className="w-full h-full object-cover"
+                        priority={false}
+                        quality={90}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        src={member.image}
+                      />
+                    </div>
 
-                  {/* Member info - positioned at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform transition-transform duration-300 group-hover:translate-y-[-8px]">
-                    <h3 className="text-xl font-semibold text-white mb-1">
-                      {member.name}
-                    </h3>
-                    {/* <p className="text-white/80 text-base font-light">
+                    {/* Member info - positioned at bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-center transform transition-transform duration-300 group-hover:translate-y-[-8px]">
+                      <h3 className="text-xl font-semibold text-white mb-1">
+                        {member.name}
+                      </h3>
+                      {/* <p className="text-white/80 text-base font-light">
                       {member.role}
                     </p> */}
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
