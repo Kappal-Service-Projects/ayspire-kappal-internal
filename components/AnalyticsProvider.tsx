@@ -211,6 +211,26 @@ class UXAnalytics {
 
     // Send to custom analytics endpoint
     if (process.env.NODE_ENV === "production") {
+      // Modern approach: collect only necessary, privacy-friendly browser info
+      const browserInfo = {
+        viewport: {
+          width: window.innerWidth,
+          height: window.innerHeight,
+        },
+        screen: {
+          width: window.screen.width,
+          height: window.screen.height,
+        },
+        language: navigator.language,
+        platform: navigator.platform,
+        // Use feature detection instead of user agent parsing
+        features: {
+          touchSupport: "ontouchstart" in window || navigator.maxTouchPoints > 0,
+          cookieEnabled: navigator.cookieEnabled,
+          onLine: navigator.onLine,
+        },
+      };
+
       fetch("/api/analytics", {
         method: "POST",
         headers: {
@@ -220,7 +240,7 @@ class UXAnalytics {
           ...event,
           timestamp: Date.now(),
           url: window.location.href,
-          userAgent: navigator.userAgent,
+          browser: browserInfo, // Modern replacement for userAgent
         }),
       }).catch(() => {
         // Silently fail for analytics
@@ -229,6 +249,7 @@ class UXAnalytics {
 
     // Log in development
     if (process.env.NODE_ENV === "development") {
+      // eslint-disable-next-line no-console
       console.log("Analytics Event:", event);
     }
   }
@@ -274,11 +295,8 @@ class UXAnalytics {
 // Analytics Hook
 export function useAnalytics() {
   useEffect(() => {
-    const analytics = UXAnalytics.getInstance();
-
-    return () => {
-      // Cleanup if needed
-    };
+    UXAnalytics.getInstance();
+    // Initialize analytics tracking
   }, []);
 
   return {

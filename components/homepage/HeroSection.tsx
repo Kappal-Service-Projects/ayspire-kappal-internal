@@ -1,28 +1,8 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 import { Logo } from "./logo";
 
 export default function HeroSection() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Detect mobile devices for performance optimization
-    const checkIsMobile = () => {
-      setIsMobile(
-        window.innerWidth <= 768 ||
-          /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-            navigator.userAgent,
-          ),
-      );
-    };
-
-    checkIsMobile();
-    window.addEventListener("resize", checkIsMobile, { passive: true });
-
-    return () => window.removeEventListener("resize", checkIsMobile);
-  }, []);
-
   return (
     <section className="relative min-h-screen pt-20 md:pt-24 lg:pt-28 flex items-center overflow-hidden bg-gradient-to-br from-sky-600/10 via-sky-800/10 to-sky-500/10  text-white">
       <div className="absolute inset-0 tech-pattern" />

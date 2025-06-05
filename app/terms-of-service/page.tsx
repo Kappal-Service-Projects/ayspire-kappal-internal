@@ -62,10 +62,10 @@ export default function TermsOfServicePage() {
                   <p className="text-muted-foreground leading-relaxed">
                     Welcome to the official website of Ayspire Technologies
                     Private Limited (&quot;Ayspire&quot;). By accessing or using
-                    our website, products, or services, you agree to comply
-                    with and be bound by the following Terms of Use. If you do
-                    not agree with these terms, you should not use our website
-                    or services.
+                    our website, products, or services, you agree to comply with
+                    and be bound by the following Terms of Use. If you do not
+                    agree with these terms, you should not use our website or
+                    services.
                   </p>
                 </section>
 
@@ -144,9 +144,9 @@ export default function TermsOfServicePage() {
                     and without warranties of any kind, either express or
                     implied. While Ayspire makes every effort to ensure the
                     accuracy and reliability of the content, we do not warrant
-                    that the site will be uninterrupted or error-free, nor do
-                    we make any guarantees regarding the completeness, accuracy,
-                    or reliability of any content or materials.
+                    that the site will be uninterrupted or error-free, nor do we
+                    make any guarantees regarding the completeness, accuracy, or
+                    reliability of any content or materials.
                   </p>
                 </section>
 

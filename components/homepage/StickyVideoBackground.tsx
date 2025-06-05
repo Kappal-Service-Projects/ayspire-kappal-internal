@@ -1,26 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useIsMobile } from "@/hooks/useDeviceDetection";
 
 export default function StickyVideoBackground() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Detect mobile devices for performance optimization
-    const checkIsMobile = () => {
-      setIsMobile(
-        window.innerWidth <= 768 ||
-          /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-            navigator.userAgent,
-          ),
-      );
-    };
-
-    checkIsMobile();
-    window.addEventListener("resize", checkIsMobile, { passive: true });
-
-    return () => window.removeEventListener("resize", checkIsMobile);
-  }, []);
+  // Use modern device detection instead of deprecated navigator.userAgent
+  const isMobile = useIsMobile();
 
   return (
     <div

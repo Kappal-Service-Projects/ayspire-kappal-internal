@@ -1,38 +1,16 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export default function FixedBgSection({
   sectionRef,
-  visible,
+  visible: _visible,
 }: {
   sectionRef: React.RefObject<HTMLElement>;
   visible: boolean;
 }) {
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Detect if device is mobile on client side
-  useEffect(() => {
-    const checkIfMobile = () => {
-      const mobile =
-        window.innerWidth <= 768 ||
-        /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent,
-        );
-
-      setIsMobile(mobile);
-    };
-
-    // Check on initial load
-    checkIfMobile();
-
-    // Recheck on resize
-    window.addEventListener("resize", checkIfMobile);
-
-    // Cleanup
-    return () => window.removeEventListener("resize", checkIfMobile);
-  }, []);
+  // Modern device detection available if needed in future
+  // const isMobile = useIsMobile();
 
   return (
     <section

@@ -1,7 +1,6 @@
 import { Link } from "@heroui/link";
 
 import { ContentImage } from "@/components/ui/OptimizedImage";
-
 import { BlogPosts } from "@/components/posts";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 

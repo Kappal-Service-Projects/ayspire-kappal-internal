@@ -2,9 +2,9 @@ import { Link } from "@heroui/link";
 import React from "react";
 import { button as buttonStyles } from "@heroui/theme";
 
-import { ContentImage } from "@/components/ui/OptimizedImage";
-
 import { ColorChip } from "./chips";
+
+import { ContentImage } from "@/components/ui/OptimizedImage";
 
 interface CardProps {
   title: string;
