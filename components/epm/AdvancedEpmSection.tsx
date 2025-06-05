@@ -46,6 +46,7 @@ export const AdvancedEpmSection: React.FC<AdvancedEpmSectionProps> = ({
                 title: "text-lg font-semibold text-primary",
                 trigger: "py-0 transition-all duration-300 ease-in-out",
               }}
+              selectionMode="multiple"
               variant="splitted"
             >
               {solutions.map((solution, _index) => {
