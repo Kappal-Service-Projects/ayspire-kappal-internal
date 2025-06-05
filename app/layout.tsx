@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import clsx from "clsx";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
@@ -199,6 +200,7 @@ export default function RootLayout({
             </div>
             {/* </Providers> */}
             <Analytics />
+            <SpeedInsights />
           </ToastProvider>
         </AnalyticsProvider>
       </body>
