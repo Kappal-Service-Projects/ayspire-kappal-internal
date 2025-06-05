@@ -12,17 +12,17 @@ const teamMembers = [
   {
     name: "Omkar Kocharekar",
     role: "XXX",
-    image: "/images/team/omkar.jpeg",
+    image: "/images/team/omkar.png",
   },
   {
     name: "Philomina Priyanka John Pius",
     role: "XXX",
-    image: "/images/team/priyanka.jpeg",
+    image: "/images/team/priyanka.png",
   },
   {
     name: "Riya Abraham",
     role: "XXX",
-    image: "/images/team/riya.jpeg",
+    image: "/images/team/riya.png",
   },
   // {
   //   name: "Abcd Efgh",

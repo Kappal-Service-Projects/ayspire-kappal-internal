@@ -3,15 +3,17 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * Comprehensive Image Optimization Script for Ayspire Corporate Website
+ * Comprehensive Smart Image Optimization Script for Ayspire Corporate Website
  * 
  * Features:
+ * - Smart synchronization: only processes new/modified images
+ * - Automatically removes optimized versions of deleted source images
  * - Converts JPG/PNG to WebP format
  * - Generates multiple responsive sizes
  * - Optimizes compression while maintaining quality
  * - Creates fallback formats for older browsers
- * - Preserves original files with .original extension
- * - Cleans up previous optimized images before generating new ones
+ * - Preserves original files and only modifies optimized directory
+ * - Cleans up empty directories after removing orphaned files
  */
 
 const IMAGE_DIR = path.join(process.cwd(), 'public', 'images');
@@ -203,42 +205,190 @@ async function generateOptimizationReport(allResults) {
 }
 
 /**
- * Clean up optimized directory - removes all previously optimized images
+ * Get all optimized files with their source mappings
  */
-async function cleanupOptimizedDirectory() {
-  if (fs.existsSync(OPTIMIZED_DIR)) {
-    console.log('🧹 Cleaning up previous optimized images...');
-    try {
-      fs.rmSync(OPTIMIZED_DIR, { recursive: true, force: true });
-      console.log('✅ Previous optimized images removed successfully');
-    } catch (error) {
-      console.error('❌ Error removing optimized directory:', error.message);
-      throw error;
+async function getOptimizedFiles(dir) {
+  const optimizedFiles = new Map();
+  
+  if (!fs.existsSync(dir)) {
+    return optimizedFiles;
+  }
+  
+  function walkOptimizedDir(currentDir) {
+    const items = fs.readdirSync(currentDir);
+    
+    for (const item of items) {
+      const fullPath = path.join(currentDir, item);
+      const stat = fs.statSync(fullPath);
+      
+      if (stat.isDirectory()) {
+        walkOptimizedDir(fullPath);
+      } else if (stat.isFile() && /\.(webp|jpg|jpeg|png)$/i.test(item)) {
+        const relativePath = path.relative(OPTIMIZED_DIR, fullPath);
+        const relativeDir = path.dirname(relativePath);
+        
+        // Extract original filename from optimized filename
+        const nameWithoutExt = path.parse(item).name;
+        const originalName = nameWithoutExt.replace(/-(?:thumbnail|small|medium|large|xlarge)$/, '');
+        
+        const sourceKey = path.join(relativeDir === '.' ? '' : relativeDir, originalName);
+        
+        if (!optimizedFiles.has(sourceKey)) {
+          optimizedFiles.set(sourceKey, []);
+        }
+        optimizedFiles.get(sourceKey).push({
+          fullPath,
+          relativePath,
+          filename: item,
+          size: stat.size,
+          modifiedTime: stat.mtime
+        });
+      }
     }
-  } else {
-    console.log('📁 No previous optimized images found');
+  }
+  
+  walkOptimizedDir(dir);
+  return optimizedFiles;
+}
+
+/**
+ * Smart synchronization between source images and optimized images
+ */
+async function syncOptimizedImages(sourceImages) {
+  console.log('🔄 Synchronizing optimized images...');
+  
+  const optimizedFiles = await getOptimizedFiles(OPTIMIZED_DIR);
+  const sourceImageMap = new Map();
+  
+  // Create map of source images by their key (relative path without extension)
+  sourceImages.forEach(img => {
+    const nameWithoutExt = path.parse(img.filename).name;
+    const relativeDir = path.dirname(img.relativePath);
+    const sourceKey = path.join(relativeDir === '.' ? '' : relativeDir, nameWithoutExt);
+    sourceImageMap.set(sourceKey, img);
+  });
+  
+  const toProcess = [];
+  const toRemove = [];
+  
+  // Check for new or modified source images
+  for (const [sourceKey, sourceImage] of sourceImageMap) {
+    const optimizedVariants = optimizedFiles.get(sourceKey);
+    
+    if (!optimizedVariants || optimizedVariants.length === 0) {
+      // New image - needs processing
+      toProcess.push(sourceImage);
+      console.log(`➕ New image found: ${sourceImage.relativePath}`);
+    } else {
+      // Check if source is newer than optimized versions
+      const sourceModTime = fs.statSync(sourceImage.fullPath).mtime;
+      const newestOptimized = Math.max(...optimizedVariants.map(opt => opt.modifiedTime.getTime()));
+      
+      if (sourceModTime.getTime() > newestOptimized) {
+        // Source is newer - needs reprocessing
+        toProcess.push(sourceImage);
+        console.log(`🔄 Modified image found: ${sourceImage.relativePath}`);
+        
+        // Remove old optimized versions
+        optimizedVariants.forEach(opt => {
+          try {
+            fs.unlinkSync(opt.fullPath);
+            console.log(`🗑️  Removed outdated: ${opt.relativePath}`);
+          } catch (error) {
+            console.warn(`⚠️  Could not remove ${opt.relativePath}:`, error.message);
+          }
+        });
+      }
+    }
+  }
+  
+  // Check for orphaned optimized images (source deleted)
+  for (const [sourceKey, optimizedVariants] of optimizedFiles) {
+    if (!sourceImageMap.has(sourceKey)) {
+      toRemove.push(...optimizedVariants);
+    }
+  }
+  
+  // Remove orphaned optimized images
+  if (toRemove.length > 0) {
+    console.log(`🗑️  Removing ${toRemove.length} orphaned optimized images...`);
+    toRemove.forEach(opt => {
+      try {
+        fs.unlinkSync(opt.fullPath);
+        console.log(`🗑️  Removed orphaned: ${opt.relativePath}`);
+      } catch (error) {
+        console.warn(`⚠️  Could not remove ${opt.relativePath}:`, error.message);
+      }
+    });
+    
+    // Clean up empty directories
+    await cleanupEmptyDirectories(OPTIMIZED_DIR);
+  }
+  
+  console.log(`📊 Sync summary:`);
+  console.log(`   • Images to process: ${toProcess.length}`);
+  console.log(`   • Orphaned files removed: ${toRemove.length}`);
+  console.log(`   • Up-to-date images: ${sourceImages.length - toProcess.length}`);
+  
+  return toProcess;
+}
+
+/**
+ * Remove empty directories recursively
+ */
+async function cleanupEmptyDirectories(dirPath) {
+  if (!fs.existsSync(dirPath)) return;
+  
+  const items = fs.readdirSync(dirPath);
+  
+  for (const item of items) {
+    const fullPath = path.join(dirPath, item);
+    const stat = fs.statSync(fullPath);
+    
+    if (stat.isDirectory()) {
+      await cleanupEmptyDirectories(fullPath);
+      
+      // Check if directory is now empty
+      try {
+        const remainingItems = fs.readdirSync(fullPath);
+        if (remainingItems.length === 0) {
+          fs.rmdirSync(fullPath);
+          console.log(`📁 Removed empty directory: ${path.relative(OPTIMIZED_DIR, fullPath)}`);
+        }
+      } catch (error) {
+        // Directory might not be empty or have permission issues
+      }
+    }
   }
 }
 
 async function main() {
-  console.log('🚀 Starting Ayspire Image Optimization Process...\n');
+  console.log('🚀 Starting Ayspire Smart Image Optimization Process...\n');
   
   try {
-    // Clean up previous optimized images first
-    await cleanupOptimizedDirectory();
-    
-    // Ensure optimized directory exists after cleanup
+    // Ensure optimized directory exists
     await ensureDirectoryExists(OPTIMIZED_DIR);
     
-    const imageFiles = await getImageFiles(IMAGE_DIR);
-    console.log(`📁 Found ${imageFiles.length} images to process`);
+    const allImageFiles = await getImageFiles(IMAGE_DIR);
+    console.log(`📁 Found ${allImageFiles.length} source images`);
+    
+    // Smart sync - only process new/modified images
+    const imagesToProcess = await syncOptimizedImages(allImageFiles);
+    
+    if (imagesToProcess.length === 0) {
+      console.log('\n✅ All images are up-to-date! No processing needed.');
+      console.log('💡 To force reprocessing, delete the optimized folder or modify source images.');
+      return;
+    }
+    
+    console.log(`\n🔄 Processing ${imagesToProcess.length} images...`);
     
     // Sort by size (largest first) to prioritize heavy images
-    imageFiles.sort((a, b) => b.size - a.size);
+    imagesToProcess.sort((a, b) => b.size - a.size);
     
     const allResults = [];
     
-    for (const imageFile of imageFiles) {
+    for (const imageFile of imagesToProcess) {
       const results = await processImageSet(imageFile);
       allResults.push(results);
     }
