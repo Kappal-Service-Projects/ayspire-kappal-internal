@@ -76,13 +76,11 @@ export default function SEOEnhancer({
       contactPoint: organizationData?.contactPoint || {
         "@type": "ContactPoint",
         contactType: "Customer Service",
-        telephone: "+1-800-AYSPIRE",
-        email: "contact@ayspire.com",
+        telephone: "+1 647 526 5661",
+        email: "info@ayspire.com",
       },
       sameAs: organizationData?.sameAs || [
         "https://linkedin.com/company/ayspire",
-        "https://twitter.com/ayspire",
-        "https://facebook.com/ayspire",
       ],
     };
 

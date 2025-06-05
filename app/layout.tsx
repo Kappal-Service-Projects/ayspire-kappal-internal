@@ -164,14 +164,11 @@ export default function RootLayout({
                     addressCountry: "CA",
                   },
                   contactPoint: {
-                    telephone: "+1-800-AYSPIRE",
+                    telephone: "+1 647 526 5661",
                     contactType: "Customer Service",
-                    email: "contact@ayspire.com",
+                    email: "info@ayspire.com",
                   },
-                  sameAs: [
-                    "https://linkedin.com/company/ayspire",
-                    "https://twitter.com/ayspire",
-                  ],
+                  sameAs: ["https://linkedin.com/company/ayspire"],
                 }}
               />
 

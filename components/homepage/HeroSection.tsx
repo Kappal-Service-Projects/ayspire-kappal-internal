@@ -31,7 +31,7 @@ export default function HeroSection() {
           <div data-aos="fade-right" data-aos-duration="1000">
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-center lg:text-left">
               <span className="bg-gradient-to-r from-primary-300 to-primary-500 bg-clip-text text-transparent">
-                Accelarate
+                Accelerate
               </span>
               <br />
               <span className="text-gray-100">To Elevate</span>
