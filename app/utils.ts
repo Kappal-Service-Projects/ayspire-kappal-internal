@@ -48,18 +48,35 @@ function readMDXFile(filePath: string) {
 }
 
 function getMDXData(dir: any) {
-  let mdxFiles = getMDXFiles(dir);
+  try {
+    if (!fs.existsSync(dir)) {
+      return [];
+    }
+    
+    let mdxFiles = getMDXFiles(dir);
+    
+    if (mdxFiles.length === 0) {
+      return [];
+    }
 
-  return mdxFiles.map((file) => {
-    let { metadata, content } = readMDXFile(path.join(dir, file));
-    let slug = path.basename(file, path.extname(file));
+    return mdxFiles.map((file) => {
+      try {
+        let { metadata, content } = readMDXFile(path.join(dir, file));
+        let slug = path.basename(file, path.extname(file));
 
-    return {
-      metadata,
-      slug,
-      content,
-    };
-  });
+        return {
+          metadata,
+          slug,
+          content,
+        };
+      } catch (fileError) {
+        // Skip problematic files and continue
+        return null;
+      }
+    }).filter(Boolean);
+  } catch (error) {
+    return [];
+  }
 }
 
 export function getBlogPosts() {
@@ -67,12 +84,25 @@ export function getBlogPosts() {
 }
 
 export function getCareerListings() {
-  let allJobs = getMDXData(
-    path.join(process.cwd(), "app", "careers", "listings"),
-  );
+  try {
+    let careerListingsPath = path.join(process.cwd(), "app", "careers", "listings");
+    
+    // Check if the directory exists
+    if (!fs.existsSync(careerListingsPath)) {
+      return [];
+    }
 
-  // Filter only active jobs
-  return allJobs.filter((job) => job.metadata.active?.toLowerCase() === "true");
+    let allJobs = getMDXData(careerListingsPath);
+    
+    if (allJobs.length === 0) {
+      return [];
+    }
+
+    // Filter only active jobs
+    return allJobs.filter((job) => job.metadata.active?.toLowerCase() === "true");
+  } catch (error) {
+    return [];
+  }
 }
 
 export function formatDate(date: string, includeRelative = false) {

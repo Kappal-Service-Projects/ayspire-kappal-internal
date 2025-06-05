@@ -1,0 +1,2 @@
+# This file ensures the careers/listings directory is tracked by git
+# and prevents build failures when no job listings are present.

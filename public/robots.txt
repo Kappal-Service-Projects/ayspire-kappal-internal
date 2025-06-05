@@ -3,7 +3,6 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://ayspire.com/sitemap.xml
-Sitemap: https://ayspire.com/sitemap-news.xml
 
 # Google-specific directives for enhanced search features
 User-agent: Googlebot
