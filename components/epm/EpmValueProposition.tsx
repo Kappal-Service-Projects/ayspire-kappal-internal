@@ -20,7 +20,7 @@ const ValuePropChip: React.FC<ValuePropChipProps> = ({
 
 export const EpmValueProposition: React.FC = () => {
   const chips = [
-    { label: "Connected Planning", isPrimary: true },
+    { label: "Connected Planning", isPrimary: false },
     { label: "Analytics", isPrimary: false },
     { label: "Performance", isPrimary: false },
     { label: "Compliance", isPrimary: false },
