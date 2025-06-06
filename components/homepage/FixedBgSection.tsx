@@ -40,7 +40,7 @@ export default function FixedBgSection({
 
       <div className="absolute inset-0 bg-blue-100/10 z-10 flex flex-col items-center justify-center gap-6">
         <SectionHeader
-          className="text-white drop-shadow-lg brightness-125 mx-5"
+          className="text-white drop-shadow-lg brightness-125 mx-5 text-center"
           gradientText="Digital Transformation"
           primaryText="Accelerate Your"
           size="lg"

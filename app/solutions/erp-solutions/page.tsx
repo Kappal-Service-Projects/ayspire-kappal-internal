@@ -9,13 +9,14 @@ import {
   ErpCallToAction,
   useScrollReveal,
 } from "@/components/erp";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function ERPSolutionsPage() {
   // Initialize scroll reveal functionality
   useScrollReveal();
 
   return (
-    <main className="min-h-[100vh] w-full scroll-smooth">
+    <main className="min-h-[100vh] w-full scroll-smooth mt-20">
       {/* Hero Section with floating elements */}
       <ErpHeroSection />
 
@@ -30,6 +31,9 @@ export default function ERPSolutionsPage() {
 
       {/* Call to Action Section */}
       <ErpCallToAction />
+
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </main>
   );
 }

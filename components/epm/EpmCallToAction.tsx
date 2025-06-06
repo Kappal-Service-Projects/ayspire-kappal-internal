@@ -13,7 +13,7 @@ interface CallToActionProps {
 
 export const EpmCallToAction: React.FC<CallToActionProps> = ({
   description = "Discover how Ayspire can help you modernize your EPM processes, drive business agility and achieve your strategic goals.",
-  buttonText = "Get Started with Ayspire",
+  buttonText = "Get Started With Ayspire",
   buttonHref = "/contact",
 }) => {
   return (
@@ -27,7 +27,7 @@ export const EpmCallToAction: React.FC<CallToActionProps> = ({
 
       <SectionHeader
         gradientText="Your EPM?"
-        primaryText="Ready to Transform"
+        primaryText="Ready To Transform"
         size="md"
       />
       <p className="max-w-xl text-lg md:text-xl text-gray-700 dark:text-gray-200 mb-8 relative z-10">

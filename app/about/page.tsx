@@ -6,10 +6,8 @@ import { AboutHeroSection } from "@/components/about/AboutHeroSection";
 import { WhyPartnerWithUsSection } from "@/components/about/WhyPartnerWithUsSection";
 import { AboutStorySection } from "@/components/about/AboutStorySection";
 import { AboutMissionVisionSection } from "@/components/about/AboutMissionVisionSection";
-import { AboutStatsSection } from "@/components/about/AboutStatsSection";
-import AboutTestimonialsSection from "@/components/about/AboutTestimonialsSection";
 import { useGlobalScrollReveal } from "@/components/about/useScrollReveal";
-import { testimonials } from "@/config/homepageData";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function AboutPage() {
   // Initialize scroll reveal for all reveal-element classes
@@ -34,6 +32,9 @@ export default function AboutPage() {
 
       {/* Why Partner With Us Section - NEW CONTENT */}
       <WhyPartnerWithUsSection />
+
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </main>
   );
 }

@@ -43,8 +43,8 @@ export const metadata = {
 
 export default function TeamPage() {
   return (
-    <main className="min-h-[80vh] w-full bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 py-16 px-4 overflow-x-hidden">
-      <section className="w-full max-w-full mx-auto mt-24 md:mt-32 overflow-x-hidden">
+    <main className="min-h-[80vh] w-full bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 mt-10 dark:to-slate-950 px-4 overflow-x-hidden">
+      <section className="w-full max-w-full mx-auto overflow-x-hidden">
         <SectionHeader
           className="text-center my-20"
           gradientText="Our Team"

@@ -1,20 +1,15 @@
+"use client";
 import React from "react";
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ColorChip } from "@/components/containers/chips";
-
-export const metadata = {
-  title: "AI Products and Solutions | Ayspire",
-  description:
-    "Explore Ayspire's upcoming AI-powered products and solutions for the enterprise. Coming soon!",
-};
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function AIProductsPage() {
   return (
-    <main className="min-h-[80vh] w-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
-      <section className="w-full flex flex-col items-center justify-center py-24 px-4 text-center">
-        <ColorChip />
+    <main className="min-h-[80vh] w-full mt-20 flex flex-col items-center justify-start bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
+      <section className="w-full flex flex-col items-center justify-center px-4 text-center">
         <SectionHeader
+          className="text-center"
           gradientText="& Solutions"
           primaryText="AI Products"
           size="lg"
@@ -29,6 +24,9 @@ export default function AIProductsPage() {
           </span>
         </div>
       </section>
+
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </main>
   );
 }

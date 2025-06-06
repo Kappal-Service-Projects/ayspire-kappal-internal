@@ -4,7 +4,6 @@ import React from "react";
 import { epmCapabilities } from "./epmCapabilities";
 
 import {
-  EpmHeroSection,
   AdvancedEpmSection,
   EpmValueProposition,
   EpmCapabilities,
@@ -12,15 +11,16 @@ import {
   useScrollReveal,
   newEpmSolutions,
 } from "@/components/epm";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function EPMSolutionsPage() {
   // Initialize scroll reveal functionality
   useScrollReveal();
 
   return (
-    <main className="min-h-[100vh] w-full dark:from-slate-900 dark:to-slate-950 scroll-smooth">
+    <main className="min-h-[100vh] w-full dark:from-slate-900 dark:to-slate-950 scroll-smooth mt-20">
       {/* Hero Section with floating elements */}
-      <EpmHeroSection />
+      {/* <EpmHeroSection /> */}
 
       {/* Advanced EPM Solutions Section */}
       <AdvancedEpmSection solutions={newEpmSolutions} />
@@ -36,6 +36,9 @@ export default function EPMSolutionsPage() {
 
       {/* Call to Action Section */}
       <EpmCallToAction />
+
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </main>
   );
 }

@@ -13,18 +13,39 @@ interface AdvancedEpmSectionProps {
   solutions: EpmSolution[];
 }
 
+interface FloatingElementProps {
+  className: string;
+  style?: React.CSSProperties;
+}
+
+const FloatingElement: React.FC<FloatingElementProps> = ({
+  className,
+  style,
+}) => <div className={className} style={style} />;
+
+
 export const AdvancedEpmSection: React.FC<AdvancedEpmSectionProps> = ({
   solutions,
 }) => {
   const isMobile = useIsMobile();
 
   return (
-    <section className="w-full py-12 md:py-16 relative">
+    <section className="w-full relative">
       <div className=" z-10 max-w-full md:max-w-7xl mx-auto px-0 sm:px-4">
+        <FloatingElement className="absolute top-10 left-20 w-32 h-32 rounded-full bg-gradient-to-r from-primary-400 to-primary-600 opacity-20 floating-element will-change-transform" />
+      <FloatingElement
+        className="absolute bottom-0 right-10 w-24 h-24 rounded-full bg-gradient-to-r from-secondary to-primary-300 opacity-30 floating-element will-change-transform"
+        style={{ animationDelay: "2s" }}
+      />
+      <FloatingElement
+        className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-gradient-to-r from-primary-500 to-secondary opacity-25 floating-element will-change-transform"
+        style={{ animationDelay: "4s" }}
+      />
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-20">
           <SectionHeader
-            gradientText="and Managed Services"
+            className="text-center"
+            gradientText="And Managed Services"
             primaryText="EPM Implementation"
             size="lg"
           />

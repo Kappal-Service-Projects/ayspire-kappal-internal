@@ -157,7 +157,7 @@ npm run build
 - **Download in local and run** ```bash npm run dev ```
 - **Commit Changes to Kappal Github**
 - **The Ayspire Prod branch is forked from Kappal**
-- **Syncing from Ayspire will trigger build**
+- **Updating Branch from Ayspire with changes in Kappal will trigger build**
 
 ## 🔍 SEO Features
 

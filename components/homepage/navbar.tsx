@@ -77,12 +77,12 @@ export const Navbar = () => {
           />
         </NavbarContent>
 
-        <NavbarMenu className="lg:hidden bg-white border-t border-gray-100 z-50">
+        <NavbarMenu className="lg:hidden bg-white my-5 border-t border-gray-100 z-50">
           <div className="px-6 py-4 space-y-4">
             {siteConfig.mobileMenuItems.map((navLink, index) => (
               <NavbarMenuItem key={`${navLink}-${index}`}>
                 <Link
-                  className="block text-gray-700 hover:text-blue-600 transition-colors py-3 px-2 rounded-md focus-outline hover:bg-blue-50"
+                  className="block text-gray-700 font-semibold text-xl hover:text-blue-600 transition-colors py-3 px-2 rounded-md focus-outline hover:bg-blue-50"
                   href={navLink.href}
                   size="lg"
                   onPress={handleLinkClick}
@@ -94,8 +94,8 @@ export const Navbar = () => {
             <NavbarMenuItem>
               <Link
                 isExternal
-                aria-label="Visit Ayspire LinkedIn page"
-                className="block text-gray-700 hover:text-blue-600 transition-colors py-3 px-2 rounded-md focus-outline hover:bg-blue-50"
+                aria-label="Visit Ayspire LinkedIn page "
+                className="block text-gray-700 hover:text-blue-600 font-semibold text-xl transition-colors py-3 px-2 rounded-md focus-outline hover:bg-blue-50"
                 href="https://www.linkedin.com/company/ayspire"
               >
                 LinkedIn

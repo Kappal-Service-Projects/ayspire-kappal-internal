@@ -1,19 +1,15 @@
+"use client";
 import React from "react";
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ColorChip } from "@/components/containers/chips";
-
-export const metadata = {
-  title: "Business Consulting | Ayspire",
-  description: "Explore Ayspire's consulting services for the enterprises.",
-};
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function ConsultingPage() {
   return (
-    <main className="min-h-[80vh] w-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
+    <main className="min-h-[100vh] w-full dark:from-slate-900 dark:to-slate-950 scroll-smooth mt-20">
       <section className="w-full flex flex-col items-center justify-center py-24 px-4 text-center">
-        <ColorChip />
         <SectionHeader
+          className="text-center"
           gradientText="Consulting"
           primaryText="Business"
           size="lg"
@@ -28,6 +24,9 @@ export default function ConsultingPage() {
           </span>
         </div>
       </section>
+
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </main>
   );
 }

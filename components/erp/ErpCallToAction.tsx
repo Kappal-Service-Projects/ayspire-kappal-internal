@@ -15,7 +15,7 @@ export const ErpCallToAction: React.FC = () => {
         <div className="relative z-10">
           <SectionHeader
             gradientText="Your ERP?"
-            primaryText="Ready to Modernize"
+            primaryText="Ready To Modernize"
             size="md"
           />
           <p className="max-w-xl mx-auto text-lg md:text-xl text-gray-700 dark:text-gray-200 mb-8 reveal-element">
@@ -27,7 +27,7 @@ export const ErpCallToAction: React.FC = () => {
               className="group inline-flex items-center gap-2 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 focus-outline animate-pulse-glow-hover"
               href="/contact"
             >
-              Get Started with Ayspire
+              Get Started With Ayspire
               <svg
                 className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200"
                 fill="none"

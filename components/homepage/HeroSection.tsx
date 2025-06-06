@@ -23,9 +23,9 @@ export default function HeroSection() {
               analytics and purposeful innovation to thrive in the AI and
               digital era.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
               <Link
-                className="inline-flex items-center px-8 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary-600 transition-all duration-300 pulse-border group focus-outline"
+                className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary-600 transition-all duration-300 pulse-border group focus-outline text-sm sm:text-base"
                 href="/contact"
               >
                 Contact Us
@@ -34,7 +34,7 @@ export default function HeroSection() {
                 </span>
               </Link>
               <Link
-                className="inline-flex items-center px-8 py-4 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 focus-outline"
+                className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 focus-outline text-sm sm:text-base"
                 href="#services"
               >
                 Explore Services

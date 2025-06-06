@@ -16,6 +16,7 @@ export default function Page() {
         <div className="col-span-1 lg:col-span-2">
           <div className="py-5 mx-5">
             <SectionHeader
+              className="text-center"
               gradientText="Insights"
               primaryText="Ayspire"
               size="lg"

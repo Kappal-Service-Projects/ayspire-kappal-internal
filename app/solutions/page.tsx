@@ -85,7 +85,7 @@ const solutions: Solution[] = [
 
 export default function SolutionsPage() {
   return (
-    <main className="min-h-screen w-full bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <main className="min-h-screen w-full bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 mt-20">
       {/* Hero Section */}
       <section className="relative pt-24 md:pt-32 pb-16 px-4 overflow-hidden">
         {/* Background Pattern */}
@@ -251,7 +251,7 @@ export default function SolutionsPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Transform Your Business?
+            Ready To Transform Your Business?
           </h2>
           <p className="text-xl mb-8 opacity-90">
             Let&apos;s discuss how our enterprise solutions can accelerate your

@@ -17,7 +17,7 @@ const FloatingElement: React.FC<FloatingElementProps> = ({
 
 export const ErpHeroSection: React.FC = () => {
   return (
-    <section className="w-full flex flex-col items-center justify-center py-16 px-4 sm:px-8 text-center relative overflow-hidden bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
+    <section className="w-full flex flex-col items-center justify-center px-4 sm:px-8 text-center relative overflow-hidden bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
       {/* Floating background elements for artistic effect - optimized for smooth performance */}
       <FloatingElement className="absolute top-10 left-20 w-32 h-32 rounded-full bg-gradient-to-r from-primary-400 to-primary-600 opacity-20 floating-element will-change-transform" />
       <FloatingElement
@@ -31,13 +31,9 @@ export const ErpHeroSection: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-10">
-        <div className="reveal-element">
-          <ColorChip />
-        </div>
-
         <SectionHeader
           className="text-center max-w-4xl"
-          gradientText="and Managed Services"
+          gradientText="And Managed Services"
           primaryText="ERP Implementation"
           size="lg"
         />
